@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Xpo Imaging Limited | Marketing · Branding · Creative Communications · Uganda</title>
+<meta name="description" content="Xpo Imaging Limited — Uganda's full-service marketing, branding, social media management, video production, and photography agency. Established 2014. Kampala, Uganda.">
+<link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<link rel="shortcut icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     XPO IMAGING LIMITED — Light Brand Theme
+     Primary: white/light grey backgrounds
+     Brand: XPO teal #0d5f8a / sky #1a8ab5
+     Text: near-black #0d1f2d
+  ============================================================ */
+  :root{
+    --bg:        #ffffff;
+    --bg-soft:   #f4f8fb;
+    --panel:     #eaf2f8;
+    --panel-2:   #daeaf4;
+    --ink:       #0d1f2d;
+    --ink-mid:   #1e2d3a;
+    --ink-dim:   rgba(20,35,48,0.70);
+    --blue:      #0d5f8a;
+    --blue-deep: #0a3d5c;
+    --sky:       #1a8ab5;
+    --sky-light: #e0f1f9;
+    --rule:      #cde3f0;
+    --stripe:    #f0f7fb;
+    --maxw:      1240px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--sky);color:#fff;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;font-weight:600;letter-spacing:-0.01em;color:var(--ink);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.20em;
+    text-transform:uppercase;
+    color:var(--sky);
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--sky);display:inline-block;border-radius:2px;}
+
+  /* ---- NAV ---- */
+  header.site{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;height:68px;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(20px) saturate(1.8);
+    -webkit-backdrop-filter:blur(20px) saturate(1.8);
+    border-bottom:1px solid var(--rule);
+    box-shadow:0 1px 16px rgba(13,63,92,0.07);
+  }
+  .logo{
+    display:flex;align-items:center;
+    text-decoration:none;
+  }
+  .logo-img{
+    height:44px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+  }
+  nav.primary{display:flex;align-items:center;gap:32px;}
+  nav.primary a{
+    font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:700;color:var(--ink-mid);
+    position:relative;padding:4px 0;
+    transition:color .2s ease;
+  }
+  nav.primary a:hover,nav.primary a.active{color:var(--blue-deep);}
+  nav.primary a::after{
+    content:"";position:absolute;left:0;bottom:-4px;
+    width:0;height:2px;background:var(--sky);border-radius:2px;
+    transition:width .22s ease;
+  }
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .has-drop{position:relative;}
+  .dropdown{
+    position:absolute;top:calc(100% + 12px);left:-16px;min-width:250px;
+    background:#fff;border:1px solid var(--rule);border-radius:12px;
+    padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);
+    transition:all .2s ease;
+    box-shadow:0 12px 40px rgba(13,63,92,0.14);
+  }
+  .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{
+    display:block;padding:10px 14px;font-size:12px;
+    letter-spacing:0.02em;text-transform:none;
+    color:var(--ink-mid);border-radius:8px;font-weight:500;
+    transition:background .15s ease,color .15s ease;
+  }
+  .dropdown a:hover{color:var(--blue-deep);background:var(--sky-light);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:51;}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s ease, opacity .3s ease;}
+  /* Burger → X animation */
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* Mobile nav drawer */
+  .mobile-nav{
+    display:none;
+    position:fixed;top:68px;left:0;right:0;z-index:49;
+    background:rgba(255,255,255,0.98);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--rule);
+    box-shadow:0 8px 32px rgba(13,63,92,0.12);
+    padding:16px 0 24px;
+    transform:translateY(-10px);
+    opacity:0;
+    transition:transform .3s ease, opacity .3s ease;
+    pointer-events:none;
+  }
+  .mobile-nav.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .mobile-nav a{
+    display:block;padding:14px 32px;
+    font-size:14px;font-weight:700;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid var(--rule);
+    transition:background .15s,color .15s;
+  }
+  .mobile-nav a:last-child{border-bottom:none;}
+  .mobile-nav a:hover{background:var(--sky-light);color:var(--blue);}
+  .mobile-nav a.active{color:var(--blue);}
+  /* Overlay behind mobile nav */
+  .nav-backdrop{
+    display:none;
+    position:fixed;inset:0;z-index:48;
+    background:rgba(10,40,60,0.25);
+  }
+  .nav-backdrop.open{display:block;}
+
+  /* ---- HERO ---- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:68px 0 0;
+    overflow:hidden;
+    background:var(--blue-deep); /* fallback */
+  }
+
+  /* Full-bleed background image layer — JS swaps src */
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    transition:opacity 0.7s ease;
+    will-change:transform,opacity;
+    transform-origin:center center;
+  }
+  .hero-bg.fade-out{ opacity:0; }
+  .hero-bg.fade-in { opacity:1; }
+
+  /* Ken Burns zoom — restarts each slide */
+  @keyframes kenBurns{
+    from{ transform:scale(1.0); }
+    to  { transform:scale(1.10); }
+  }
+  .hero-bg.zoom{
+    animation:kenBurns 6s ease-out forwards;
+  }
+
+  /* Blue overlay on top of photo */
+  .hero-overlay{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(to bottom,
+        rgba(8,32,52,0.78) 0%,
+        rgba(8,32,52,0.68) 40%,
+        rgba(8,32,52,0.82) 75%,
+        rgba(8,32,52,0.96) 100%
+      );
+  }
+
+  /* Accent top bar */
+  .hero-accent-bar{
+    position:absolute;top:68px;left:0;right:0;height:3px;z-index:3;
+    background:linear-gradient(to right, var(--sky) 0%, rgba(255,255,255,0.4) 100%);
+  }
+
+  /* Typewriter cursor on hero title */
+  .hero-title .tw-cursor{
+    display:inline-block;
+    width:3px;
+    background:var(--sky);
+    margin-left:3px;
+    animation:blink .75s step-end infinite;
+    vertical-align:baseline;
+    height:0.85em;
+    border-radius:1px;
+  }
+  @keyframes blink{
+    0%,100%{opacity:1;}
+    50%{opacity:0;}
+  }
+  /* Fade-in for sub and eyebrow on slide change */
+  .hero-sub.tw-fade,
+  .hero .eyebrow.tw-fade{
+    animation:twFadeIn 0.5s ease forwards;
+  }
+  @keyframes twFadeIn{
+    from{opacity:0;transform:translateY(8px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .slate-top{
+    position:relative;z-index:4;
+    display:flex;justify-content:space-between;align-items:flex-start;
+    padding:32px 32px 0;max-width:var(--maxw);margin:0 auto;width:100%;
+  }
+  .slate-meta{
+    font-family:'Space Mono',monospace;font-size:11px;
+    color:rgba(255,255,255,0.55);display:flex;gap:24px;letter-spacing:0.06em;
+  }
+  .slate-meta b{color:var(--sky);font-weight:700;}
+  .hero-body{
+    position:relative;z-index:4;
+    padding:0 32px 80px;max-width:var(--maxw);margin:0 auto;width:100%;
+  }
+  .hero-service{font-size:11px;margin-bottom:4px;}
+  .hero-title{
+    font-size:clamp(48px,8vw,110px);
+    line-height:0.97;margin:20px 0 24px;
+    max-width:13ch;color:#fff;
+  }
+  .hero-title em{font-style:italic;color:var(--sky);}
+  .hero-sub{
+    font-size:17px;color:rgba(255,255,255,0.75);
+    max-width:48ch;margin-bottom:36px;line-height:1.65;
+  }
+  /* Eyebrow on hero — white */
+  .hero .eyebrow{color:rgba(255,255,255,0.7);}
+  .hero .eyebrow::before{background:rgba(255,255,255,0.5);}
+
+  /* Ghost button on hero */
+  .hero .btn.ghost{
+    background:transparent;color:#fff;
+    border-color:rgba(255,255,255,0.45);
+  }
+  .hero .btn.ghost:hover{
+    border-color:#fff;background:rgba(255,255,255,0.1);
+  }
+
+  /* Progress dots on hero — white */
+  .hero .slate-dots{
+    display:flex;gap:8px;position:relative;z-index:4;
+    padding:0 32px 40px;max-width:var(--maxw);margin:0 auto;width:100%;
+  }
+  .hero .slate-dots button{background:rgba(255,255,255,0.25);}
+  .hero .slate-dots button.active::after{background:#fff;}
+
+  /* ---- BUTTONS ---- */
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.14em;text-transform:uppercase;
+    background:var(--blue);color:#fff;
+    padding:15px 28px;border:2px solid var(--blue);
+    border-radius:4px;
+    transition:all .22s ease;cursor:pointer;
+  }
+  .btn:hover{background:var(--blue-deep);border-color:var(--blue-deep);}
+  .btn.ghost{background:transparent;color:var(--blue);border-color:var(--rule);}
+  .btn.ghost:hover{border-color:var(--blue);background:var(--sky-light);}
+  .btn svg{width:14px;height:14px;transition:transform .22s ease;}
+  .btn:hover svg{transform:translateX(4px);}
+
+  /* Progress dots */
+  .slate-dots{
+    display:flex;gap:8px;position:relative;z-index:4;
+    padding:0 32px 40px;max-width:var(--maxw);margin:0 auto;width:100%;
+  }
+  .slate-dots button{
+    width:32px;height:3px;background:var(--rule);border:none;
+    cursor:pointer;padding:0;position:relative;overflow:hidden;border-radius:2px;
+  }
+  .slate-dots button.active::after{
+    content:"";position:absolute;inset:0;background:var(--sky);
+    animation:fillbar 5.5s linear forwards;
+  }
+  @keyframes fillbar{from{width:0}to{width:100%}}
+
+  /* ---- SECTIONS ---- */
+  section{padding:100px 0;position:relative;}
+
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:40px;margin-bottom:56px;flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(32px,4vw,52px);max-width:12ch;}
+  .section-head p{color:var(--ink-mid);max-width:40ch;font-size:15px;line-height:1.7;}
+
+  /* ---- ABOUT CARDS ---- */
+  .about-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .about-card{
+    background:var(--bg-soft);
+    border:1px solid var(--rule);
+    border-radius:16px;padding:36px 32px;
+    transition:box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+  }
+  .about-card:hover{
+    box-shadow:0 16px 48px rgba(13,95,138,0.12);
+    transform:translateY(-5px);
+    border-color:var(--sky);
+  }
+  .about-card-title{
+    font-size:clamp(22px,2.2vw,32px);line-height:1.1;
+    font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;
+  }
+  .about-card-title em{font-style:italic;color:var(--sky);}
+  .about-card-body{font-size:15px;line-height:1.7;color:var(--ink-mid);margin:0 0 26px;}
+
+  /* Shared eyebrow / link / tags for about cards */
+  .cin-card-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .cin-num{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.18em;color:var(--sky);}
+  .cin-rule{flex:0 0 36px;height:1px;background:var(--rule);}
+  .cin-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mid);}
+  .cin-card-link{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);
+    border-bottom:1px solid var(--rule);padding-bottom:3px;
+    transition:color .2s,border-color .2s;
+  }
+  .cin-card-link:hover{color:var(--sky);border-color:var(--sky);}
+  .cin-card-link svg{width:13px;height:13px;transition:transform .2s;}
+  .cin-card-link:hover svg{transform:translateX(4px);}
+  .cin-tag-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+  .cin-tag-list li{
+    font-family:'Space Mono',monospace;font-size:10px;
+    letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-mid);border:1px solid var(--rule);
+    padding:5px 12px;border-radius:100px;
+    transition:background .2s,border-color .2s,color .2s;
+  }
+  .about-card:hover .cin-tag-list li{background:var(--sky-light);border-color:var(--sky);color:var(--blue);}
+
+  /* ---- OUR WORKS GRID ---- */
+  .works-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:48px 36px;
+  }
+  .work-card{
+    background:transparent;
+    position:relative;
+    display:flex;flex-direction:column;
+    cursor:pointer;
+    text-decoration:none;
+  }
+  /* Square image box */
+  .work-card .art{
+    position:relative;
+    width:100%;aspect-ratio:1/1;
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:18px;
+    flex-shrink:0;
+  }
+  .work-card .art img{
+    width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    display:block;
+    transition:transform .5s ease;
+  }
+  .work-card:hover .art img{transform:scale(1.06);}
+  /* Arrow overlay */
+  .work-card .arrow{
+    position:absolute;top:14px;right:14px;z-index:2;
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,0.92);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transform:scale(0.75);
+    transition:opacity .3s ease,transform .3s ease;
+  }
+  .work-card:hover .arrow{opacity:1;transform:scale(1);}
+  .work-card .arrow svg{width:14px;height:14px;color:var(--blue);}
+  /* Caption area */
+  .work-card .cap{display:flex;flex-direction:column;}
+  /* Teal accent line */
+  .work-card .accent-line{
+    width:22px;height:3px;border-radius:2px;
+    background:var(--sky);margin-bottom:10px;flex-shrink:0;
+  }
+  /* Sub-description */
+  .work-card .num{
+    font-size:13px;color:var(--ink-mid);
+    margin-bottom:8px;line-height:1.4;
+    font-weight:400;
+  }
+  /* Service title */
+  .work-card .cap h3{
+    font-family:'Fraunces',serif;
+    font-size:clamp(20px,1.8vw,26px);
+    font-weight:700;color:var(--ink);
+    line-height:1.15;letter-spacing:-0.01em;
+    margin:0;
+    transition:color .2s ease;
+  }
+  .work-card:hover .cap h3{color:var(--blue);}
+  .work-card .cap .tag{display:none;}
+  .work-card::after{display:none;}
+
+  /* ---- WHY US ---- */
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    background:var(--rule);
+  }
+  .why-card{
+    background:var(--bg);padding:44px 32px;
+    border-right:1px solid var(--rule);
+    transition:background .25s ease;
+  }
+  .why-card:last-child{border-right:none;}
+  .why-card:hover{background:var(--sky-light);}
+  .why-card .ic{width:40px;height:40px;margin-bottom:22px;color:var(--sky);}
+  .why-card h4{font-size:18px;margin-bottom:10px;color:var(--ink);}
+  .why-card p{font-size:14px;color:var(--ink-mid);line-height:1.7;}
+
+  /* ---- CLIENTS CAROUSEL ---- */
+  .partners{
+    padding:80px 0;
+    background:var(--bg-soft);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    overflow:hidden;
+  }
+  .logo-track-wrap{
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  }
+  .logo-track{display:flex;width:max-content;}
+  .logo-track--left{animation:logoLeft 38s linear infinite;}
+  .logo-track--right{animation:logoRight 44s linear infinite;}
+  .logo-track-wrap:hover .logo-track{animation-play-state:paused;}
+  @keyframes logoLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes logoRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .logo-set{display:flex;align-items:center;flex-shrink:0;}
+  .logo-item{
+    display:flex;align-items:center;justify-content:center;
+    padding:0 36px;height:80px;border-right:1px solid var(--rule);flex-shrink:0;
+  }
+  .logo-item img{
+    height:42px;width:auto;max-width:130px;object-fit:contain;
+    opacity:0.8;transition:opacity .3s ease,transform .3s ease;
+  }
+  .logo-item:hover img{opacity:1;transform:scale(1.08);}
+
+  /* ---- TESTIMONIALS — stacked deck carousel ---- */
+  .testimonials{
+    padding:110px 0;
+    background:var(--blue-deep);
+    position:relative;overflow:hidden;
+  }
+  .testimonials::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 5% 60%, rgba(26,138,181,0.22), transparent 50%),
+      radial-gradient(ellipse at 95% 30%, rgba(26,138,181,0.10), transparent 45%);
+  }
+  /* Split layout */
+  .testi-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+    position:relative;z-index:1;
+  }
+  /* Left col — heading + controls */
+  .testi-left{ display:flex; flex-direction:column; }
+  .testi-heading{
+    font-family:'Fraunces',serif;
+    font-size:clamp(36px,5vw,62px);
+    font-weight:600;line-height:1.05;
+    color:#fff;margin:0 0 48px;
+  }
+  .testi-heading em{font-style:italic;color:var(--sky);}
+  .testi-controls{display:flex;align-items:center;gap:16px;}
+  .testi-btn{
+    width:48px;height:48px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.07);
+    color:rgba(255,255,255,0.7);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:all .25s ease;
+    flex-shrink:0;
+  }
+  .testi-btn:hover{background:var(--sky);border-color:var(--sky);color:#fff;}
+  .testi-btn svg{width:18px;height:18px;}
+  .testi-counter{
+    font-family:'Space Mono',monospace;
+    font-size:12px;letter-spacing:0.1em;
+    color:rgba(255,255,255,0.45);
+  }
+  .testi-counter strong{color:#fff;}
+
+  /* Right col — stacked deck */
+  .testi-deck{
+    position:relative;
+    height:320px; /* enough for stacking peek */
+  }
+  .testi-card{
+    position:absolute;
+    inset:0;
+    background:#fff;
+    border-radius:20px;
+    padding:40px 36px;
+    display:flex;flex-direction:column;gap:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    transition:transform .5s cubic-bezier(.22,.68,0,1.2), opacity .4s ease;
+    will-change:transform,opacity;
+    cursor:default;
+  }
+  /* Stack peek — cards behind the active one */
+  .testi-card[data-pos="1"]{
+    transform:translate(14px, -12px) scale(0.97);
+    opacity:0.6;z-index:1;
+  }
+  .testi-card[data-pos="2"]{
+    transform:translate(26px, -22px) scale(0.94);
+    opacity:0.3;z-index:0;
+  }
+  .testi-card[data-pos="active"]{
+    transform:translate(0,0) scale(1);
+    opacity:1;z-index:2;
+  }
+  /* Exiting card animates off to the left */
+  .testi-card.exiting{
+    transform:translate(-60px,0) scale(0.96);
+    opacity:0;z-index:3;
+  }
+  /* Card inner */
+  .testi-count-pill{
+    display:inline-flex;align-items:center;
+    background:var(--panel);border-radius:100px;
+    padding:5px 14px;
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.1em;color:var(--ink-mid);
+    align-self:flex-start;
+  }
+  .testi-body{
+    font-size:15px;line-height:1.75;
+    color:var(--ink);
+    flex:1;
+  }
+  .testi-divider{
+    height:1px;background:var(--rule);flex-shrink:0;
+  }
+  .testi-footer{
+    display:flex;align-items:center;gap:14px;
+  }
+  .testi-avatar{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--blue);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-family:'Fraunces',serif;
+    font-size:16px;font-weight:700;color:#fff;
+  }
+  .testi-meta{display:flex;flex-direction:column;}
+  .testi-client{
+    font-family:'Manrope',sans-serif;
+    font-size:14px;font-weight:700;color:var(--ink);
+    display:block;margin-bottom:1px;
+  }
+  .testi-type{
+    font-family:'Space Mono',monospace;
+    font-size:10px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--sky);
+  }
+
+  @media(max-width:900px){
+    .testi-layout{
+      grid-template-columns:1fr;
+      gap:48px;
+    }
+    .testi-deck{height:360px;}
+  }
+  @media(max-width:560px){
+    .testi-deck{height:400px;}
+    .testi-card{padding:28px 24px;}
+  }
+
+  /* ---- CTA STRIP ---- */
+  .cta-strip{
+    background:var(--blue-deep);
+    padding:100px 0;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .cta-strip::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 30% 50%,rgba(26,138,181,0.25),transparent 60%),
+      radial-gradient(ellipse at 80% 50%,rgba(26,138,181,0.15),transparent 55%);
+  }
+  .cta-strip::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(to right,var(--sky),rgba(255,255,255,0.3));
+  }
+  .cta-strip h2{
+    font-size:clamp(30px,5vw,58px);max-width:16ch;
+    margin:0 auto 36px;color:#fff;position:relative;
+  }
+  .cta-strip .eyebrow{justify-content:center;margin-bottom:20px;color:rgba(255,255,255,0.6);}
+  .cta-strip .eyebrow::before{background:rgba(255,255,255,0.4);}
+  .cta-strip .btn{
+    background:#fff;border-color:#fff;color:var(--blue-deep);position:relative;
+    font-weight:700;
+  }
+  .cta-strip .btn:hover{background:transparent;color:#fff;border-color:rgba(255,255,255,0.6);}
+
+  /* ---- FOOTER ---- */
+  footer{padding:90px 0 40px;background:var(--blue-deep);}
+  .foot-grid{
+    display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:44px;padding-bottom:64px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .foot-grid h5{
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.16em;text-transform:uppercase;
+    color:rgba(255,255,255,0.45);margin-bottom:18px;
+  }
+  .foot-grid p,.foot-grid a{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.9;display:block;}
+  .foot-grid a:hover{color:#fff;}
+  .foot-logo{margin-bottom:18px;}
+  .foot-logo img{
+    height:52px;width:auto;display:block;
+    /* Invert to white for dark footer background */
+    filter:brightness(0) invert(1);
+  }
+  .foot-tag{color:rgba(255,255,255,0.5);font-size:14px;max-width:30ch;line-height:1.65;}
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:26px;font-size:12px;color:rgba(255,255,255,0.35);
+    flex-wrap:wrap;gap:16px;
+  }
+  .socials{display:flex;gap:12px;}
+  .socials a{
+    width:34px;height:34px;
+    border:1px solid rgba(255,255,255,0.15);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,0.45);
+    transition:border-color .2s,color .2s,background .2s;
+  }
+  .socials svg{width:13px;height:13px;}
+  .socials a:hover{border-color:var(--sky);color:#fff;background:var(--sky);}
+
+  @media (max-width:900px){
+    nav.primary{display:none;}
+    .burger{display:flex;}
+    .works-grid{grid-template-columns:repeat(2,1fr);gap:32px 24px;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:36px;}
+    .slate-meta{display:none;}
+    /* Hero */
+    .hero-body{padding:0 24px 70px;}
+    .hero-title{font-size:clamp(38px,10vw,70px);}
+    .hero-sub{font-size:15px;max-width:100%;}
+    /* Sections */
+    section{padding:70px 0;}
+    .section-head{flex-direction:column;align-items:flex-start;margin-bottom:36px;}
+    /* Testimonials */
+    .testi-layout{grid-template-columns:1fr;gap:40px;}
+    .testi-deck{height:auto;min-height:340px;}
+    /* About */
+    .about-grid{grid-template-columns:1fr;gap:16px;}
+    .about-card{padding:28px 24px;}
+    /* Why */
+    .why-card{padding:32px 24px;}
+    /* Footer */
+    footer{padding:60px 0 28px;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .works-grid{grid-template-columns:1fr;gap:36px;}
+    .why-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .section-head{flex-direction:column;align-items:flex-start;}
+    /* Hero mobile */
+    .hero{padding:68px 0 0;}
+    .hero-title{font-size:clamp(34px,12vw,56px);line-height:1.0;}
+    .hero-sub{font-size:14px;}
+    .hero-body{padding:0 20px 60px;}
+    .slate-dots{padding:0 20px 32px;}
+    /* Buttons stack */
+    .hero-body > div{flex-direction:column;align-items:flex-start;}
+    .btn{font-size:11px;padding:13px 22px;}
+    /* Sections tighter */
+    section{padding:56px 0;}
+    /* Testimonial deck full height */
+    .testi-deck{min-height:380px;}
+    .testi-card{padding:24px 20px;}
+    /* Footer single col */
+    .foot-grid{grid-template-columns:1fr;gap:28px;}
+    .foot-bottom{flex-direction:column;align-items:flex-start;gap:12px;}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+
+  /* ============================================================
+     ABOUT SECTION — static 3-column card grid
+  ============================================================ */
+  .about-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:0;
+  }
+  .about-card{
+    background:var(--bg);
+    border:1px solid var(--rule);
+    border-radius:20px;
+    padding:40px 36px;
+    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .about-card:hover{
+    border-color:var(--sky);
+    transform:translateY(-4px);
+    box-shadow:0 12px 40px rgba(13,95,138,0.10);
+  }
+  .about-card-title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(24px,2.5vw,36px);
+    line-height:1.1;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin:0 0 18px;
+    color:var(--ink);
+  }
+  .about-card-title em{ font-style:italic; color:var(--sky); }
+  .about-card-body{
+    font-size:15px;
+    line-height:1.7;
+    color:var(--ink-dim);
+    margin:0 0 28px;
+  }
+
+  /* Shared card utilities (eyebrow row, link, tags) */
+  .cin-card-eyebrow{
+    display:flex; align-items:center; gap:14px; margin-bottom:24px;
+  }
+  .cin-num{
+    font-family:'Space Mono',monospace; font-size:11px;
+    letter-spacing:0.16em; color:var(--sky); white-space:nowrap;
+  }
+  .cin-rule{ flex:0 0 40px; height:1px; background:rgba(74,155,191,0.45); }
+  .cin-label{
+    font-family:'Space Mono',monospace; font-size:11px;
+    letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ink-dim); white-space:nowrap;
+  }
+  .cin-card-link{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Space Mono',monospace; font-size:12px;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--ink);
+    border-bottom:1px solid rgba(74,155,191,0.25); padding-bottom:4px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .cin-card-link:hover{ color:var(--sky); border-color:var(--sky); }
+  .cin-card-link svg{ width:14px; height:14px; transition:transform .25s ease; }
+  .cin-card-link:hover svg{ transform:translateX(5px); }
+  .cin-tag-list{
+    list-style:none; margin:0; padding:0;
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .cin-tag-list li{
+    font-family:'Space Mono',monospace; font-size:11px;
+    letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-dim);
+    border:1px solid var(--rule); padding:6px 14px; border-radius:100px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .about-card:hover .cin-tag-list li{ border-color:rgba(74,155,191,0.35); color:var(--ink); }
+
+  @media(max-width:900px){
+    .about-grid{ grid-template-columns:1fr; gap:16px; }
+    .about-card{ padding:32px 26px; }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="site">
+  <a href="#" class="logo">
+    <img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited" class="logo-img">
+  </a>
+  <nav class="primary">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <div class="has-drop">
+      <a href="#services">Services</a>
+      <div class="dropdown">
+        <a href="#services">Marketing &amp; Branding</a>
+        <a href="#services">Social Media Management</a>
+        <a href="#services">Video Production</a>
+        <a href="#services">Photography</a>
+        <a href="#services">Graphic Design</a>
+        <a href="#services">Printing &amp; Branding</a>
+        <a href="#services">Communication &amp; Documentation</a>
+      </div>
+    </div>
+    <a href="#clients">Clients</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="index.html#clients">Clients</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<!-- ============ HERO — THE SLATE ============ -->
+<section class="hero" id="hero">
+  <!-- Background image layer (src swapped by JS) -->
+  <div class="hero-bg" id="heroBg"></div>
+  <!-- Blue tint overlay -->
+  <div class="hero-overlay"></div>
+  <!-- Accent bar -->
+  <div class="hero-accent-bar"></div>
+  <div class="slate-top">
+    <div class="slate-meta"><span>EST. <b>2014</b></span><span>KAMPALA, <b>UGANDA</b></span></div>
+    <div class="slate-meta"><span id="takeCount">SERVICE <b>01</b></span></div>
+  </div>
+
+  <div class="hero-body">
+    <div class="eyebrow hero-service" id="heroService">Marketing &amp; Branding</div>
+    <h1 class="hero-title" id="heroTitle">Your story.<br>Our <em>creativity.</em></h1>
+    <p class="hero-sub" id="heroSub">Xpo Imaging Limited is Uganda's full-service creative communications, marketing, branding, and media production agency — established 2014.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="#services" class="btn">Our Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="#contact" class="btn ghost">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="slate-dots" id="slateDots"></div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" aria-label="About Xpo Imaging Limited">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Est. 2014 · Kampala, Uganda</div>
+        <h2>Who we are</h2>
+      </div>
+      <p>Xpo Imaging Limited — Uganda's full-service creative communications, marketing, branding, and media production agency.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card">
+        <header class="cin-card-eyebrow">
+          <span class="cin-num">01 / 03</span>
+          <span class="cin-rule"></span>
+          <span class="cin-label">Est. 2014</span>
+        </header>
+        <h3 class="about-card-title">Integrated creative<br><em>communications.</em></h3>
+        <p class="about-card-body">
+          Xpo Imaging Limited is a fully registered Ugandan creative communications,
+          marketing, branding, and media production company. What began as a
+          professional video and photography company is now a full-service agency
+          delivering integrated solutions to governments, UN agencies, NGOs,
+          development partners, and corporate organizations.
+        </p>
+        <a href="#services" class="cin-card-link">
+          Explore our services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="about-card">
+        <header class="cin-card-eyebrow">
+          <span class="cin-num">02 / 03</span>
+          <span class="cin-rule"></span>
+          <span class="cin-label">Our Mission</span>
+        </header>
+        <h3 class="about-card-title">Authentic stories<br><em>that inspire action.</em></h3>
+        <p class="about-card-body">
+          We help organizations communicate their impact, strengthen their brands,
+          and engage stakeholders through strategic marketing, creative branding,
+          digital communications, documentary filmmaking, and visual storytelling.
+        </p>
+        <ul class="cin-tag-list" aria-label="Core disciplines">
+          <li>Marketing</li>
+          <li>Branding</li>
+          <li>Video</li>
+          <li>Photography</li>
+          <li>Social Media</li>
+          <li>Design</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <header class="cin-card-eyebrow">
+          <span class="cin-num">03 / 03</span>
+          <span class="cin-rule"></span>
+          <span class="cin-label">Our Vision</span>
+        </header>
+        <h3 class="about-card-title">East Africa's leading<br><em>creative agency.</em></h3>
+        <p class="about-card-body">
+          We have worked across Uganda — from Kampala to Nyumanzi Refugee Settlement,
+          Karamoja, and Northern Uganda — combining creativity with strategic thinking
+          to produce campaigns that deliver measurable results and lasting impact.
+        </p>
+        <a href="#contact" class="cin-card-link">
+          Start a project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR WORKS ============ -->
+<section id="services" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Our Works</div>
+        <h2>What we create for you</h2>
+      </div>
+      <p>From brand strategy to documentary film, social media to studio photography — every communication need under one roof.</p>
+    </div>
+    <div class="works-grid" id="worksGrid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Xpo Imaging · Why Choose Us</div>
+        <h2>Why organizations trust us</h2>
+      </div>
+      <p>Over a decade of delivering integrated creative solutions across Uganda and beyond — quality, consistency, and impact on every project.</p>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <h4>10+ Years of Experience</h4>
+      <p>Since 2014, we've delivered communications, branding, and media production projects for government institutions, UN agencies, NGOs, and corporate organizations across Uganda.</p>
+    </div>
+    <div class="why-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M3 9h18M3 15h18"/></svg>
+      <h4>Full-Service Under One Roof</h4>
+      <p>Marketing strategy, brand identity, social media, video production, photography, graphic design, and printing — no need to brief multiple agencies.</p>
+    </div>
+    <div class="why-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <h4>Nationwide Operational Capacity</h4>
+      <p>We have worked in remote and challenging environments — refugee settlements, conflict-affected areas, and hard-to-reach communities — maintaining high production quality throughout.</p>
+    </div>
+    <div class="why-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.4 4-8 9-8s9 3.6 9 8"/></svg>
+      <h4>Experienced Creative Team</h4>
+      <p>Our team of marketers, filmmakers, photographers, graphic designers, content creators, and digital strategists combines creativity with strategic thinking to produce measurable results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS / PARTNERS ============ -->
+<section class="partners" id="clients">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:52px;">Clients &amp; Partners</div>
+  </div>
+
+  <!-- Row 1 — scrolls left -->
+  <div class="logo-track-wrap">
+    <div class="logo-track logo-track--left" id="logoTrack1">
+      <div class="logo-set" id="logoSet1a"></div>
+      <div class="logo-set" id="logoSet1b"></div>
+    </div>
+  </div>
+
+  <!-- Row 2 — scrolls right -->
+  <div class="logo-track-wrap" style="margin-top:24px;">
+    <div class="logo-track logo-track--right" id="logoTrack2">
+      <div class="logo-set" id="logoSet2a"></div>
+      <div class="logo-set" id="logoSet2b"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="testi-layout">
+
+      <!-- Left: heading + controls -->
+      <div class="testi-left">
+        <div class="eyebrow" style="color:rgba(255,255,255,0.55);margin-bottom:20px;">
+          What clients say
+        </div>
+        <h2 class="testi-heading">Hear it from<br><em>our clients.</em></h2>
+        <div class="testi-controls">
+          <button class="testi-btn" id="testiPrev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          </button>
+          <button class="testi-btn" id="testiNext" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <span class="testi-counter"><strong id="testiCurrent">1</strong> of <strong>3</strong></span>
+        </div>
+      </div>
+
+      <!-- Right: stacked card deck -->
+      <div class="testi-deck" id="testiDeck">
+
+        <div class="testi-card" data-pos="active">
+          <span class="testi-count-pill">1 of 3</span>
+          <p class="testi-body">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
+          <div class="testi-divider"></div>
+          <div class="testi-footer">
+            <div class="testi-avatar">U</div>
+            <div class="testi-meta">
+              <span class="testi-client">UGANICS Limited</span>
+              <span class="testi-type">Development Partner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-pos="1">
+          <span class="testi-count-pill">2 of 3</span>
+          <p class="testi-body">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
+          <div class="testi-divider"></div>
+          <div class="testi-footer">
+            <div class="testi-avatar">A</div>
+            <div class="testi-meta">
+              <span class="testi-client">AEE Uganda</span>
+              <span class="testi-type">Corporate Client</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-pos="2">
+          <span class="testi-count-pill">3 of 3</span>
+          <p class="testi-body">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
+          <div class="testi-divider"></div>
+          <div class="testi-footer">
+            <div class="testi-avatar">A</div>
+            <div class="testi-meta">
+              <span class="testi-client">AEE Uganda</span>
+              <span class="testi-type">NGO Partner</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /testi-deck -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-strip">
+  <div class="wrap">
+    <h2>Ready to tell your story with impact?</h2>
+    <a href="#contact" class="btn">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited">
+        </div>
+        <p class="foot-tag">Uganda's full-service marketing, branding, creative communications, and media production agency — established 2014.</p>
+        <p class="foot-tag" style="margin-top:12px;font-style:italic;color:var(--sky);font-size:13px;">Your Story. Our Creativity. Lasting Impact.</p>
+      </div>
+      <div>
+        <h5>Head Office</h5>
+        <p>Plot 14 Kaduyu Road</p>
+        <p>Ntinda Kiwatule, Foxwoods Hotel</p>
+        <p>Kampala, Uganda</p>
+      </div>
+      <div>
+        <h5>Get in Touch</h5>
+        <a href="tel:+256782046399">+256 782 046 399</a>
+        <a href="mailto:xpoimaging@gmail.com">xpoimaging@gmail.com</a>
+      </div>
+      <div>
+        <h5>What We Do</h5>
+        <a href="#services">Marketing &amp; Branding</a>
+        <a href="#services">Social Media Management</a>
+        <a href="#services">Video Production</a>
+        <a href="#services">Photography</a>
+        <a href="#services">Graphic Design</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2014–2026 Xpo Imaging Limited. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l.5-3.5H13V7.2c0-1 .3-1.7 1.8-1.7H16V2.3C15.6 2.2 14.5 2 13.2 2 10.5 2 8.7 3.6 8.7 6.6V9.5H6V13h2.7v9H13z"/></svg></a>
+        <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.955l4.263 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.youtube.com/@XpoProductionUganda" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C17.9 5 12 5 12 5s-5.9 0-7.6.3a2.9 2.9 0 0 0-2 2C2 8.8 2 12 2 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2C6.1 19 12 19 12 19s5.9 0 7.6-.3a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7zM10 15V9l5.2 3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Hero slate rotator — real Xpo Imaging services ----------
+  const services = [
+    {
+      tag:"Marketing &amp; Branding",
+      title:'Your story.<br>Our <em>creativity.</em>',
+      sub:"Strategic marketing and branding that positions your organization for growth, visibility, and long-term success.",
+      hue:200,
+      bg:"services/branding.jpeg"
+    },
+    {
+      tag:"Social Media Management",
+      title:'Build communities. <em>Drive engagement.</em>',
+      sub:"We help organizations build strong online communities and maintain consistent, impactful digital engagement.",
+      hue:195,
+      bg:"services/social media management.jpeg"
+    },
+    {
+      tag:"Video Production",
+      title:'Cinematic content that <em>inspires action.</em>',
+      sub:"From corporate documentaries to TV commercials — high-quality video production that informs, inspires, and drives results.",
+      hue:210,
+      bg:"services/video production.jpeg"
+    },
+    {
+      tag:"Photography",
+      title:'Images that <em>communicate impact.</em>',
+      sub:"Professional corporate, documentary, event, and studio photography — camera-ready, every assignment.",
+      hue:205,
+      bg:"services/photograpy.jpeg"
+    },
+    {
+      tag:"Graphic Design",
+      title:'Visually <em>compelling</em> communications.',
+      sub:"Company profiles, annual reports, brochures, infographics, exhibition materials — designed to international standards.",
+      hue:215,
+      bg:"services/graphics deign.jpeg"
+    },
+    {
+      tag:"Printing &amp; Branding",
+      title:'Your brand, <em>everywhere.</em>',
+      sub:"Promotional merchandise, outdoor signage, vehicle branding, branded apparel, and corporate gift branding.",
+      hue:190,
+      bg:"services/printing and designing.PNG"
+    },
+    {
+      tag:"Communication &amp; Documentation",
+      title:'Impact stories that <em>mobilize resources.</em>',
+      sub:"Project documentation, success stories, case studies, and knowledge management products for development partners.",
+      hue:220,
+      bg:"services/communication and documentation.jpeg"
+    },
+  ];
+
+  const heroBg     = document.getElementById('heroBg');
+  const heroService = document.getElementById('heroService');
+  const heroTitle   = document.getElementById('heroTitle');
+  const heroSub     = document.getElementById('heroSub');
+  const takeCount   = document.getElementById('takeCount');
+  const dotsWrap    = document.getElementById('slateDots');
+  let current = 0, rotateTimer;
+
+  // Pre-load all background images for snappy transitions
+  services.forEach(s => { const i = new Image(); i.src = s.bg; });
+
+  // Set initial background immediately
+  heroBg.style.backgroundImage = `url('${services[0].bg}')`;
+  heroBg.style.opacity = '1';
+  heroBg.classList.add('zoom');
+  services.forEach((s,i)=>{
+    const b = document.createElement('button');
+    if(i===0) b.classList.add('active');
+    b.addEventListener('click', ()=>setSlide(i, true));
+    dotsWrap.appendChild(b);
+  });
+
+  function pad(n){ return n.toString().padStart(2,'0'); }
+
+  // ---- Typewriter engine ----
+  let twTimer = null;
+
+  function typeWriter(el, htmlText, speed, onDone){
+    el.innerHTML = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'tw-cursor';
+    el.appendChild(cursor);
+
+    // Parse HTML into typed segments: plain text, <em>text</em>, or <br>
+    const segments = [];
+    const regex = /(<br\s*\/?>|<em>[^<]*<\/em>|[^<]+)/gi;
+    let match;
+    while((match = regex.exec(htmlText)) !== null){
+      const raw = match[0];
+      if(/^<br/i.test(raw)){
+        segments.push({type:'br', text:''});
+      } else if(/^<em>/i.test(raw)){
+        segments.push({type:'em', text:raw.replace(/<\/?em>/gi,'')});
+      } else {
+        segments.push({type:'text', text:raw});
+      }
+    }
+
+    // Flatten into character-level steps
+    const steps = [];
+    segments.forEach(seg => {
+      if(seg.type === 'br'){
+        steps.push({br:true, em:false, char:''});
+      } else {
+        for(let c = 0; c < seg.text.length; c++){
+          steps.push({br:false, em:(seg.type==='em'), char:seg.text[c]});
+        }
+      }
+    });
+
+    let stepIdx = 0;
+    clearInterval(twTimer);
+
+    function rebuildHTML(upTo){
+      // Rebuild full HTML from steps 0..upTo
+      let html = '';
+      let inEm = false;
+      for(let s = 0; s <= upTo; s++){
+        const st = steps[s];
+        if(st.br){
+          if(inEm){ html += '</em>'; inEm = false; }
+          html += '<br>';
+        } else if(st.em){
+          if(!inEm){ html += '<em>'; inEm = true; }
+          html += st.char;
+        } else {
+          if(inEm){ html += '</em>'; inEm = false; }
+          html += st.char;
+        }
+      }
+      if(inEm) html += '</em>';
+      return html;
+    }
+
+    twTimer = setInterval(()=>{
+      if(stepIdx >= steps.length){
+        clearInterval(twTimer);
+        el.innerHTML = rebuildHTML(steps.length - 1);
+        setTimeout(()=>{ if(cursor.parentNode) cursor.remove(); }, 600);
+        if(onDone) onDone();
+        return;
+      }
+      el.innerHTML = rebuildHTML(stepIdx);
+      el.appendChild(cursor);
+      stepIdx++;
+    }, speed);
+  }
+
+  function setSlide(i, manual){
+    const prev = current;
+    current = i;
+    const s = services[i];
+
+    // Swap background image with crossfade + zoom restart
+    if(s.bg !== services[prev].bg){
+      heroBg.style.opacity = '0';
+      heroBg.classList.remove('zoom');
+      setTimeout(()=>{
+        heroBg.style.backgroundImage = `url('${s.bg}')`;
+        heroBg.style.opacity = '1';
+        // Force reflow so the animation restarts cleanly
+        void heroBg.offsetWidth;
+        heroBg.classList.add('zoom');
+      }, 350);
+    } else {
+      // Same image — just restart zoom
+      heroBg.classList.remove('zoom');
+      void heroBg.offsetWidth;
+      heroBg.classList.add('zoom');
+    }
+
+    // Update service eyebrow immediately
+    heroService.innerHTML = s.tag;
+    heroService.classList.remove('tw-fade');
+    void heroService.offsetWidth; // force reflow
+    heroService.classList.add('tw-fade');
+
+    // Update subtitle with fade
+    heroSub.textContent   = s.sub;
+    heroSub.classList.remove('tw-fade');
+    void heroSub.offsetWidth;
+    heroSub.classList.add('tw-fade');
+
+    // Typewriter on the title
+    typeWriter(heroTitle, s.title, 42, null);
+
+    takeCount.innerHTML   = 'SERVICE <b>' + pad(i+1) + '</b>';
+    [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active', idx===i));
+    if(manual){ clearInterval(rotateTimer); startRotate(); }
+  }
+
+  function startRotate(){
+    rotateTimer = setInterval(()=>{ setSlide((current+1) % services.length, false); }, 5500);
+  }
+  startRotate();
+  // Fire typewriter on the initial slide
+  setTimeout(() => typeWriter(heroTitle, services[0].title, 42, null), 300);
+
+  // ---------- Our Works grid ----------
+  const worksGrid  = document.getElementById('worksGrid');
+  const worksCopy  = [
+    "Brand strategy, identity design, and campaign branding",
+    "Account management, content planning, and paid advertising",
+    "Documentaries, commercials, and event coverage",
+    "Corporate, documentary, studio, and drone photography",
+    "Profiles, reports, brochures, and exhibition materials",
+    "Signage, merchandise, vehicle branding, and apparel",
+    "Impact documentation, case studies, and annual reports",
+  ];
+  services.forEach((s,i)=>{
+    const card = document.createElement('a');
+    card.href      = '#contact';
+    card.className = 'work-card';
+    card.innerHTML = `
+      <div class="art">
+        <img src="${s.bg}" alt="${s.tag}" loading="lazy">
+        <span class="arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+      </div>
+      <div class="cap">
+        <span class="accent-line"></span>
+        <span class="num">${worksCopy[i]}</span>
+        <h3>${s.tag}</h3>
+      </div>`;
+    worksGrid.appendChild(card);
+  });
+
+  // ---------- Clients logo carousel ----------
+  // All logos from CLient Logos folder
+  // .tif files excluded — browsers can't render them natively
+  const logoFiles = [
+    "CLient Logos/Aceli-Africa-FullColor-Logo.png",
+    "CLient Logos/AKU_logo.gif",
+    "CLient Logos/BASA.png",
+    "CLient Logos/Bethany Hospital Logo.png",
+    "CLient Logos/cropped-Social-Innovation-Academy-Sina.jpg",
+    "CLient Logos/Danish refugee-council.png",
+    "CLient Logos/DGF.jpg",
+    "CLient Logos/diakonia.jpg",
+    "CLient Logos/download (1).png",
+    "CLient Logos/download (3).png",
+    "CLient Logos/e3eau61hcek827fpkjfj.jpg",
+    "CLient Logos/fa_latitude_0__logo__full_colour_vertical_logo_on_transparent_background.jpg",
+    "CLient Logos/Global_Peace_Foundation_logo.png",
+    "CLient Logos/Grand mothers logo.jpg",
+    "CLient Logos/HAC_DRC-1.png",
+    "CLient Logos/HMH8nHxXkAATlj5.jpg",
+    "CLient Logos/images.png",
+    "CLient Logos/IMG-20240813-WA0085.jpg",
+    "CLient Logos/kampalafair_logo.png",
+    "CLient Logos/KOFFI ANNAN FOUNDATION LOGO.jpg",
+    "CLient Logos/logo-294x256.png",
+    "CLient Logos/Ministr_Danida_Std_Rgb_En [66].png",
+    "CLient Logos/Project.png",
+    "CLient Logos/Screenshot-2023-07-24-142604.png",
+    "CLient Logos/Umeme-Revenue-Up-12.93-Percent-For-FY-2016-Customer-Numbers-Up-19.8-Percent-Uganda-Securities-Exchange-Energy-Business-African-Markets-Financial-Age.png",
+    "CLient Logos/unnamed.png",
+    "CLient Logos/ur_logo.webp",
+    "CLient Logos/Urganics-transp.jpeg",
+    "CLient Logos/Uwonet-logo (1).png",
+    "CLient Logos/UYONET logo.PNG",
+    "CLient Logos/WhatsApp Image 2020-11-17 at 1.12.47 PM.jpeg",
+    "CLient Logos/WhatsApp Image 2020-11-17 at 1.17.22 PM.jpeg",
+    "CLient Logos/7STAR png.png",
+    "CLient Logos/1448541514.jpg",
+    "CLient Logos/1454-768x364.png",
+    "CLient Logos/1602617935-22-uro-care-hospital.jpg",
+    "CLient Logos/1_onhmjtm4cbK8U1xx5lEpuA.jpeg",
+    "CLient Logos/4a1399860dbdf7aab6b7eac1c229df80_400x400.jpeg",
+    "CLient Logos/download.jfif",
+  ];
+
+  // Split into two rows — odd indices row 1, even indices row 2
+  const row1 = logoFiles.filter((_, i) => i % 2 === 0);
+  const row2 = logoFiles.filter((_, i) => i % 2 !== 0);
+
+  function buildLogoSet(logos){
+    const frag = document.createDocumentFragment();
+    logos.forEach(src => {
+      const item = document.createElement('div');
+      item.className = 'logo-item';
+      const img = document.createElement('img');
+      img.src     = src;
+      img.alt     = src.split('/').pop().replace(/\.[^.]+$/, ''); // filename as alt
+      img.loading = 'lazy';
+      item.appendChild(img);
+      frag.appendChild(item);
+    });
+    return frag;
+  }
+
+  // Row 1 — duplicate for seamless loop
+  const s1a = document.getElementById('logoSet1a');
+  const s1b = document.getElementById('logoSet1b');
+  if(s1a && s1b){
+    s1a.appendChild(buildLogoSet(row1));
+    s1b.appendChild(buildLogoSet(row1));
+  }
+
+  // Row 2 — duplicate for seamless loop
+  const s2a = document.getElementById('logoSet2a');
+  const s2b = document.getElementById('logoSet2b');
+  if(s2a && s2b){
+    s2a.appendChild(buildLogoSet(row2));
+    s2b.appendChild(buildLogoSet(row2));
+  }
+
+  // ---------- Mobile burger — proper drawer ----------
+  (function(){
+    const btn      = document.getElementById('burgerBtn');
+    const nav      = document.getElementById('mobileNav');
+    const backdrop = document.getElementById('navBackdrop');
+    if(!btn || !nav) return;
+
+    function openNav(){
+      nav.style.display = 'block';
+      backdrop.style.display = 'block';
+      requestAnimationFrame(()=>{
+        nav.classList.add('open');
+        backdrop.classList.add('open');
+      });
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav(){
+      nav.classList.remove('open');
+      backdrop.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+      setTimeout(()=>{
+        nav.style.display = 'none';
+        backdrop.style.display = 'none';
+      }, 300);
+    }
+    function toggleNav(){ nav.classList.contains('open') ? closeNav() : openNav(); }
+
+    btn.addEventListener('click', toggleNav);
+    backdrop.addEventListener('click', closeNav);
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeNav(); });
+  })();
+
+  /* ================================================================
+     Cinematic scroll removed — no animation dependencies needed
+  ================================================================ */
+
+  // ---------- Testimonials stacked deck ----------
+  (function(){
+    const cards   = Array.from(document.querySelectorAll('.testi-card'));
+    const counter = document.getElementById('testiCurrent');
+    const total   = cards.length;
+    let active    = 0;
+    let animating = false;
+
+    // positions: 'active', '1', '2', 'hidden'
+    function getPos(index){
+      const diff = (index - active + total) % total;
+      if(diff === 0) return 'active';
+      if(diff === 1) return '1';
+      if(diff === 2) return '2';
+      return 'hidden';
+    }
+
+    function applyPositions(){
+      cards.forEach((card, i) => {
+        const pos = getPos(i);
+        card.dataset.pos = pos;
+        card.style.display = (pos === 'hidden') ? 'none' : '';
+      });
+      counter.textContent = active + 1;
+    }
+
+    function advance(direction){
+      if(animating) return;
+      animating = true;
+
+      const prevActive = cards[active];
+
+      // Animate active card off
+      prevActive.classList.add('exiting');
+
+      setTimeout(() => {
+        prevActive.classList.remove('exiting');
+        // Move to next/prev
+        active = direction === 'next'
+          ? (active + 1) % total
+          : (active - 1 + total) % total;
+        applyPositions();
+        animating = false;
+      }, 420);
+    }
+
+    // Init
+    applyPositions();
+
+    document.getElementById('testiNext').addEventListener('click', () => advance('next'));
+    document.getElementById('testiPrev').addEventListener('click', () => advance('prev'));
+
+    // Optional: auto-advance every 6s
+    let autoTimer = setInterval(() => advance('next'), 6000);
+    document.querySelector('.testimonials').addEventListener('mouseenter', () => clearInterval(autoTimer));
+    document.querySelector('.testimonials').addEventListener('mouseleave', () => {
+      autoTimer = setInterval(() => advance('next'), 6000);
+    });
+  })();
+</script>
+</body>
+</html>

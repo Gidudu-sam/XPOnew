@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>About Us | Xpo Imaging Limited</title>
+<meta name="description" content="Learn about Xpo Imaging Limited — Uganda's full-service marketing, branding, creative communications, and media production agency established in 2014.">
+<link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<link rel="shortcut icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f4f8fb;
+    --panel:#eaf2f8;
+    --ink:#0d1f2d;
+    --ink-mid:#1e2d3a;
+    --ink-dim:rgba(20,35,48,0.70);
+    --blue:#0d5f8a;
+    --blue-deep:#0a3d5c;
+    --sky:#1a8ab5;
+    --sky-light:#e0f1f9;
+    --rule:#cde3f0;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  ::selection{background:var(--sky);color:#fff;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;font-weight:600;letter-spacing:-0.01em;color:var(--ink);}
+  p{margin:0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.20em;text-transform:uppercase;color:var(--sky);
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--sky);display:inline-block;border-radius:2px;}
+
+  /* ---- NAV ---- */
+  header.site{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;height:68px;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(20px) saturate(1.8);
+    -webkit-backdrop-filter:blur(20px) saturate(1.8);
+    border-bottom:1px solid var(--rule);
+    box-shadow:0 1px 16px rgba(13,63,92,0.07);
+  }
+  .logo{display:flex;align-items:center;text-decoration:none;}
+  .logo-img{height:44px;width:auto;display:block;object-fit:contain;}
+  nav.primary{display:flex;align-items:center;gap:32px;}
+  nav.primary a{
+    font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:700;color:var(--ink-mid);position:relative;padding:4px 0;
+    transition:color .2s ease;
+  }
+  nav.primary a:hover,nav.primary a.active{color:var(--blue-deep);}
+  nav.primary a::after{
+    content:"";position:absolute;left:0;bottom:-4px;
+    width:0;height:2px;background:var(--sky);border-radius:2px;
+    transition:width .22s ease;
+  }
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .has-drop{position:relative;}
+  .dropdown{
+    position:absolute;top:calc(100% + 12px);left:-16px;min-width:250px;
+    background:#fff;border:1px solid var(--rule);border-radius:12px;
+    padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);
+    transition:all .2s ease;box-shadow:0 12px 40px rgba(13,63,92,0.14);
+  }
+  .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:10px 14px;font-size:12px;text-transform:none;color:var(--ink-mid);border-radius:8px;font-weight:500;transition:background .15s,color .15s;}
+  .dropdown a:hover{color:var(--blue-deep);background:var(--sky-light);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:51;}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s ease, opacity .3s ease;}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;z-index:49;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);box-shadow:0 8px 32px rgba(13,63,92,0.12);padding:16px 0 24px;transform:translateY(-10px);opacity:0;transition:transform .3s ease, opacity .3s ease;pointer-events:none;}
+  .mobile-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .mobile-nav a{display:block;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--rule);transition:background .15s,color .15s;}
+  .mobile-nav a:last-child{border-bottom:none;}
+  .mobile-nav a:hover{background:var(--sky-light);color:var(--blue);}
+  .mobile-nav a.active{color:var(--blue);}
+  .nav-backdrop{display:none;position:fixed;inset:0;z-index:48;background:rgba(10,40,60,0.25);}
+  .nav-backdrop.open{display:block;}
+
+  /* ---- PAGE HERO ---- */
+  .page-hero{
+    padding:160px 0 100px;
+    background:var(--blue-deep);
+    position:relative;overflow:hidden;
+    min-height:500px;
+    display:flex;align-items:center;
+  }
+  .page-hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+  }
+  .page-hero-overlay{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(
+      to bottom,
+      rgba(10,40,60,0.70) 0%,
+      rgba(10,40,60,0.62) 50%,
+      rgba(10,40,60,0.82) 100%
+    );
+  }
+  .page-hero::after{
+    content:"";position:absolute;top:68px;left:0;right:0;height:3px;z-index:3;
+    background:linear-gradient(to right, var(--sky), rgba(255,255,255,0.3));
+  }
+  .page-hero .wrap{position:relative;z-index:2;text-align:center;width:100%;}
+  .page-hero .eyebrow{color:rgba(255,255,255,0.6);margin-bottom:20px;justify-content:center;}
+  .page-hero .eyebrow::before{background:rgba(255,255,255,0.45);}
+  .page-hero h1{
+    font-size:clamp(42px,6vw,84px);line-height:1.0;
+    color:#fff;max-width:18ch;margin:0 auto 24px;
+  }
+  .page-hero h1 em{font-style:italic;color:var(--sky);}
+  .page-hero p{
+    font-size:18px;color:rgba(255,255,255,0.75);
+    max-width:54ch;line-height:1.7;margin:0 auto;
+  }
+
+  /* ---- SECTION BASE ---- */
+  .section{padding:90px 0;}
+  .section-alt{background:var(--bg-soft);}
+  .section-dark{background:var(--blue-deep);}
+  .section-label{
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--sky);margin-bottom:12px;display:block;
+  }
+  .section-title{
+    font-size:clamp(28px,3.5vw,46px);
+    font-weight:600;margin-bottom:24px;
+  }
+  .section-body{
+    font-size:16px;line-height:1.8;color:var(--ink-mid);
+    max-width:72ch;
+  }
+  .section-body + .section-body{margin-top:18px;}
+
+  /* ---- ABOUT INTRO ---- */
+  .about-intro-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:80px;align-items:start;
+  }
+  .about-intro-text{ display:flex; flex-direction:column; gap:0; }
+  .about-intro-aside{
+    background:var(--panel);border-radius:20px;padding:40px;
+    border:1px solid var(--rule);
+  }
+  .aside-stat{margin-bottom:32px;}
+  .aside-stat:last-child{margin-bottom:0;}
+  .aside-stat-num{
+    font-family:'Fraunces',serif;font-size:52px;font-weight:700;
+    color:var(--blue);line-height:1;margin-bottom:6px;
+  }
+  .aside-stat-label{font-size:14px;color:var(--ink-mid);line-height:1.5;}
+
+  /* ---- EXPERIENCE ---- */
+  .experience-layout{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:80px;
+    align-items:start;
+  }
+  .exp-sectors{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:36px;
+  }
+  .exp-sector{
+    display:flex;align-items:center;gap:12px;
+    background:#fff;border:1px solid var(--rule);
+    border-radius:10px;padding:14px 16px;
+    transition:background .2s,border-color .2s,transform .2s;
+  }
+  .exp-sector:hover{
+    background:var(--sky-light);border-color:var(--sky);
+    transform:translateX(4px);
+  }
+  .exp-sector-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--sky);flex-shrink:0;
+  }
+  .exp-sector span{font-size:14px;font-weight:600;color:var(--ink);}
+  .exp-timeline{position:relative;padding-left:28px;}
+  .exp-timeline::before{
+    content:"";position:absolute;left:7px;top:8px;bottom:8px;
+    width:2px;background:var(--rule);border-radius:2px;
+  }
+  .exp-item{
+    position:relative;margin-bottom:32px;
+  }
+  .exp-item:last-child{margin-bottom:0;}
+  .exp-item::before{
+    content:"";position:absolute;left:-25px;top:6px;
+    width:10px;height:10px;border-radius:50%;
+    background:#fff;border:2px solid var(--sky);
+  }
+  .exp-item-year{
+    font-family:'Space Mono',monospace;font-size:10px;
+    letter-spacing:0.14em;color:var(--sky);
+    display:block;margin-bottom:4px;
+  }
+  .exp-item-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .exp-item-desc{font-size:14px;color:var(--ink-mid);line-height:1.6;}
+
+  /* ---- VISION / MISSION ---- */
+  .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .vm-card{
+    background:#fff;border:1px solid var(--rule);border-radius:20px;
+    padding:44px 40px;
+    transition:box-shadow .3s ease,transform .3s ease,border-color .3s ease;
+  }
+  .vm-card:hover{
+    box-shadow:0 16px 48px rgba(13,95,138,0.10);
+    transform:translateY(-4px);border-color:var(--sky);
+  }
+  .vm-icon{
+    width:48px;height:48px;border-radius:12px;
+    background:var(--sky-light);display:flex;align-items:center;
+    justify-content:center;margin-bottom:24px;color:var(--blue);
+  }
+  .vm-icon svg{width:24px;height:24px;}
+  .vm-card h3{font-size:22px;margin-bottom:14px;}
+  .vm-card p{font-size:15px;line-height:1.75;color:var(--ink-mid);}
+
+  /* ---- CORE VALUES ---- */
+  .values-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+  }
+  .value-pill{
+    background:#fff;border:1px solid var(--rule);border-radius:12px;
+    padding:20px 16px;text-align:center;
+    transition:background .2s,border-color .2s,transform .2s;
+  }
+  .value-pill:hover{background:var(--sky-light);border-color:var(--sky);transform:translateY(-3px);}
+  .value-pill .v-num{
+    font-family:'Space Mono',monospace;font-size:10px;
+    letter-spacing:0.14em;color:var(--sky);display:block;margin-bottom:8px;
+  }
+  .value-pill .v-name{font-size:14px;font-weight:700;color:var(--ink);}
+
+  /* ---- PROCESS ---- */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:16px;overflow:hidden;}
+  .process-step{background:#fff;padding:36px 28px;}
+  .process-step:hover{background:var(--sky-light);}
+  .step-num{
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:0.16em;color:var(--sky);display:block;margin-bottom:16px;
+  }
+  .process-step h4{font-size:17px;margin-bottom:10px;color:var(--ink);}
+  .process-step p{font-size:14px;line-height:1.65;color:var(--ink-mid);}
+
+  /* ---- EQUIPMENT ---- */
+  .equip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .equip-card{
+    background:#fff;border:1px solid var(--rule);border-radius:16px;
+    padding:32px 28px;
+  }
+  .equip-card h4{font-size:17px;margin-bottom:16px;color:var(--blue-deep);}
+  .equip-card ul{list-style:none;margin:0;padding:0;}
+  .equip-card ul li{
+    font-size:14px;color:var(--ink-mid);line-height:1.7;
+    padding:6px 0;border-bottom:1px solid var(--rule);
+    display:flex;align-items:center;gap:10px;
+  }
+  .equip-card ul li:last-child{border-bottom:none;}
+  .equip-card ul li::before{
+    content:"";width:6px;height:6px;border-radius:50%;
+    background:var(--sky);flex-shrink:0;
+  }
+
+  /* ---- ORG STRUCTURE ---- */
+  .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .org-dept{
+    background:#fff;border:1px solid var(--rule);border-radius:16px;
+    overflow:hidden;
+  }
+  .org-dept-head{
+    background:var(--blue-deep);padding:20px 24px;
+  }
+  .org-dept-head h4{font-size:16px;color:#fff;font-weight:700;}
+  .org-dept-body{padding:20px 24px;}
+  .org-dept-body ul{list-style:none;margin:0;padding:0;}
+  .org-dept-body ul li{
+    font-size:13px;color:var(--ink-mid);
+    padding:5px 0;border-bottom:1px solid var(--rule);
+    display:flex;align-items:center;gap:8px;
+  }
+  .org-dept-body ul li:last-child{border-bottom:none;}
+  .org-dept-body ul li::before{
+    content:"";width:5px;height:5px;border-radius:50%;
+    background:var(--sky);flex-shrink:0;
+  }
+
+  /* ---- COMMITMENT ---- */
+  .commitment{
+    background:var(--blue-deep);padding:90px 0;
+    position:relative;overflow:hidden;text-align:center;
+  }
+  .commitment::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 0%, rgba(26,138,181,0.28), transparent 65%);
+  }
+  .commitment .eyebrow{justify-content:center;color:rgba(255,255,255,0.5);margin-bottom:20px;position:relative;z-index:1;}
+  .commitment .eyebrow::before{background:rgba(255,255,255,0.35);}
+  .commitment h2{font-size:clamp(28px,4vw,50px);color:#fff;margin-bottom:24px;position:relative;z-index:1;}
+  .commitment p{font-size:17px;color:rgba(255,255,255,0.7);max-width:56ch;margin:0 auto 16px;line-height:1.7;position:relative;z-index:1;}
+  .commitment .tagline{
+    font-family:'Fraunces',serif;font-size:22px;font-style:italic;
+    color:var(--sky);position:relative;z-index:1;margin-top:32px;display:block;
+  }
+
+  /* ---- FOOTER ---- */
+  footer{padding:60px 0 32px;background:var(--blue-deep);border-top:1px solid rgba(255,255,255,0.08);}
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:16px;
+  }
+  .foot-bottom a{color:rgba(255,255,255,0.55);transition:color .2s;}
+  .foot-bottom a:hover{color:#fff;}
+  .foot-logo-sm img{height:36px;width:auto;filter:brightness(0) invert(1);}
+
+  /* ---- RESPONSIVE ---- */
+  @media(max-width:900px){
+    nav.primary{display:none;}
+    .burger{display:flex;}
+    .about-intro-grid{grid-template-columns:1fr;gap:40px;}
+    .experience-layout{grid-template-columns:1fr;gap:40px;}
+    .exp-sectors{grid-template-columns:1fr 1fr;}
+    .vm-grid{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:repeat(2,1fr);}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .equip-grid{grid-template-columns:1fr;}
+    .org-grid{grid-template-columns:1fr;}
+    .page-hero{padding:130px 0 70px;min-height:400px;}
+    section.section{padding:64px 0;}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 20px;}
+    .values-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .exp-sectors{grid-template-columns:1fr;}
+    .about-intro-aside{padding:28px 22px;}
+    .page-hero h1{font-size:clamp(34px,10vw,56px);}
+    .page-hero p{font-size:15px;}
+    section.section{padding:48px 0;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site">
+  <a href="index.html" class="logo">
+    <img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited" class="logo-img">
+  </a>
+  <nav class="primary">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <div class="has-drop">
+      <a href="index.html#services">Services</a>
+      <div class="dropdown">
+        <a href="index.html#services">Marketing &amp; Branding</a>
+        <a href="index.html#services">Social Media Management</a>
+        <a href="index.html#services">Video Production</a>
+        <a href="index.html#services">Photography</a>
+        <a href="index.html#services">Graphic Design</a>
+        <a href="index.html#services">Printing &amp; Branding</a>
+        <a href="index.html#services">Communication &amp; Documentation</a>
+      </div>
+    </div>
+    <a href="index.html#clients">Clients</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="index.html#clients">Clients</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('background images/about us.jpeg');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="wrap">
+   
+</section>
+
+<!-- ============ ABOUT INTRO ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="about-intro-grid">
+      <div class="about-intro-text">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">From a camera to a<br>full creative agency.</h2>
+        <p class="section-body">Xpo Imaging Limited is a fully registered Ugandan creative communications, marketing, branding, and media production company established in 2014. What began as a professional video production and photography company is now a full-service marketing and branding agency providing integrated communication solutions to government institutions, development partners, NGOs, UN agencies, corporate organizations, financial institutions, and private businesses.</p>
+        <p class="section-body" style="margin-top:18px;">We specialize in helping organizations communicate their impact, strengthen their brands, influence public perception, and engage stakeholders through strategic marketing, creative branding, digital communications, professional photography, documentary filmmaking, and visual storytelling.</p>
+        <p class="section-body" style="margin-top:18px;">Our experienced team of marketers, communication specialists, filmmakers, photographers, graphic designers, content creators, and digital strategists combines creativity with strategic thinking to develop compelling campaigns that produce measurable results.</p>
+        <p class="section-body" style="margin-top:18px;">Having worked extensively across Uganda, including underserved and hard-to-reach communities such as Nyumanzi Refugee Settlement, Karamoja, Moroto, Kaabong, Abim, Pader, Oyam, Kitagata, Amuru, Adjumani, and other regions, we understand how to tell authentic stories that inspire action, influence policy, mobilize resources, and strengthen institutional visibility.</p>
+      </div>
+      <div class="about-intro-aside">
+        <div class="aside-stat">
+          <div class="aside-stat-num">10+</div>
+          <div class="aside-stat-label">Years of professional experience delivering integrated creative solutions across Uganda.</div>
+        </div>
+        <div class="aside-stat">
+          <div class="aside-stat-num">7</div>
+          <div class="aside-stat-label">Core service lines — marketing, branding, social media, video, photography, design, and documentation.</div>
+        </div>
+        <div class="aside-stat">
+          <div class="aside-stat-num">50+</div>
+          <div class="aside-stat-label">Clients served — including UN agencies, government institutions, NGOs, and corporate organizations.</div>
+        </div>
+        <div class="aside-stat" style="margin-bottom:0;">
+          <div class="aside-stat-num">2014</div>
+          <div class="aside-stat-label">Founded in Kampala, Uganda. Headquartered at Plot 14 Kaduyu Road, Ntinda Kiwatule.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="experience-layout">
+
+      <!-- Left: text + sectors grid -->
+      <div>
+        <span class="section-label">A Decade of Impact</span>
+        <h2 class="section-title">Working across<br>all of Uganda.</h2>
+        <p class="section-body">Since 2014, Xpo Imaging Limited has worked throughout Uganda documenting development projects, corporate events, humanitarian interventions, community transformation initiatives, advocacy campaigns, conferences, and institutional success stories.</p>
+        <p class="section-body" style="margin-top:16px;">Our work spans a wide range of sectors — from emergency refugee response to environmental conservation — giving us deep understanding of how to tell authentic stories that inspire action and mobilize resources.</p>
+
+        <div class="exp-sectors">
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Refugee Response</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Agriculture</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Education</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Health</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Livelihoods</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Youth Empowerment</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Women's Empowerment</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Governance</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Environmental Conservation</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Climate Resilience</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Financial Inclusion</span></div>
+          <div class="exp-sector"><span class="exp-sector-dot"></span><span>Infrastructure Development</span></div>
+        </div>
+      </div>
+
+      <!-- Right: milestone timeline -->
+      <div>
+        <span class="section-label" style="margin-bottom:28px;display:block;">Our Journey</span>
+        <div class="exp-timeline">
+          <div class="exp-item">
+            <span class="exp-item-year">2014</span>
+            <div class="exp-item-title">Founded in Kampala</div>
+            <p class="exp-item-desc">Started as a professional video production and photography company serving corporate and NGO clients.</p>
+          </div>
+          <div class="exp-item">
+            <span class="exp-item-year">2015 – 2017</span>
+            <div class="exp-item-title">Development Sector Expansion</div>
+            <p class="exp-item-desc">Extended operations to document humanitarian and development projects across Northern Uganda and refugee settlements.</p>
+          </div>
+          <div class="exp-item">
+            <span class="exp-item-year">2018 – 2020</span>
+            <div class="exp-item-title">Full-Service Agency Growth</div>
+            <p class="exp-item-desc">Expanded into marketing, branding, graphic design, and social media management — becoming a one-stop creative agency.</p>
+          </div>
+          <div class="exp-item">
+            <span class="exp-item-year">2021 – 2023</span>
+            <div class="exp-item-title">UN & Government Partnerships</div>
+            <p class="exp-item-desc">Delivered integrated communications for UN agencies, government ministries, and international development partners.</p>
+          </div>
+          <div class="exp-item">
+            <span class="exp-item-year">2024 – Present</span>
+            <div class="exp-item-title">Towards East Africa Leadership</div>
+            <p class="exp-item-desc">Scaling operations with advanced production capabilities and a growing portfolio across all sectors.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION & MISSION ============ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <span class="section-label">Our Direction</span>
+    <h2 class="section-title" style="margin-bottom:40px;">Vision &amp; Mission</h2>
+    <div class="vm-grid">
+      <div class="vm-card">
+        <div class="vm-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To become East Africa's leading integrated marketing, branding, and creative communications agency recognized for transforming organizations through innovative storytelling, strategic marketing, and impactful visual communication.</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To provide innovative marketing, branding, photography, video production, and communication solutions that strengthen organizations, increase visibility, influence positive change, and deliver measurable results for our clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORE VALUES ============ -->
+<section class="section">
+  <div class="wrap">
+    <span class="section-label">What Drives Us</span>
+    <h2 class="section-title" style="margin-bottom:40px;">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-pill"><span class="v-num">01</span><span class="v-name">Creativity</span></div>
+      <div class="value-pill"><span class="v-num">02</span><span class="v-name">Professionalism</span></div>
+      <div class="value-pill"><span class="v-num">03</span><span class="v-name">Excellence</span></div>
+      <div class="value-pill"><span class="v-num">04</span><span class="v-name">Integrity</span></div>
+      <div class="value-pill"><span class="v-num">05</span><span class="v-name">Innovation</span></div>
+      <div class="value-pill"><span class="v-num">06</span><span class="v-name">Accountability</span></div>
+      <div class="value-pill"><span class="v-num">07</span><span class="v-name">Teamwork</span></div>
+      <div class="value-pill"><span class="v-num">08</span><span class="v-name">Client Satisfaction</span></div>
+      <div class="value-pill"><span class="v-num">09</span><span class="v-name">Impact</span></div>
+      <div class="value-pill"><span class="v-num">10</span><span class="v-name">Continuous Learning</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK PROCESS ============ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <span class="section-label">How We Work</span>
+    <h2 class="section-title" style="margin-bottom:40px;">Our Work Process</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <span class="step-num">01</span>
+        <h4>Consultation</h4>
+        <p>Understanding client objectives and communication needs.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">02</span>
+        <h4>Research</h4>
+        <p>Audience analysis, project planning, and communication strategy.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">03</span>
+        <h4>Creative Development</h4>
+        <p>Concept creation, scripting, design, and campaign planning.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">04</span>
+        <h4>Production</h4>
+        <p>Photography, filming, branding implementation, and content creation.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">05</span>
+        <h4>Post-Production</h4>
+        <p>Professional editing, graphics, animation, sound design, and quality assurance.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">06</span>
+        <h4>Delivery</h4>
+        <p>Timely delivery of approved outputs.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">07</span>
+        <h4>Monitoring &amp; Evaluation</h4>
+        <p>Performance reporting and impact assessment where applicable.</p>
+      </div>
+      <div class="process-step" style="background:var(--sky-light);border-color:var(--sky);">
+        <span class="step-num" style="color:var(--blue);">XPO</span>
+        <h4 style="color:var(--blue);">End-to-End</h4>
+        <p>We manage every stage so your project stays on track from brief to delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPMENT ============ -->
+<section class="section">
+  <div class="wrap">
+    <span class="section-label">Production Capabilities</span>
+    <h2 class="section-title" style="margin-bottom:40px;">Our Equipment</h2>
+    <div class="equip-grid">
+      <div class="equip-card">
+        <h4>Cameras</h4>
+        <ul>
+          <li>Full-frame cinema cameras</li>
+          <li>Professional DSLR and mirrorless cameras</li>
+          <li>4K video cameras</li>
+        </ul>
+      </div>
+      <div class="equip-card">
+        <h4>Audio</h4>
+        <ul>
+          <li>Wireless microphone systems</li>
+          <li>Shotgun microphones</li>
+          <li>Audio recorders</li>
+          <li>Professional sound mixers</li>
+        </ul>
+      </div>
+      <div class="equip-card">
+        <h4>Lighting</h4>
+        <ul>
+          <li>LED studio lighting</li>
+          <li>Softboxes</li>
+          <li>Portable lighting kits</li>
+          <li>Continuous lighting systems</li>
+        </ul>
+      </div>
+      <div class="equip-card">
+        <h4>Drone Technology</h4>
+        <ul>
+          <li>Professional aerial photography systems</li>
+          <li>Professional aerial videography systems</li>
+        </ul>
+      </div>
+      <div class="equip-card">
+        <h4>Studio Equipment</h4>
+        <ul>
+          <li>Professional studio lighting</li>
+          <li>Photography backdrops</li>
+          <li>Product photography setup</li>
+          <li>Portrait photography equipment</li>
+        </ul>
+      </div>
+      <div class="equip-card">
+        <h4>Editing Software</h4>
+        <ul>
+          <li>Adobe Premiere Pro</li>
+          <li>Adobe After Effects</li>
+          <li>Adobe Photoshop &amp; Lightroom</li>
+          <li>Adobe Illustrator &amp; InDesign</li>
+          <li>Adobe Audition</li>
+          <li>DaVinci Resolve</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORGANISATIONAL STRUCTURE ============ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <span class="section-label">How We Are Organised</span>
+    <h2 class="section-title" style="margin-bottom:16px;">Organisational Structure</h2>
+    <p class="section-body" style="margin-bottom:40px;">The company operates through specialized departments that work collaboratively to deliver integrated communication solutions.</p>
+    <div class="org-grid">
+      <div class="org-dept">
+        <div class="org-dept-head"><h4>Creative &amp; Branding</h4></div>
+        <div class="org-dept-body">
+          <ul>
+            <li>Brand Strategy</li>
+            <li>Graphic Design</li>
+            <li>Content Development</li>
+          </ul>
+        </div>
+      </div>
+      <div class="org-dept">
+        <div class="org-dept-head"><h4>Media Production</h4></div>
+        <div class="org-dept-body">
+          <ul>
+            <li>Documentary Production</li>
+            <li>Corporate Video</li>
+            <li>Event Coverage</li>
+            <li>Drone Operations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="org-dept">
+        <div class="org-dept-head"><h4>Photography</h4></div>
+        <div class="org-dept-body">
+          <ul>
+            <li>Studio Photography</li>
+            <li>Documentary Photography</li>
+            <li>Commercial Photography</li>
+            <li>Event Photography</li>
+          </ul>
+        </div>
+      </div>
+      <div class="org-dept">
+        <div class="org-dept-head"><h4>Digital Communications</h4></div>
+        <div class="org-dept-body">
+          <ul>
+            <li>Social Media Management</li>
+            <li>Digital Marketing</li>
+            <li>Website Content</li>
+            <li>Online Campaigns</li>
+          </ul>
+        </div>
+      </div>
+      <div class="org-dept">
+        <div class="org-dept-head"><h4>Post-Production</h4></div>
+        <div class="org-dept-body">
+          <ul>
+            <li>Video Editing</li>
+            <li>Motion Graphics</li>
+            <li>Color Grading</li>
+            <li>Audio Production</li>
+          </ul>
+        </div>
+      </div>
+      <div class="org-dept">
+        <div class="org-dept-head"><h4>Operations</h4></div>
+        <div class="org-dept-body">
+          <ul>
+            <li>Managing Director</li>
+            <li>Operations &amp; Administration</li>
+            <li>Marketing &amp; Business Development</li>
+            <li>Client Services &amp; Project Management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMITMENT ============ -->
+<section class="commitment">
+  <div class="wrap">
+    <div class="eyebrow">Our Commitment</div>
+    <h2>Communication as a<br>catalyst for development.</h2>
+    <p>At Xpo Imaging Limited, every photograph, video, campaign, and brand we create is designed to inspire action, strengthen institutions, influence decisions, and leave a lasting impact.</p>
+    <p>We are committed to helping organizations tell their stories with authenticity, creativity, and purpose.</p>
+    <span class="tagline">Your Story. Our Creativity. Lasting Impact.</span>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div class="foot-logo-sm"><img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited"></div>
+      <span>© 2014–2026 Xpo Imaging Limited. All rights reserved.</span>
+      <div style="display:flex;gap:24px;">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile burger — proper drawer
+  (function(){
+    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('mobileNav'),backdrop=document.getElementById('navBackdrop');
+    if(!btn||!nav) return;
+    function openNav(){nav.style.display='block';backdrop.style.display='block';requestAnimationFrame(()=>{nav.classList.add('open');backdrop.classList.add('open');});btn.classList.add('open');btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function closeNav(){nav.classList.remove('open');backdrop.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';setTimeout(()=>{nav.style.display='none';backdrop.style.display='none';},300);}
+    btn.addEventListener('click',()=>nav.classList.contains('open')?closeNav():openNav());
+    backdrop.addEventListener('click',closeNav);
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
+  })();
+</script>
+</body>
+</html>
