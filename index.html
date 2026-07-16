@@ -1101,7 +1101,8 @@
     nav.primary{display:none;}
     .burger{display:flex;}
     .nav-cta{display:none;}
-    header.site{height:80px;padding:0 24px;}
+    .nav-right{justify-self:end;}
+    header.site{height:80px;padding:0 24px;grid-template-columns:1fr 1fr;}
     .logo-img{height:60px;}
     .mobile-nav{top:80px;}
     /* Hero */
@@ -1116,8 +1117,9 @@
     .about-grid{grid-template-columns:1fr;gap:16px;}
     .about-card{padding:28px 24px;}
     /* Services */
-    .service-grid{grid-template-columns:repeat(2,1fr);gap:24px 16px;}
-    .service-item--offset{margin-top:30px;}
+    .service-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+    .service-item{aspect-ratio:3/4;border-radius:12px;}
+    .service-item--offset{margin-top:0;}
     /* Why */
     .why-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
     .why-card{padding:32px 24px;}
@@ -1149,10 +1151,13 @@
     .slate-dots{padding:0 16px 24px;}
     /* Sections */
     section{padding:50px 0;}
-    /* Services */
-    .service-grid{grid-template-columns:1fr;gap:28px;}
+    /* Services — full width cards */
+    .service-grid{grid-template-columns:1fr;gap:12px;}
+    .service-item{aspect-ratio:4/3;border-radius:10px;}
     .service-item--offset{margin-top:0;}
-    .service-img{border-radius:12px;padding:20px;}
+    .service-img{border-radius:0;}
+    .service-caption{padding:16px;}
+    .service-name{font-size:18px;}
     /* Why */
     .why-grid{grid-template-columns:1fr;gap:14px;}
     /* Footer */
@@ -1500,7 +1505,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2 style="color:#fff;">Full service, nationwide,<br>and built for results.</h2>
+        <h2 style="color:#fff;">Why<br>Choose us.</h2>
       </div>
     </div>
   </div>
