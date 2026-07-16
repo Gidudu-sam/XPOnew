@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Branding & Marketing | Xpo Imaging Limited</title>
+<meta name="description" content="Xpo Imaging — Branding & Marketing. Brand strategy, identity design, and campaign execution for organizations across Uganda.">
+<link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*:not(code):not(pre){font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif !important;}
+:root{
+  --bg:#fff;--bg-soft:#f4f8fb;--ink:#0d1f2d;--ink-mid:#1e2d3a;
+  --ink-dim:rgba(20,35,48,0.70);--blue:#0d5f8a;--blue-deep:#0a3d5c;
+  --sky:#1a8ab5;--sky-light:#e0f1f9;--rule:#cde3f0;--maxw:1240px;
+  --brand-color:#f5c518;
+}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::selection{background:var(--sky);color:#fff;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
+p{margin:0;}.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+/* NAV */
+header.site{position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 40px;height:100px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);box-shadow:0 1px 16px rgba(13,63,92,0.07);}
+.logo{display:flex;align-items:center;justify-self:start;}.logo-img{height:80px;width:auto;display:block;object-fit:contain;}
+nav.primary{display:flex;align-items:center;gap:40px;justify-self:center;}
+nav.primary a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--ink-mid);padding:4px 0;transition:color .2s;}
+nav.primary a:hover,nav.primary a.active{color:var(--blue-deep);}
+.has-drop{position:relative;}
+.dropdown{position:absolute;top:calc(100% + 12px);left:-16px;min-width:250px;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .2s;box-shadow:0 12px 40px rgba(13,63,92,0.14);}
+.has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown a{display:block;padding:10px 14px;font-size:12px;text-transform:none;color:var(--ink-mid);border-radius:8px;font-weight:500;transition:background .15s,color .15s;}
+.dropdown a:hover{color:var(--blue-deep);background:var(--sky-light);}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:51;justify-self:end;}
+.burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:100px;left:0;right:0;z-index:49;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);padding:16px 0 24px;transform:translateY(-10px);opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;border-bottom:1px solid var(--rule);}
+.mobile-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+.mobile-nav a{display:block;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--rule);}
+.mobile-nav a:hover{background:var(--sky-light);color:var(--blue);}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--blue-deep);padding:14px 0;margin-top:100px;}
+.breadcrumb .wrap{display:flex;align-items:center;gap:16px;}
+.breadcrumb a{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-weight:700;transition:color .2s;}
+.breadcrumb a:hover{color:#fff;}
+.breadcrumb-sep{color:rgba(255,255,255,0.3);font-size:14px;}
+.breadcrumb-current{font-size:13px;color:rgba(255,255,255,0.85);font-weight:400;}
+
+/* HERO CAROUSEL */
+.svc-hero{position:relative;height:85vh;min-height:500px;overflow:hidden;}
+.svc-hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;}
+.svc-hero-slide.active{opacity:1;}
+.svc-hero-slide img{width:100%;height:100%;object-fit:cover;}
+.svc-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,40,60,0.25) 0%,rgba(10,40,60,0.6) 100%);}
+.svc-hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 32px 60px;max-width:var(--maxw);margin:0 auto;z-index:2;}
+.svc-hero-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-color);margin-bottom:12px;display:block;}
+.svc-hero-title{font-size:clamp(40px,7vw,80px);line-height:1.0;color:#fff;margin-bottom:16px;}
+.svc-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:50ch;line-height:1.6;}
+.svc-hero-dots{position:absolute;bottom:28px;right:32px;display:flex;gap:8px;z-index:3;}
+.svc-hero-dots button{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,0.5);background:transparent;cursor:pointer;padding:0;transition:all .2s;}
+.svc-hero-dots button.active{background:#fff;border-color:#fff;transform:scale(1.2);}
+.svc-hero-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.1);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;backdrop-filter:blur(4px);}
+.svc-hero-nav:hover{background:#fff;color:var(--blue-deep);border-color:#fff;}
+.svc-hero-prev{left:24px;}
+.svc-hero-next{right:24px;}
+
+/* SERVICE INTRO */
+.svc-intro{padding:80px 0;background:var(--brand-color);}.svc-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.svc-intro-label{font-size:clamp(32px,4vw,52px);letter-spacing:-0.02em;line-height:1.05;color:#fff;margin-bottom:16px;font-weight:800;}
+.svc-intro-title{font-size:clamp(18px,2vw,24px);font-weight:400;line-height:1.6;color:rgba(255,255,255,0.85);}
+.svc-deliverables{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.svc-deliverables li{font-size:14px;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;padding:8px 0;}
+.svc-deliverables li::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0;}
+
+/* PROJECTS GRID */
+.svc-projects{padding:80px 0;background:var(--bg-soft);border-top:1px solid var(--rule);}
+.svc-projects-head{margin-bottom:48px;}
+.svc-projects-head h2{font-size:clamp(28px,3.5vw,44px);}
+.svc-projects-head p{font-size:15px;color:var(--ink-mid);margin-top:12px;max-width:50ch;}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.project-card{display:block;text-decoration:none;color:inherit;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;transition:transform .3s,box-shadow .3s;}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.2);}
+.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.project-card:hover img{transform:scale(1.04);}
+.project-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 50%);pointer-events:none;}
+.project-card-name{position:absolute;bottom:20px;left:20px;right:20px;font-size:clamp(16px,2vw,22px);font-weight:700;color:#fff;margin:0;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
+.project-card-count{display:none;}
+
+/* Click overlay effect */
+.project-card-click-overlay{position:absolute;inset:0;background:rgba(245,197,24,0.92);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:5;}
+.project-card.clicked .project-card-click-overlay{opacity:1;}
+.project-card-click-overlay span{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#fff;}
+.project-card-click-overlay .click-arrow{width:40px;height:40px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;animation:clickPulse .6s ease infinite;}
+.project-card-click-overlay .click-arrow svg{width:18px;height:18px;color:var(--blue-deep);}
+@keyframes clickPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+
+/* PARTNERS */
+.svc-partners{padding:60px 0;border-top:1px solid var(--rule);}
+.svc-partners h3{font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim);text-align:center;margin-bottom:32px;}
+.partner-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+.partner-logos img{height:40px;width:auto;opacity:0.6;transition:opacity .3s;object-fit:contain;}
+.partner-logos img:hover{opacity:1;}
+
+/* CTA */
+.svc-cta{background:var(--blue-deep);padding:80px 0;text-align:center;position:relative;overflow:hidden;}
+.svc-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,138,181,0.25),transparent 65%);}
+.svc-cta h2{font-size:clamp(28px,4vw,48px);color:#fff;margin-bottom:16px;position:relative;}
+.svc-cta p{font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:32px;position:relative;}
+.btn{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;background:#fff;color:var(--blue-deep);padding:16px 28px;border:2px solid #fff;border-radius:6px;font-weight:700;cursor:pointer;transition:all .22s;position:relative;}
+.btn:hover{background:transparent;color:#fff;border-color:rgba(255,255,255,0.6);}
+.btn svg{width:14px;height:14px;transition:transform .22s;}.btn:hover svg{transform:translateX(4px);}
+
+/* FOOTER */
+footer{padding:40px 0;background:var(--blue-deep);border-top:1px solid rgba(255,255,255,0.08);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:16px;}
+.foot-bottom a{color:rgba(255,255,255,0.55);transition:color .2s;}.foot-bottom a:hover{color:#fff;}
+.foot-logo-sm img{height:36px;width:auto;filter:brightness(0) invert(1);}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(7,19,26,0.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;flex-direction:column;}
+.lb.open{opacity:1;visibility:visible;}
+.lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:6px;}
+.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.7;transition:opacity .2s;}.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lb-nav:hover{background:var(--sky);}.lb-prev{left:20px;}.lb-next{right:20px;}
+.lb-counter{position:absolute;bottom:20px;font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;}
+.lb-title{position:absolute;top:20px;left:24px;font-size:14px;color:rgba(255,255,255,0.7);font-weight:600;}
+
+/* RESPONSIVE */
+@media(max-width:900px){nav.primary{display:none;}.burger{display:flex;}.svc-intro-grid{grid-template-columns:1fr;gap:40px;}.projects-grid{grid-template-columns:1fr;}.svc-hero{height:70vh;}}
+@media(max-width:560px){.wrap{padding:0 20px;}.svc-hero{height:60vh;min-height:400px;}.svc-deliverables{grid-template-columns:1fr;}.partner-logos{gap:24px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site">
+  <a href="index.html" class="logo"><img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited" class="logo-img"></a>
+  <nav class="primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="has-drop">
+      <a href="index.html#services">Services</a>
+      <div class="dropdown">
+        <a href="branding.html">Branding &amp; Marketing</a>
+        <a href="social-media.html">Social Media Management</a>
+        <a href="events.html">Events Production</a>
+        <a href="photography.html">Product Photography</a>
+        <a href="podcast.html">Podcast Studio</a>
+        <a href="weddings.html">Yes I Do (Weddings)</a>
+      </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="branding.html">Branding</a>
+  <a href="social-media.html">Social Media</a>
+  <a href="events.html">Events</a>
+  <a href="photography.html">Photography</a>
+  <a href="podcast.html">Podcast</a>
+  <a href="weddings.html">Weddings</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="index.html#services">SERVICES</a>
+    <span class="breadcrumb-sep">»</span>
+    <span class="breadcrumb-current">Branding & Marketing</span>
+  </div>
+</div>
+
+<!-- HERO CAROUSEL -->
+<section class="svc-hero" id="svcHero">
+  <div class="svc-hero-slide active">
+    <img src="services/branding.jpeg" alt="Branding project">
+    <div class="svc-hero-overlay"></div>
+  </div>
+  <div class="svc-hero-slide">
+    <img src="services/social media management.jpeg" alt="Brand campaign">
+    <div class="svc-hero-overlay"></div>
+  </div>
+  <div class="svc-hero-slide">
+    <img src="services/printing and designing.PNG" alt="Brand materials">
+    <div class="svc-hero-overlay"></div>
+  </div>
+  <div class="svc-hero-content">
+    <span class="svc-hero-eyebrow">Service / Branding & Marketing</span>
+    <h1 class="svc-hero-title">Branding &amp;<br>Marketing</h1>
+    <p class="svc-hero-sub">We build brands that stand out — from strategy and identity to campaign execution and everything in between.</p>
+  </div>
+  <div class="svc-hero-dots" id="heroDots"></div>
+  <button class="svc-hero-nav svc-hero-prev" id="heroPrev" aria-label="Previous slide">&#8592;</button>
+  <button class="svc-hero-nav svc-hero-next" id="heroNext" aria-label="Next slide">&#8594;</button>
+</section>
+
+<!-- SERVICE INTRO -->
+<section class="svc-intro">
+  <div class="wrap">
+    <div class="svc-intro-grid">
+      <div>
+        <h1 class="svc-intro-label">What We Do</h1>
+        <h2 class="svc-intro-title">Strategic branding that positions your organization for growth.</h2>
+      </div>
+      <div>
+        <h3 class="svc-intro-label" style="font-size:clamp(24px,3vw,36px);">Deliverables</h3>
+        <ul class="svc-deliverables">
+          <li>Brand Strategy</li>
+          <li>Logo Design</li>
+          <li>Visual Identity Systems</li>
+          <li>Brand Guidelines</li>
+          <li>Corporate Stationery</li>
+          <li>Marketing Collateral</li>
+          <li>Signage & Outdoor</li>
+          <li>Vehicle Branding</li>
+          <li>Packaging Design</li>
+          <li>Campaign Branding</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="svc-projects">
+  <div class="wrap">
+    <div class="svc-projects-head">
+      <h2>Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+
+      <a href="project-aceli.html" class="project-card" onclick="cardClick(event,this)">
+        <img src="CLient Logos/Aceli-Africa-FullColor-Logo.png" alt="Aceli Africa" loading="lazy">
+        <div class="project-card-overlay"></div>
+        <h3 class="project-card-name">Aceli Africa</h3>
+        <div class="project-card-click-overlay">
+          <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <span>Opening</span>
+        </div>
+      </a>
+
+      <a href="project-globalpeace.html" class="project-card" onclick="cardClick(event,this)">
+        <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace Foundation" loading="lazy">
+        <div class="project-card-overlay"></div>
+        <h3 class="project-card-name">Global Peace Foundation</h3>
+        <div class="project-card-click-overlay">
+          <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <span>Opening</span>
+        </div>
+      </a>
+
+      <a href="project-7star.html" class="project-card" onclick="cardClick(event,this)">
+        <img src="CLient Logos/7STAR png.png" alt="7 Star" loading="lazy">
+        <div class="project-card-overlay"></div>
+        <h3 class="project-card-name">7 Star</h3>
+        <div class="project-card-click-overlay">
+          <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <span>Opening</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="svc-partners">
+  <div class="wrap">
+    <h3>Brands We've Worked With</h3>
+    <div class="partner-logos">
+      <img src="CLient Logos/Aceli-Africa-FullColor-Logo.png" alt="Aceli Africa">
+      <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace Foundation">
+      <img src="CLient Logos/7STAR png.png" alt="7 Star">
+      <img src="CLient Logos/BASA.png" alt="BASA">
+      <img src="CLient Logos/DGF.jpg" alt="DGF">
+      <img src="CLient Logos/kampalafair_logo.png" alt="Kampala Fair">
+      <img src="CLient Logos/Danish refugee-council.png" alt="Danish Refugee Council">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="svc-cta">
+  <div class="wrap">
+    <h2>Ready to build your brand?</h2>
+    <p>Tell us about your organization and let's create a brand that makes an impact.</p>
+    <a href="mailto:xpoimaging@gmail.com?subject=Branding%20Project%20Inquiry" class="btn">Start Your Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div class="foot-logo-sm"><img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging"></div>
+      <span>© 2014–2026 Xpo Imaging Limited. All rights reserved.</span>
+      <div style="display:flex;gap:24px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Project card click overlay effect
+function cardClick(e,card){
+  e.preventDefault();
+  card.classList.add('clicked');
+  setTimeout(()=>{
+    window.location.href = card.href;
+  }, 700);
+}
+
+// Hero carousel
+(function(){
+  const slides=document.querySelectorAll('.svc-hero-slide');
+  const dotsWrap=document.getElementById('heroDots');
+  let cur=0,timer;
+  slides.forEach((_,i)=>{const b=document.createElement('button');if(i===0)b.classList.add('active');b.onclick=()=>{go(i);resetTimer();};dotsWrap.appendChild(b);});
+  function go(i){slides[cur].classList.remove('active');dotsWrap.children[cur].classList.remove('active');cur=i;slides[cur].classList.add('active');dotsWrap.children[cur].classList.add('active');}
+  function next(){go((cur+1)%slides.length);}
+  function prev(){go((cur-1+slides.length)%slides.length);}
+  function resetTimer(){clearInterval(timer);timer=setInterval(next,4500);}
+  document.getElementById('heroNext').onclick=()=>{next();resetTimer();};
+  document.getElementById('heroPrev').onclick=()=>{prev();resetTimer();};
+  timer=setInterval(next,4500);
+})();
+
+// Mobile burger
+(function(){
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('mobileNav');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',()=>{const o=nav.classList.contains('open');nav.style.display=o?'':'block';requestAnimationFrame(()=>nav.classList.toggle('open'));btn.classList.toggle('open');document.body.style.overflow=o?'':'hidden';});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.classList.remove('open');nav.style.display='';document.body.style.overflow='';}));
+})();
+</script>
+</body>
+</html>

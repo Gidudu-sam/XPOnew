@@ -3,13 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Xpo Imaging Limited | Marketing · Branding · Creative Communications · Uganda</title>
-<meta name="description" content="Xpo Imaging Limited — Uganda's full-service marketing, branding, social media management, video production, and photography agency. Established 2014. Kampala, Uganda.">
+<title>Product Photography | Xpo Imaging Limited</title>
+<meta name="description" content="High-quality visuals for your brand. Xpo Imaging Limited — Uganda's full-service marketing, branding, social media management, events production, and photography agency. Established 2014. Kampala, Uganda.">
 <link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
 <link rel="shortcut icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Century Gothic font override — applied globally */
+  *:not(code):not(pre) {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+  }
+
+  /* ---- CONTACT FORM — Premium Split Layout ---- */
+  .contact-split{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:80px;
+    align-items:start;
+    padding:20px 0 0;
+  }
+
+  /* Left info column */
+  .contact-info{ display:flex; flex-direction:column; }
+  .contact-eyebrow{
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--sky);
+    margin-bottom:16px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .contact-eyebrow::before{
+    display:none;
+  }
+  .contact-heading{
+    font-size:clamp(32px,4vw,52px);
+    font-weight:700;
+    line-height:1.05;
+    color:#fff;
+    margin:0 0 20px;
+    letter-spacing:-0.02em;
+  }
+  .contact-heading em{
+    font-style:italic;
+    color:var(--sky);
+  }
+  .contact-desc{
+    font-size:15px;
+    line-height:1.7;
+    color:rgba(255,255,255,0.55);
+    margin-bottom:40px;
+    max-width:36ch;
+  }
+
+  /* Contact details */
+  .contact-details{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    margin-bottom:40px;
+  }
+  .contact-detail-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .contact-detail-icon{
+    width:44px;height:44px;
+    border-radius:12px;
+    background:rgba(26,138,181,0.12);
+    border:1px solid rgba(26,138,181,0.2);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    color:var(--sky);
+  }
+  .contact-detail-icon svg{width:20px;height:20px;}
+  .contact-detail-label{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.4);
+    display:block;
+    margin-bottom:2px;
+  }
+  .contact-detail-value{
+    font-size:14px;
+    color:rgba(255,255,255,0.85);
+    font-weight:500;
+    transition:color .2s;
+  }
+  a.contact-detail-value:hover{color:#fff;}
+
+  /* Social icons */
+  .contact-social{
+    display:flex;
+    gap:10px;
+    margin-bottom:32px;
+  }
+  .contact-social a{
+    width:38px;height:38px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.04);
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,0.5);
+    transition:all .25s ease;
+  }
+  .contact-social a:hover{
+    background:var(--sky);
+    border-color:var(--sky);
+    color:#fff;
+    transform:translateY(-2px);
+  }
+  .contact-social svg{width:15px;height:15px;}
+
+  /* Trust badges */
+  .contact-trust{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:12px;
+    color:rgba(255,255,255,0.35);
+    letter-spacing:0.04em;
+  }
+  .trust-dot{
+    width:4px;height:4px;border-radius:50%;
+    background:rgba(255,255,255,0.2);
+  }
+
+  /* Right form column */
+  .contact-form-wrap{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:44px 40px;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-form-wrap::before{
+    content:"";
+    position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(to right, var(--blue), rgba(37,99,235,0.2));
+    border-radius:20px 20px 0 0;
+  }
+  .contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+  .form-group{
+    display:flex;
+    flex-direction:column;
+  }
+  .form-group label{
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.5);
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;
+    padding:16px 18px;
+    font-size:15px;
+    color:#fff;
+    transition:border-color .25s ease, background .25s ease, box-shadow .25s ease;
+    outline:none;
+    width:100%;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{
+    color:rgba(255,255,255,0.25);
+  }
+  .form-group select{
+    color:rgba(255,255,255,0.55);
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='rgba(255,255,255,0.5)' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    padding-right:40px;
+  }
+  .form-group select option{
+    background:#0a3d5c;color:#fff;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{
+    border-color:var(--sky);
+    background:rgba(26,138,181,0.06);
+    box-shadow:0 0 0 3px rgba(26,138,181,0.1);
+  }
+  .form-group textarea{
+    resize:vertical;
+    min-height:120px;
+  }
+
+  /* Submit button */
+  .form-submit{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    padding:18px 28px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    background:var(--blue);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:all .3s ease;
+    margin-top:8px;
+  }
+  .form-submit:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 32px rgba(37,99,235,0.4);
+    background:#3B7AF0;
+  }
+  .form-submit svg{width:16px;height:16px;transition:transform .25s ease;}
+  .form-submit:hover svg{transform:translateX(4px);}
+
+  /* Success state */
+  .form-success{
+    display:none;
+    text-align:center;
+    padding:40px 20px;
+  }
+  .form-success h4{
+    font-size:24px;
+    color:#fff;
+    margin-bottom:8px;
+  }
+  .form-success p{
+    font-size:15px;
+    color:rgba(255,255,255,0.6);
+  }
+
+  /* Responsive */
+  @media(max-width:900px){
+    .contact-split{
+      grid-template-columns:1fr;
+      gap:48px;
+    }
+    .contact-form-wrap{
+      padding:32px 28px;
+    }
+  }
+  @media(max-width:560px){
+    .contact-form-wrap{
+      padding:28px 20px;
+      border-radius:16px;
+    }
+    .contact-heading{
+      font-size:clamp(28px,8vw,40px);
+    }
+    .contact-detail-item{gap:12px;}
+    .contact-detail-icon{width:38px;height:38px;border-radius:10px;}
+  }
+</style>
 <style>
   /* ============================================================
      XPO IMAGING LIMITED — Light Brand Theme
@@ -18,20 +285,29 @@
      Text: near-black #0d1f2d
   ============================================================ */
   :root{
-    --bg:        #ffffff;
-    --bg-soft:   #f4f8fb;
-    --panel:     #eaf2f8;
-    --panel-2:   #daeaf4;
-    --ink:       #0d1f2d;
-    --ink-mid:   #1e2d3a;
-    --ink-dim:   rgba(20,35,48,0.70);
-    --blue:      #0d5f8a;
-    --blue-deep: #0a3d5c;
-    --sky:       #1a8ab5;
-    --sky-light: #e0f1f9;
-    --rule:      #cde3f0;
-    --stripe:    #f0f7fb;
+    --bg:        #0F1419;
+    --bg-soft:   #1A2332;
+    --panel:     #1E2A3A;
+    --panel-2:   #243447;
+    --ink:       #FFFFFF;
+    --ink-mid:   #9CA3AF;
+    --ink-dim:   rgba(255,255,255,0.5);
+    --blue:      #2563EB;
+    --blue-deep: #0F1419;
+    --sky:       #6B9E9E;
+    --sky-light: #1A2332;
+    --rule:      #2A3544;
+    --stripe:    #1A2332;
     --maxw:      1240px;
+    --gold:      #D4A843;
+    --navy:      #0F1419;
+    --orange:    #D4A843;
+    --coral:     #D4A843;
+    --mint:      #8FAC7E;
+    --purple:    #6B9E9E;
+    --pink:      #6B9E9E;
+    --aqua:      #6B9E9E;
+    --cream:     #0F1419;
   }
 
   *{box-sizing:border-box;}
@@ -48,60 +324,62 @@
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
   h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;font-weight:600;letter-spacing:-0.01em;color:var(--ink);}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 48px;}
 
   .eyebrow{
-    font-family:'Space Mono',monospace;
     font-size:11px;
     letter-spacing:0.20em;
     text-transform:uppercase;
     color:var(--sky);
     display:flex;align-items:center;gap:10px;
   }
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--sky);display:inline-block;border-radius:2px;}
 
   /* ---- NAV ---- */
   header.site{
     position:fixed;top:0;left:0;right:0;z-index:50;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0 32px;height:68px;
-    background:rgba(255,255,255,0.96);
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    padding:0 40px;height:100px;
+    background:rgba(15,20,25,0.96);
     backdrop-filter:blur(20px) saturate(1.8);
     -webkit-backdrop-filter:blur(20px) saturate(1.8);
     border-bottom:1px solid var(--rule);
-    box-shadow:0 1px 16px rgba(13,63,92,0.07);
+    box-shadow:none;
   }
   .logo{
     display:flex;align-items:center;
     text-decoration:none;
+    justify-self:start;
   }
   .logo-img{
-    height:44px;
+    height:80px;
     width:auto;
     display:block;
     object-fit:contain;
+    filter:brightness(0) invert(1);
   }
-  nav.primary{display:flex;align-items:center;gap:32px;}
+  nav.primary{display:flex;align-items:center;gap:40px;justify-self:center;}
   nav.primary a{
-    font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
-    font-weight:700;color:var(--ink-mid);
+    font-size:13px;letter-spacing:0.12em;text-transform:uppercase;
+    font-weight:700;color:rgba(255,255,255,0.7);
     position:relative;padding:4px 0;
     transition:color .2s ease;
   }
-  nav.primary a:hover,nav.primary a.active{color:var(--blue-deep);}
+  nav.primary a:hover,nav.primary a.active{color:#fff;}
   nav.primary a::after{
     content:"";position:absolute;left:0;bottom:-4px;
-    width:0;height:2px;background:var(--sky);border-radius:2px;
+    width:0;height:2px;background:var(--gold);border-radius:2px;
     transition:width .22s ease;
   }
   nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
   .has-drop{position:relative;}
   .dropdown{
     position:absolute;top:calc(100% + 12px);left:-16px;min-width:250px;
-    background:#fff;border:1px solid var(--rule);border-radius:12px;
+    background:#1A2332;border:1px solid var(--rule);border-radius:12px;
     padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);
     transition:all .2s ease;
-    box-shadow:0 12px 40px rgba(13,63,92,0.14);
+    box-shadow:0 12px 40px rgba(0,0,0,0.4);
   }
   .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
   .dropdown a{
@@ -110,23 +388,35 @@
     color:var(--ink-mid);border-radius:8px;font-weight:500;
     transition:background .15s ease,color .15s ease;
   }
-  .dropdown a:hover{color:var(--blue-deep);background:var(--sky-light);}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:51;}
-  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s ease, opacity .3s ease;}
+  .dropdown a:hover{color:#fff;background:var(--panel);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:51;justify-self:end;}
+  .nav-right{display:flex;align-items:center;gap:16px;justify-self:end;}
+  .nav-cta{
+    font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+    font-weight:700;color:#fff;
+    padding:12px 24px;
+    border:1.5px solid rgba(255,255,255,0.4);
+    border-radius:4px;
+    transition:all .22s ease;
+  }
+  .nav-cta:hover{
+    border-color:#fff;
+    background:rgba(255,255,255,0.08);
+  }
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s ease, opacity .3s ease;}
   /* Burger → X animation */
   .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-  /* Mobile nav drawer */
   .mobile-nav{
     display:none;
-    position:fixed;top:68px;left:0;right:0;z-index:49;
-    background:rgba(255,255,255,0.98);
+    position:fixed;top:100px;left:0;right:0;z-index:49;
+    background:rgba(15,20,25,0.98);
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
     border-bottom:1px solid var(--rule);
-    box-shadow:0 8px 32px rgba(13,63,92,0.12);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
     padding:16px 0 24px;
     transform:translateY(-10px);
     opacity:0;
@@ -141,13 +431,13 @@
   .mobile-nav a{
     display:block;padding:14px 32px;
     font-size:14px;font-weight:700;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--ink);
+    text-transform:uppercase;color:rgba(255,255,255,0.7);
     border-bottom:1px solid var(--rule);
     transition:background .15s,color .15s;
   }
   .mobile-nav a:last-child{border-bottom:none;}
-  .mobile-nav a:hover{background:var(--sky-light);color:var(--blue);}
-  .mobile-nav a.active{color:var(--blue);}
+  .mobile-nav a:hover{background:var(--panel);color:#fff;}
+  .mobile-nav a.active{color:#fff;}
   /* Overlay behind mobile nav */
   .nav-backdrop{
     display:none;
@@ -156,12 +446,14 @@
   }
   .nav-backdrop.open{display:block;}
 
-  /* ---- HERO ---- */
+  /* ---- HERO — Sticky reveal (next section scrolls over it) ---- */
   .hero{
-    position:relative;
+    position:sticky;
+    top:0;
+    z-index:1;
     min-height:100svh;
     display:flex;flex-direction:column;justify-content:flex-end;
-    padding:68px 0 0;
+    padding:100px 0 0;
     overflow:hidden;
     background:var(--blue-deep); /* fallback */
   }
@@ -188,23 +480,19 @@
     animation:kenBurns 6s ease-out forwards;
   }
 
-  /* Blue overlay on top of photo */
+  /* Blue overlay on top of photo — REMOVED */
   .hero-overlay{
     position:absolute;inset:0;z-index:1;
     background:
       linear-gradient(to bottom,
-        rgba(8,32,52,0.78) 0%,
-        rgba(8,32,52,0.68) 40%,
-        rgba(8,32,52,0.82) 75%,
-        rgba(8,32,52,0.96) 100%
+        rgba(27,77,92,0.45) 0%,
+        rgba(27,77,92,0.15) 40%,
+        rgba(27,77,92,0.50) 75%,
+        rgba(27,77,92,0.82) 100%
       );
   }
 
-  /* Accent top bar */
-  .hero-accent-bar{
-    position:absolute;top:68px;left:0;right:0;height:3px;z-index:3;
-    background:linear-gradient(to right, var(--sky) 0%, rgba(255,255,255,0.4) 100%);
-  }
+  /* Accent top bar — removed */
 
   /* Typewriter cursor on hero title */
   .hero-title .tw-cursor{
@@ -246,18 +534,50 @@
   }
   .hero-service{font-size:11px;margin-bottom:4px;}
   .hero-title{
-    font-size:clamp(48px,8vw,110px);
-    line-height:0.97;margin:20px 0 24px;
+    font-size:clamp(56px,10vw,130px);
+    line-height:0.95;margin:0;
     max-width:13ch;color:#fff;
+    text-transform:uppercase;
+    letter-spacing:-0.02em;
+    font-weight:800;
   }
-  .hero-title em{font-style:italic;color:var(--sky);}
-  .hero-sub{
-    font-size:17px;color:rgba(255,255,255,0.75);
-    max-width:48ch;margin-bottom:36px;line-height:1.65;
+  .hero-title em{font-style:italic;color:var(--sky);text-transform:none;}
+  .hero-sub-line{
+    font-size:clamp(15px,1.8vw,20px);
+    color:rgba(255,255,255,0.7);
+    margin-bottom:12px;
+    font-weight:400;
+    font-style:italic;
+  }
+  .hero-btn{
+    background:var(--blue);
+    border:none;color:#fff;
+    border-radius:30px;
+    padding:16px 32px;
+    font-size:12px;
+    font-weight:700;
+  }
+  .hero-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(37,99,235,0.4);
+    background:#3B7AF0;
+  }
+  .hero-counter{
+    position:absolute;
+    bottom:36px;right:40px;
+    z-index:4;
+    font-size:clamp(36px,5vw,64px);
+    font-weight:800;
+    color:#fff;
+  }
+  .hero-counter span{
+    font-size:0.5em;
+    font-weight:400;
+    color:rgba(255,255,255,0.4);
   }
   /* Eyebrow on hero — white */
   .hero .eyebrow{color:rgba(255,255,255,0.7);}
-  .hero .eyebrow::before{background:rgba(255,255,255,0.5);}
+  .hero .eyebrow::before{display:none;}
 
   /* Ghost button on hero */
   .hero .btn.ghost{
@@ -308,7 +628,7 @@
   @keyframes fillbar{from{width:0}to{width:100%}}
 
   /* ---- SECTIONS ---- */
-  section{padding:100px 0;position:relative;}
+  section{padding:100px 0;position:relative;z-index:2;background:var(--bg);}
 
   .section-head{
     display:flex;justify-content:space-between;align-items:flex-end;
@@ -322,22 +642,26 @@
     display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
   }
   .about-card{
-    background:var(--bg-soft);
-    border:1px solid var(--rule);
+    border:none;
     border-radius:16px;padding:36px 32px;
-    transition:box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+    transition:box-shadow .3s ease, transform .3s ease;
+    color:#fff;
+    background:#fff;
   }
+  .about-card:nth-child(1){background:#1A2332;}
+  .about-card:nth-child(2){background:#1E2A3A;}
+  .about-card:nth-child(3){background:#243447;}
   .about-card:hover{
-    box-shadow:0 16px 48px rgba(13,95,138,0.12);
+    box-shadow:0 16px 48px rgba(0,0,0,0.15);
     transform:translateY(-5px);
-    border-color:var(--sky);
   }
   .about-card-title{
     font-size:clamp(22px,2.2vw,32px);line-height:1.1;
     font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;
+    color:#fff;
   }
-  .about-card-title em{font-style:italic;color:var(--sky);}
-  .about-card-body{font-size:15px;line-height:1.7;color:var(--ink-mid);margin:0 0 26px;}
+  .about-card-title em{font-style:italic;color:var(--gold);}
+  .about-card-body{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.85);margin:0 0 26px;}
 
   /* Shared eyebrow / link / tags for about cards */
   .cin-card-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
@@ -346,114 +670,212 @@
   .cin-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mid);}
   .cin-card-link{
     display:inline-flex;align-items:center;gap:8px;
-    font-family:'Space Mono',monospace;font-size:11px;
-    letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);
-    border-bottom:1px solid var(--rule);padding-bottom:3px;
-    transition:color .2s,border-color .2s;
+    font-size:11px;
+    letter-spacing:0.12em;text-transform:uppercase;color:#fff;
+    padding-bottom:3px;
+    transition:color .2s;
   }
-  .cin-card-link:hover{color:var(--sky);border-color:var(--sky);}
+  .cin-card-link:hover{color:rgba(255,255,255,0.7);}
   .cin-card-link svg{width:13px;height:13px;transition:transform .2s;}
   .cin-card-link:hover svg{transform:translateX(4px);}
   .cin-tag-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
   .cin-tag-list li{
-    font-family:'Space Mono',monospace;font-size:10px;
+    font-size:10px;
     letter-spacing:0.1em;text-transform:uppercase;
-    color:var(--ink-mid);border:1px solid var(--rule);
+    color:#fff;border:1px solid rgba(255,255,255,0.4);
     padding:5px 12px;border-radius:100px;
     transition:background .2s,border-color .2s,color .2s;
+    background:rgba(255,255,255,0.15);
   }
-  .about-card:hover .cin-tag-list li{background:var(--sky-light);border-color:var(--sky);color:var(--blue);}
+  .about-card:hover .cin-tag-list li{background:rgba(255,255,255,0.25);border-color:rgba(255,255,255,0.6);}
 
-  /* ---- OUR WORKS GRID ---- */
-  .works-grid{
+  /* ---- SERVICES — Full-bleed photo cards ---- */
+  .service-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:48px 36px;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
   }
-  .work-card{
-    background:transparent;
-    position:relative;
-    display:flex;flex-direction:column;
-    cursor:pointer;
-    text-decoration:none;
-  }
-  /* Square image box */
-  .work-card .art{
-    position:relative;
-    width:100%;aspect-ratio:1/1;
-    border-radius:6px;
-    overflow:hidden;
-    margin-bottom:18px;
-    flex-shrink:0;
-  }
-  .work-card .art img{
-    width:100%;height:100%;
-    object-fit:cover;object-position:center;
+  .service-item{
     display:block;
+    text-decoration:none;
+    position:relative;
+    border-radius:16px;
+    overflow:hidden;
+    aspect-ratio:3/4;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .service-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.2);
+  }
+  /* Staggered offset — every other card drops down */
+  .service-item--offset{
+    margin-top:60px;
+  }
+
+  /* Image fills entire card */
+  .service-img{
+    position:absolute;
+    inset:0;
+    background:var(--card-bg, #ccc);
+    overflow:hidden;
+  }
+  .service-img img{
+    width:100%;height:100%;
+    object-fit:cover;
     transition:transform .5s ease;
   }
-  .work-card:hover .art img{transform:scale(1.06);}
-  /* Arrow overlay */
-  .work-card .arrow{
-    position:absolute;top:14px;right:14px;z-index:2;
-    width:36px;height:36px;border-radius:50%;
-    background:rgba(255,255,255,0.92);
-    display:flex;align-items:center;justify-content:center;
-    opacity:0;transform:scale(0.75);
-    transition:opacity .3s ease,transform .3s ease;
+  .service-item:hover .service-img img{
+    transform:scale(1.06);
   }
-  .work-card:hover .arrow{opacity:1;transform:scale(1);}
-  .work-card .arrow svg{width:14px;height:14px;color:var(--blue);}
-  /* Caption area */
-  .work-card .cap{display:flex;flex-direction:column;}
-  /* Teal accent line */
-  .work-card .accent-line{
-    width:22px;height:3px;border-radius:2px;
-    background:var(--sky);margin-bottom:10px;flex-shrink:0;
+
+  /* Dark gradient overlay */
+  .service-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    pointer-events:none;
   }
-  /* Sub-description */
-  .work-card .num{
-    font-size:13px;color:var(--ink-mid);
-    margin-bottom:8px;line-height:1.4;
-    font-weight:400;
+
+  /* Caption at bottom of card */
+  .service-caption{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:24px;
+    z-index:2;
   }
-  /* Service title */
-  .work-card .cap h3{
-    font-family:'Fraunces',serif;
-    font-size:clamp(20px,1.8vw,26px);
-    font-weight:700;color:var(--ink);
-    line-height:1.15;letter-spacing:-0.01em;
+  .service-accent{display:none;}
+  .service-subtitle{
+    display:block;
+    font-size:12px;
+    color:rgba(255,255,255,0.7);
+    margin-bottom:6px;
+    letter-spacing:0.02em;
+  }
+  .service-name{
+    font-size:clamp(18px,2vw,24px);
+    font-weight:800;
+    color:#fff;
     margin:0;
-    transition:color .2s ease;
+    letter-spacing:-0.02em;
+    line-height:1.2;
   }
-  .work-card:hover .cap h3{color:var(--blue);}
-  .work-card .cap .tag{display:none;}
-  .work-card::after{display:none;}
+
+  @media(max-width:900px){
+    .service-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+    .service-item--offset{margin-top:30px;}
+    .service-item{aspect-ratio:3/4;}
+  }
+  @media(max-width:560px){
+    .service-grid{grid-template-columns:1fr;gap:16px;}
+    .service-item--offset{margin-top:0;}
+    .service-item{aspect-ratio:4/3;border-radius:12px;}
+  }
+
+  /* ---- VISUAL BREAK — Sticky image between sections ---- */
+  .visual-break{
+    position:relative;
+    z-index:1;
+    height:100vh;
+  }
+  .visual-break-img{
+    position:sticky;
+    top:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+  }
+  .visual-break-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+  .visual-break-overlay{
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(to bottom,
+        rgba(27,77,92,0.2) 0%,
+        rgba(27,77,92,0.1) 40%,
+        rgba(27,77,92,0.4) 80%,
+        rgba(27,77,92,0.7) 100%
+      );
+  }
+  .visual-break-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:0 32px 80px;
+    max-width:var(--maxw);
+    margin:0 auto;
+    z-index:2;
+  }
+  .visual-break-eyebrow{
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--sky);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .visual-break-eyebrow::before{
+    display:none;
+  }
+  .visual-break-heading{
+    font-size:clamp(36px,6vw,72px);
+    font-weight:700;
+    line-height:1.05;
+    color:#fff;
+    margin:0;
+    letter-spacing:-0.02em;
+  }
+
+  @media(max-width:900px){
+    .visual-break{height:70vh;}
+    .visual-break-img{height:70vh;}
+    .visual-break-text{padding:0 24px 60px;}
+  }
+  @media(max-width:560px){
+    .visual-break{height:60vh;}
+    .visual-break-img{height:60vh;}
+    .visual-break-text{padding:0 20px 48px;}
+    .visual-break-heading{font-size:clamp(28px,8vw,48px);}
+  }
 
   /* ---- WHY US ---- */
+  .why-section{
+    position:relative;
+    z-index:2;
+    background:#1A2332;
+    border-radius:24px 24px 0 0;
+    box-shadow:0 -20px 60px rgba(0,0,0,0.5);
+    margin-top:-24px;
+  }
   .why-grid{
     display:grid;grid-template-columns:repeat(4,1fr);
-    gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-    background:var(--rule);
+    gap:20px;
   }
   .why-card{
-    background:var(--bg);padding:44px 32px;
-    border-right:1px solid var(--rule);
-    transition:background .25s ease;
+    padding:44px 32px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    color:#fff;
+    background:rgba(255,255,255,0.04);
+    border-radius:12px;
+    border:1px solid var(--rule);
   }
-  .why-card:last-child{border-right:none;}
-  .why-card:hover{background:var(--sky-light);}
-  .why-card .ic{width:40px;height:40px;margin-bottom:22px;color:var(--sky);}
-  .why-card h4{font-size:18px;margin-bottom:10px;color:var(--ink);}
+  .why-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3);background:rgba(255,255,255,0.07);}
+  .why-card .ic{width:40px;height:40px;margin-bottom:22px;color:var(--gold);}
+  .why-card h4{font-size:18px;margin-bottom:10px;color:#fff;}
   .why-card p{font-size:14px;color:var(--ink-mid);line-height:1.7;}
 
   /* ---- CLIENTS CAROUSEL ---- */
   .partners{
     padding:80px 0;
-    background:var(--bg-soft);
-    border-top:1px solid var(--rule);
-    border-bottom:1px solid var(--rule);
+    background:var(--bg);
     overflow:hidden;
+    position:relative;
+    z-index:2;
   }
   .logo-track-wrap{
     overflow:hidden;
@@ -469,159 +891,158 @@
   .logo-set{display:flex;align-items:center;flex-shrink:0;}
   .logo-item{
     display:flex;align-items:center;justify-content:center;
-    padding:0 36px;height:80px;border-right:1px solid var(--rule);flex-shrink:0;
+    padding:0 36px;height:80px;flex-shrink:0;
   }
   .logo-item img{
     height:42px;width:auto;max-width:130px;object-fit:contain;
-    opacity:0.8;transition:opacity .3s ease,transform .3s ease;
+    opacity:0.7;transition:opacity .3s ease,transform .3s ease, filter .3s ease;
+    filter:grayscale(100%);
   }
-  .logo-item:hover img{opacity:1;transform:scale(1.08);}
+  .logo-item:hover img{opacity:1;transform:scale(1.08);filter:grayscale(0%);}
 
-  /* ---- TESTIMONIALS — stacked deck carousel ---- */
-  .testimonials{
+  /* ---- TESTIMONIALS — Horizontal Auto-Scroll Carousel ---- */
+  .testi-section{
     padding:110px 0;
-    background:var(--blue-deep);
-    position:relative;overflow:hidden;
-  }
-  .testimonials::before{
-    content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(ellipse at 5% 60%, rgba(26,138,181,0.22), transparent 50%),
-      radial-gradient(ellipse at 95% 30%, rgba(26,138,181,0.10), transparent 45%);
-  }
-  /* Split layout */
-  .testi-layout{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    align-items:center;
-    position:relative;z-index:1;
-  }
-  /* Left col — heading + controls */
-  .testi-left{ display:flex; flex-direction:column; }
-  .testi-heading{
-    font-family:'Fraunces',serif;
-    font-size:clamp(36px,5vw,62px);
-    font-weight:600;line-height:1.05;
-    color:#fff;margin:0 0 48px;
-  }
-  .testi-heading em{font-style:italic;color:var(--sky);}
-  .testi-controls{display:flex;align-items:center;gap:16px;}
-  .testi-btn{
-    width:48px;height:48px;border-radius:50%;
-    border:1px solid rgba(255,255,255,0.2);
-    background:rgba(255,255,255,0.07);
-    color:rgba(255,255,255,0.7);
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;transition:all .25s ease;
-    flex-shrink:0;
-  }
-  .testi-btn:hover{background:var(--sky);border-color:var(--sky);color:#fff;}
-  .testi-btn svg{width:18px;height:18px;}
-  .testi-counter{
-    font-family:'Space Mono',monospace;
-    font-size:12px;letter-spacing:0.1em;
-    color:rgba(255,255,255,0.45);
-  }
-  .testi-counter strong{color:#fff;}
-
-  /* Right col — stacked deck */
-  .testi-deck{
+    background:var(--bg-soft);
     position:relative;
-    height:320px; /* enough for stacking peek */
+    overflow:hidden;
+    z-index:2;
   }
-  .testi-card{
-    position:absolute;
-    inset:0;
-    background:#fff;
-    border-radius:20px;
-    padding:40px 36px;
-    display:flex;flex-direction:column;gap:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.35);
-    transition:transform .5s cubic-bezier(.22,.68,0,1.2), opacity .4s ease;
-    will-change:transform,opacity;
-    cursor:default;
+  .testi-section::before{
+    display:none;
   }
-  /* Stack peek — cards behind the active one */
-  .testi-card[data-pos="1"]{
-    transform:translate(14px, -12px) scale(0.97);
-    opacity:0.6;z-index:1;
+  .testi-section::after{
+    display:none;
   }
-  .testi-card[data-pos="2"]{
-    transform:translate(26px, -22px) scale(0.94);
-    opacity:0.3;z-index:0;
+  .testi-eyebrow{
+    font-size:11px;
+    letter-spacing:0.20em;
+    text-transform:uppercase;
+    color:#8FAC7E;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
   }
-  .testi-card[data-pos="active"]{
-    transform:translate(0,0) scale(1);
-    opacity:1;z-index:2;
+  .testi-eyebrow::before{
+    display:none;
   }
-  /* Exiting card animates off to the left */
-  .testi-card.exiting{
-    transform:translate(-60px,0) scale(0.96);
-    opacity:0;z-index:3;
-  }
-  /* Card inner */
-  .testi-count-pill{
-    display:inline-flex;align-items:center;
-    background:var(--panel);border-radius:100px;
-    padding:5px 14px;
-    font-family:'Space Mono',monospace;font-size:11px;
-    letter-spacing:0.1em;color:var(--ink-mid);
-    align-self:flex-start;
-  }
-  .testi-body{
-    font-size:15px;line-height:1.75;
+  .testi-title{
+    font-size:clamp(36px,5vw,58px);
+    font-weight:700;
+    line-height:1.05;
     color:var(--ink);
+    margin:0;
+    letter-spacing:-0.02em;
+  }
+
+  /* Carousel wrapper */
+  .testi-carousel-wrap{
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    mask-image:linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  }
+  .testi-carousel{
+    display:flex;
+    width:max-content;
+    animation:testiScroll 40s linear infinite;
+  }
+  .testi-carousel-wrap:hover .testi-carousel{
+    animation-play-state:paused;
+  }
+  @keyframes testiScroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  /* Individual card */
+  .testi-slide{
+    flex-shrink:0;
+    width:380px;
+    margin:0 14px;
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-radius:20px;
+    padding:36px 32px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .testi-slide:hover{
+    border-color:var(--blue);
+    transform:translateY(-4px);
+    box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  /* Stars */
+  .testi-stars{
+    font-size:16px;
+    letter-spacing:3px;
+    color:var(--gold);
+  }
+
+  /* Quote */
+  .testi-quote{
+    font-size:15px;
+    line-height:1.75;
+    color:var(--ink-mid);
     flex:1;
+    margin:0;
   }
-  .testi-divider{
-    height:1px;background:var(--rule);flex-shrink:0;
+
+  /* Author */
+  .testi-author{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
   }
-  .testi-footer{
-    display:flex;align-items:center;gap:14px;
-  }
-  .testi-avatar{
-    width:40px;height:40px;border-radius:50%;
-    background:var(--blue);
+  .testi-author .testi-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:var(--panel-2);
+    border:1px solid var(--rule);
     display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;font-family:'Fraunces',serif;
-    font-size:16px;font-weight:700;color:#fff;
+    flex-shrink:0;
+    font-size:16px;font-weight:700;color:var(--gold);
   }
-  .testi-meta{display:flex;flex-direction:column;}
-  .testi-client{
-    font-family:'Manrope',sans-serif;
-    font-size:14px;font-weight:700;color:var(--ink);
-    display:block;margin-bottom:1px;
+  .testi-author strong{
+    font-size:14px;
+    font-weight:700;
+    color:#fff;
+    display:block;
+    margin-bottom:2px;
   }
-  .testi-type{
-    font-family:'Space Mono',monospace;
-    font-size:10px;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--sky);
+  .testi-author span{
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-mid);
   }
 
   @media(max-width:900px){
-    .testi-layout{
-      grid-template-columns:1fr;
-      gap:48px;
-    }
-    .testi-deck{height:360px;}
+    .testi-section{padding:80px 0;}
+    .testi-slide{width:320px;padding:28px 24px;}
   }
   @media(max-width:560px){
-    .testi-deck{height:400px;}
-    .testi-card{padding:28px 24px;}
+    .testi-section{padding:60px 0;}
+    .testi-slide{width:290px;padding:24px 20px;margin:0 10px;}
+    .testi-title{font-size:clamp(28px,8vw,42px);}
   }
 
   /* ---- CTA STRIP ---- */
   .cta-strip{
-    background:var(--blue-deep);
+    background:var(--blue);
     padding:100px 0;text-align:center;
     position:relative;overflow:hidden;
+    z-index:2;
   }
   .cta-strip::before{
     content:"";position:absolute;inset:0;
     background:
-      radial-gradient(ellipse at 30% 50%,rgba(26,138,181,0.25),transparent 60%),
-      radial-gradient(ellipse at 80% 50%,rgba(26,138,181,0.15),transparent 55%);
+      radial-gradient(ellipse at 30% 50%,rgba(107,158,158,0.2),transparent 60%),
+      radial-gradient(ellipse at 80% 50%,rgba(143,172,126,0.15),transparent 55%);
   }
   .cta-strip::after{
     content:"";position:absolute;top:0;left:0;right:0;height:3px;
@@ -632,7 +1053,7 @@
     margin:0 auto 36px;color:#fff;position:relative;
   }
   .cta-strip .eyebrow{justify-content:center;margin-bottom:20px;color:rgba(255,255,255,0.6);}
-  .cta-strip .eyebrow::before{background:rgba(255,255,255,0.4);}
+  .cta-strip .eyebrow::before{display:none;}
   .cta-strip .btn{
     background:#fff;border-color:#fff;color:var(--blue-deep);position:relative;
     font-weight:700;
@@ -640,7 +1061,7 @@
   .cta-strip .btn:hover{background:transparent;color:#fff;border-color:rgba(255,255,255,0.6);}
 
   /* ---- FOOTER ---- */
-  footer{padding:90px 0 40px;background:var(--blue-deep);}
+  footer{padding:90px 0 40px;background:#0A0F14;position:relative;z-index:2;}
   .foot-grid{
     display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
     gap:44px;padding-bottom:64px;
@@ -655,7 +1076,7 @@
   .foot-grid a:hover{color:#fff;}
   .foot-logo{margin-bottom:18px;}
   .foot-logo img{
-    height:52px;width:auto;display:block;
+    height:100px;width:auto;display:block;
     /* Invert to white for dark footer background */
     filter:brightness(0) invert(1);
   }
@@ -679,55 +1100,117 @@
   @media (max-width:900px){
     nav.primary{display:none;}
     .burger{display:flex;}
-    .works-grid{grid-template-columns:repeat(2,1fr);gap:32px 24px;}
-    .why-grid{grid-template-columns:repeat(2,1fr);}
-    .foot-grid{grid-template-columns:1fr 1fr;gap:36px;}
-    .slate-meta{display:none;}
+    .nav-cta{display:none;}
+    header.site{height:80px;padding:0 24px;}
+    .logo-img{height:60px;}
+    .mobile-nav{top:80px;}
     /* Hero */
+    .hero{padding:80px 0 0;}
     .hero-body{padding:0 24px 70px;}
-    .hero-title{font-size:clamp(38px,10vw,70px);}
-    .hero-sub{font-size:15px;max-width:100%;}
+    .hero-title{font-size:clamp(36px,10vw,60px);}
+    .hero-counter{bottom:24px;right:24px;font-size:clamp(28px,5vw,48px);}
     /* Sections */
     section{padding:70px 0;}
     .section-head{flex-direction:column;align-items:flex-start;margin-bottom:36px;}
-    /* Testimonials */
-    .testi-layout{grid-template-columns:1fr;gap:40px;}
-    .testi-deck{height:auto;min-height:340px;}
     /* About */
     .about-grid{grid-template-columns:1fr;gap:16px;}
     .about-card{padding:28px 24px;}
+    /* Services */
+    .service-grid{grid-template-columns:repeat(2,1fr);gap:24px 16px;}
+    .service-item--offset{margin-top:30px;}
     /* Why */
+    .why-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
     .why-card{padding:32px 24px;}
+    /* Testimonials */
+    .testi-section{padding:80px 0;}
+    .testi-slide{width:320px;padding:28px 24px;}
+    /* Contact */
+    .contact-split{grid-template-columns:1fr;gap:48px;}
+    .contact-form-wrap{padding:32px 28px;}
     /* Footer */
+    .foot-grid{grid-template-columns:1fr 1fr;gap:36px;}
     footer{padding:60px 0 28px;}
+    /* Visual break */
+    .visual-break{height:70vh;}
+    .visual-break-img{height:70vh;}
+    .visual-break-text{padding:0 24px 60px;}
   }
   @media (max-width:560px){
-    .wrap{padding:0 20px;}
-    .works-grid{grid-template-columns:1fr;gap:36px;}
-    .why-grid{grid-template-columns:1fr;}
-    .foot-grid{grid-template-columns:1fr;}
-    .section-head{flex-direction:column;align-items:flex-start;}
-    /* Hero mobile */
-    .hero{padding:68px 0 0;}
-    .hero-title{font-size:clamp(34px,12vw,56px);line-height:1.0;}
-    .hero-sub{font-size:14px;}
-    .hero-body{padding:0 20px 60px;}
-    .slate-dots{padding:0 20px 32px;}
-    /* Buttons stack */
-    .hero-body > div{flex-direction:column;align-items:flex-start;}
-    .btn{font-size:11px;padding:13px 22px;}
-    /* Sections tighter */
-    section{padding:56px 0;}
-    /* Testimonial deck full height */
-    .testi-deck{min-height:380px;}
-    .testi-card{padding:24px 20px;}
-    /* Footer single col */
+    .wrap{padding:0 16px;}
+    header.site{height:70px;padding:0 16px;}
+    .logo-img{height:50px;}
+    .mobile-nav{top:70px;}
+    /* Hero */
+    .hero{padding:70px 0 0;}
+    .hero-title{font-size:clamp(28px,11vw,48px);line-height:1.0;}
+    .hero-body{padding:0 16px 50px;}
+    .hero-sub-line{font-size:13px;}
+    .hero-counter{bottom:16px;right:16px;font-size:clamp(24px,6vw,36px);}
+    .slate-dots{padding:0 16px 24px;}
+    /* Sections */
+    section{padding:50px 0;}
+    /* Services */
+    .service-grid{grid-template-columns:1fr;gap:28px;}
+    .service-item--offset{margin-top:0;}
+    .service-img{border-radius:12px;padding:20px;}
+    /* Why */
+    .why-grid{grid-template-columns:1fr;gap:14px;}
+    /* Footer */
     .foot-grid{grid-template-columns:1fr;gap:28px;}
     .foot-bottom{flex-direction:column;align-items:flex-start;gap:12px;}
+    /* Contact */
+    .contact-form-wrap{padding:24px 18px;border-radius:14px;}
+    .contact-heading{font-size:clamp(24px,7vw,36px);}
+    .contact-detail-item{gap:12px;}
+    .contact-detail-icon{width:38px;height:38px;border-radius:10px;}
+    /* Testimonials */
+    .testi-section{padding:60px 0;}
+    .testi-slide{width:280px;padding:24px 18px;margin:0 8px;}
+    .testi-title{font-size:clamp(28px,7vw,40px);}
+    /* Visual break */
+    .visual-break{height:50vh;}
+    .visual-break-img{height:50vh;}
+    .visual-break-text{padding:0 16px 40px;}
+    .visual-break-heading{font-size:clamp(24px,7vw,40px);}
   }
 
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;}
+  }
+
+  /* Large screens (TVs, ultrawide) */
+  @media (min-width:1600px){
+    .wrap{max-width:1600px;padding:0 80px;}
+    .hero-title{font-size:clamp(80px,8vw,160px);}
+    .hero-body{padding:0 80px 100px;max-width:1600px;}
+    .hero-sub-line{font-size:24px;}
+    .hero-counter{font-size:80px;bottom:50px;right:80px;}
+    header.site{padding:0 80px;height:110px;}
+    .logo-img{height:90px;}
+    nav.primary a{font-size:15px;gap:48px;}
+    section{padding:120px 0;}
+    .about-grid{gap:32px;}
+    .about-card{padding:48px 44px;}
+    .about-card-title{font-size:36px;}
+    .service-grid{gap:48px 40px;}
+    .service-img{border-radius:20px;}
+    .service-name{font-size:26px;}
+    .why-grid{gap:24px;}
+    .why-card{padding:56px 40px;}
+    .why-card h4{font-size:22px;}
+    .testi-slide{width:440px;padding:44px 40px;}
+    .testi-quote{font-size:17px;}
+    .testi-title{font-size:64px;}
+    .contact-split{gap:100px;}
+    .contact-heading{font-size:60px;}
+    .foot-grid{gap:60px;}
+    .visual-break-heading{font-size:clamp(60px,6vw,100px);}
+    .visual-break-text{padding:0 80px 100px;}
+  }
+  @media (min-width:2200px){
+    .wrap{max-width:1900px;padding:0 120px;}
+    .hero-title{font-size:180px;}
+    section{padding:140px 0;}
   }
 
   /* ============================================================
@@ -823,22 +1306,22 @@
     <div class="has-drop">
       <a href="#services">Services</a>
       <div class="dropdown">
-        <a href="#services">Marketing &amp; Branding</a>
-        <a href="#services">Social Media Management</a>
-        <a href="#services">Video Production</a>
-        <a href="#services">Photography</a>
-        <a href="#services">Graphic Design</a>
-        <a href="#services">Printing &amp; Branding</a>
-        <a href="#services">Communication &amp; Documentation</a>
+        <a href="branding.html">Branding &amp; Marketing</a>
+        <a href="social-media.html">Social Media Management</a>
+        <a href="events.html">Events Production</a>
+        <a href="photography.html">Product Photography</a>
+        <a href="podcast.html">Podcast Studio</a>
+        <a href="weddings.html">Yes I Do (Weddings)</a>
       </div>
     </div>
-    <a href="#clients">Clients</a>
-    <a href="portfolio.html">Portfolio</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <a href="mailto:xpoimaging@gmail.com?subject=New%20Project%20Inquiry" class="nav-cta">Start a Project</a>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <!-- Mobile nav drawer -->
@@ -847,34 +1330,23 @@
   <a href="index.html" class="active">Home</a>
   <a href="about.html">About</a>
   <a href="index.html#services">Services</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="index.html#clients">Clients</a>
   <a href="index.html#contact">Contact</a>
 </nav>
 
-<!-- ============ HERO — THE SLATE ============ -->
+<!-- ============ HERO ============ -->
 <section class="hero" id="hero">
-  <!-- Background image layer (src swapped by JS) -->
   <div class="hero-bg" id="heroBg"></div>
-  <!-- Blue tint overlay -->
   <div class="hero-overlay"></div>
-  <!-- Accent bar -->
-  <div class="hero-accent-bar"></div>
-  <div class="slate-top">
-    <div class="slate-meta"><span>EST. <b>2014</b></span><span>KAMPALA, <b>UGANDA</b></span></div>
-    <div class="slate-meta"><span id="takeCount">SERVICE <b>01</b></span></div>
-  </div>
 
   <div class="hero-body">
-    <div class="eyebrow hero-service" id="heroService">Marketing &amp; Branding</div>
-    <h1 class="hero-title" id="heroTitle">Your story.<br>Our <em>creativity.</em></h1>
-    <p class="hero-sub" id="heroSub">Xpo Imaging Limited is Uganda's full-service creative communications, marketing, branding, and media production agency — established 2014.</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="#services" class="btn">Our Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-      <a href="#contact" class="btn ghost">Get In Touch</a>
+    <p class="hero-sub-line" id="heroService">— Strategic Brand Identity &amp; Campaigns</p>
+    <h1 class="hero-title" id="heroTitle">Branding and Marketing</h1>
+    <div style="margin-top:32px;">
+      <a href="#services" class="btn hero-btn">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 
+  <div class="hero-counter" id="takeCount"><strong>01</strong><span>/6</span></div>
   <div class="slate-dots" id="slateDots"></div>
 </section>
 
@@ -883,27 +1355,16 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Est. 2014 · Kampala, Uganda</div>
         <h2>Who we are</h2>
       </div>
-      <p>Xpo Imaging Limited — Uganda's full-service creative communications, marketing, branding, and media production agency.</p>
     </div>
 
     <div class="about-grid">
 
       <div class="about-card">
-        <header class="cin-card-eyebrow">
-          <span class="cin-num">01 / 03</span>
-          <span class="cin-rule"></span>
-          <span class="cin-label">Est. 2014</span>
-        </header>
         <h3 class="about-card-title">Integrated creative<br><em>communications.</em></h3>
         <p class="about-card-body">
-          Xpo Imaging Limited is a fully registered Ugandan creative communications,
-          marketing, branding, and media production company. What began as a
-          professional video and photography company is now a full-service agency
-          delivering integrated solutions to governments, UN agencies, NGOs,
-          development partners, and corporate organizations.
+          A fully registered Ugandan creative communications, marketing, branding, and media production company delivering integrated solutions since 2014.
         </p>
         <a href="#services" class="cin-card-link">
           Explore our services
@@ -912,40 +1373,26 @@
       </div>
 
       <div class="about-card">
-        <header class="cin-card-eyebrow">
-          <span class="cin-num">02 / 03</span>
-          <span class="cin-rule"></span>
-          <span class="cin-label">Our Mission</span>
-        </header>
         <h3 class="about-card-title">Authentic stories<br><em>that inspire action.</em></h3>
         <p class="about-card-body">
-          We help organizations communicate their impact, strengthen their brands,
-          and engage stakeholders through strategic marketing, creative branding,
-          digital communications, documentary filmmaking, and visual storytelling.
+          We help organizations communicate their impact, strengthen their brands, and engage stakeholders through creative storytelling.
         </p>
         <ul class="cin-tag-list" aria-label="Core disciplines">
-          <li>Marketing</li>
-          <li>Branding</li>
-          <li>Video</li>
-          <li>Photography</li>
+          <li>Branding &amp; Marketing</li>
           <li>Social Media</li>
-          <li>Design</li>
+          <li>Events Production</li>
+          <li>Product Photography</li>
+          <li>Podcast Studio</li>
+          <li>Weddings</li>
         </ul>
       </div>
 
       <div class="about-card">
-        <header class="cin-card-eyebrow">
-          <span class="cin-num">03 / 03</span>
-          <span class="cin-rule"></span>
-          <span class="cin-label">Our Vision</span>
-        </header>
         <h3 class="about-card-title">East Africa's leading<br><em>creative agency.</em></h3>
         <p class="about-card-body">
-          We have worked across Uganda — from Kampala to Nyumanzi Refugee Settlement,
-          Karamoja, and Northern Uganda — combining creativity with strategic thinking
-          to produce campaigns that deliver measurable results and lasting impact.
+          Working across Uganda from Kampala to remote communities, combining creativity with strategic thinking to deliver measurable results.
         </p>
-        <a href="#contact" class="cin-card-link">
+        <a href="mailto:xpoimaging@gmail.com?subject=New%20Project%20Inquiry" class="cin-card-link">
           Start a project
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
@@ -955,46 +1402,123 @@
   </div>
 </section>
 
-<!-- ============ OUR WORKS ============ -->
-<section id="services" style="background:var(--bg);">
+<!-- ============ OUR WORKS — Colorful Staggered Grid ============ -->
+<section id="services" style="background:var(--bg);padding-bottom:80px;">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Our Works</div>
         <h2>What we create for you</h2>
       </div>
-      <p>From brand strategy to documentary film, social media to studio photography — every communication need under one roof.</p>
     </div>
-    <div class="works-grid" id="worksGrid"></div>
+
+    <div class="service-grid">
+
+      <a href="branding.html" class="service-item">
+        <div class="service-img">
+          <img src="assets/branding.JPG" alt="Branding & Marketing">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Strategy, Identity & Campaigns</span>
+          <h3 class="service-name">Branding &amp; Marketing</h3>
+        </div>
+      </a>
+
+      <a href="social-media.html" class="service-item service-item--offset">
+        <div class="service-img">
+          <img src="assets/social media.jpg" alt="Social Media Management">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Content, Planning & Engagement</span>
+          <h3 class="service-name">Social Media Management</h3>
+        </div>
+      </a>
+
+      <a href="events.html" class="service-item">
+        <div class="service-img">
+          <img src="assets/events production.jpg" alt="Events Production">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Conferences, Launches & Activations</span>
+          <h3 class="service-name">Events Production</h3>
+        </div>
+      </a>
+
+      <a href="photography.html" class="service-item service-item--offset">
+        <div class="service-img">
+          <img src="assets/product protography.jpg" alt="Product Photography">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Studio, Commercial & E-commerce</span>
+          <h3 class="service-name">Product Photography</h3>
+        </div>
+      </a>
+
+      <a href="podcast.html" class="service-item">
+        <div class="service-img">
+          <img src="assets/podcast.webp" alt="Podcast Studio">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Audio & Video Podcast Production</span>
+          <h3 class="service-name">Podcast Studio</h3>
+        </div>
+      </a>
+
+      <a href="weddings.html" class="service-item service-item--offset">
+        <div class="service-img">
+          <img src="assets/yes i do.JPG" alt="Yes I Do (Weddings)">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Photography, Videography & Coverage</span>
+          <h3 class="service-name">Yes I Do (Weddings)</h3>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
+<!-- ============ VISUAL BREAK — Sticky image reveal ============ -->
+<div class="visual-break">
+  <div class="visual-break-img">
+    <img src="assets/a (1).jpg" alt="Xpo Imaging at work" loading="lazy">
+    <div class="visual-break-overlay"></div>
+    <div class="visual-break-text">
+      <span class="visual-break-eyebrow">Trusted Since 2014</span>
+      <h2 class="visual-break-heading">Creativity meets<br>strategy.</h2>
+    </div>
+  </div>
+</div>
+
 <!-- ============ WHY US ============ -->
-<section style="padding-top:0;">
+<section class="why-section" style="padding-top:100px;">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Xpo Imaging · Why Choose Us</div>
-        <h2>Why organizations trust us</h2>
+        <h2 style="color:#fff;">Full service, nationwide,<br>and built for results.</h2>
       </div>
-      <p>Over a decade of delivering integrated creative solutions across Uganda and beyond — quality, consistency, and impact on every project.</p>
     </div>
   </div>
   <div class="why-grid">
     <div class="why-card">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
       <h4>10+ Years of Experience</h4>
-      <p>Since 2014, we've delivered communications, branding, and media production projects for government institutions, UN agencies, NGOs, and corporate organizations across Uganda.</p>
+      <p>Since 2014, delivering communications, branding, and media production for government institutions, UN agencies, NGOs, and corporate organizations across Uganda.</p>
     </div>
     <div class="why-card">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M3 9h18M3 15h18"/></svg>
       <h4>Full-Service Under One Roof</h4>
-      <p>Marketing strategy, brand identity, social media, video production, photography, graphic design, and printing — no need to brief multiple agencies.</p>
+      <p>Branding, social media, events production, product photography, podcast studio, and wedding coverage. No need to brief multiple agencies.</p>
     </div>
     <div class="why-card">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
       <h4>Nationwide Operational Capacity</h4>
-      <p>We have worked in remote and challenging environments — refugee settlements, conflict-affected areas, and hard-to-reach communities — maintaining high production quality throughout.</p>
+      <p>We have worked in remote and challenging environments, refugee settlements, conflict-affected areas, and hard-to-reach communities while maintaining high production quality throughout.</p>
     </div>
     <div class="why-card">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.4 4-8 9-8s9 3.6 9 8"/></svg>
@@ -1007,7 +1531,6 @@
 <!-- ============ CLIENTS / PARTNERS ============ -->
 <section class="partners" id="clients">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;margin-bottom:52px;">Clients &amp; Partners</div>
   </div>
 
   <!-- Row 1 — scrolls left -->
@@ -1027,91 +1550,193 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<section class="testimonials" id="testimonials">
-  <div class="wrap">
-    <div class="testi-layout">
+<!-- ============ TESTIMONIALS — Horizontal Carousel ============ -->
+<section class="testi-section" id="testimonials">
+  <div class="wrap" style="text-align:center;margin-bottom:56px;position:relative;z-index:2;">
+    <span class="testi-eyebrow">Real Reviews</span>
+    <h2 class="testi-title">What Our Clients Say</h2>
+  </div>
 
-      <!-- Left: heading + controls -->
-      <div class="testi-left">
-        <div class="eyebrow" style="color:rgba(255,255,255,0.55);margin-bottom:20px;">
-          What clients say
-        </div>
-        <h2 class="testi-heading">Hear it from<br><em>our clients.</em></h2>
-        <div class="testi-controls">
-          <button class="testi-btn" id="testiPrev" aria-label="Previous testimonial">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-          </button>
-          <button class="testi-btn" id="testiNext" aria-label="Next testimonial">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-          <span class="testi-counter"><strong id="testiCurrent">1</strong> of <strong>3</strong></span>
+  <div class="testi-carousel-wrap" style="position:relative;z-index:2;">
+    <div class="testi-carousel" id="testiCarousel">
+      <!-- Set A -->
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
+        <div class="testi-author">
+          <div class="testi-avatar">U</div>
+          <div><strong>UGANICS Limited</strong><span>Development Partner</span></div>
         </div>
       </div>
 
-      <!-- Right: stacked card deck -->
-      <div class="testi-deck" id="testiDeck">
-
-        <div class="testi-card" data-pos="active">
-          <span class="testi-count-pill">1 of 3</span>
-          <p class="testi-body">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
-          <div class="testi-divider"></div>
-          <div class="testi-footer">
-            <div class="testi-avatar">U</div>
-            <div class="testi-meta">
-              <span class="testi-client">UGANICS Limited</span>
-              <span class="testi-type">Development Partner</span>
-            </div>
-          </div>
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>AEE Uganda</strong><span>Corporate Client</span></div>
         </div>
+      </div>
 
-        <div class="testi-card" data-pos="1">
-          <span class="testi-count-pill">2 of 3</span>
-          <p class="testi-body">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
-          <div class="testi-divider"></div>
-          <div class="testi-footer">
-            <div class="testi-avatar">A</div>
-            <div class="testi-meta">
-              <span class="testi-client">AEE Uganda</span>
-              <span class="testi-type">Corporate Client</span>
-            </div>
-          </div>
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>AEE Uganda</strong><span>NGO Partner</span></div>
         </div>
+      </div>
 
-        <div class="testi-card" data-pos="2">
-          <span class="testi-count-pill">3 of 3</span>
-          <p class="testi-body">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
-          <div class="testi-divider"></div>
-          <div class="testi-footer">
-            <div class="testi-avatar">A</div>
-            <div class="testi-meta">
-              <span class="testi-client">AEE Uganda</span>
-              <span class="testi-type">NGO Partner</span>
-            </div>
-          </div>
+      <!-- Set B (duplicate for seamless loop) -->
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
+        <div class="testi-author">
+          <div class="testi-avatar">U</div>
+          <div><strong>UGANICS Limited</strong><span>Development Partner</span></div>
         </div>
+      </div>
 
-      </div><!-- /testi-deck -->
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>AEE Uganda</strong><span>Corporate Client</span></div>
+        </div>
+      </div>
+
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>AEE Uganda</strong><span>NGO Partner</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="cta-strip">
+<section class="cta-strip" id="start-project">
   <div class="wrap">
     <h2>Ready to tell your story with impact?</h2>
-    <a href="#contact" class="btn">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    <p style="font-size:17px;color:rgba(255,255,255,0.7);max-width:48ch;margin:0 auto 36px;line-height:1.7;position:relative;">High-quality visuals for your brand. Let's create something remarkable together.</p>
+    <a href="mailto:xpoimaging@gmail.com?subject=New%20Project%20Inquiry" class="btn">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
   </div>
 </section>
 
 <footer id="contact">
   <div class="wrap">
+
+    <!-- CONTACT SECTION — Split Layout -->
+    <div class="contact-split">
+
+      <!-- Left: Info column -->
+      <div class="contact-info">
+        <span class="contact-eyebrow">Start a Project</span>
+        <h2 class="contact-heading">Let's create<br>something <em>remarkable.</em></h2>
+        <p class="contact-desc">Tell us about your vision and we'll bring it to life. We reply within 24 hours.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="contact-detail-label">Call us</span>
+              <a href="tel:+256782046399" class="contact-detail-value">+256 782 046 399</a>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-detail-label">Email us</span>
+              <a href="mailto:xpoimaging@gmail.com" class="contact-detail-value">xpoimaging@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="contact-detail-label">Visit us</span>
+              <span class="contact-detail-value">Plot 14 Kaduyu Road, Ntinda Kiwatule</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l.5-3.5H13V7.2c0-1 .3-1.7 1.8-1.7H16V2.3C15.6 2.2 14.5 2 13.2 2 10.5 2 8.7 3.6 8.7 6.6V9.5H6V13h2.7v9H13z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="https://www.youtube.com/@XpoProductionUganda" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C17.9 5 12 5 12 5s-5.9 0-7.6.3a2.9 2.9 0 0 0-2 2C2 8.8 2 12 2 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2C6.1 19 12 19 12 19s5.9 0 7.6-.3a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7zM10 15V9l5.2 3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.955l4.263 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+
+        <div class="contact-trust">
+          <span>50+ clients served</span>
+          <span class="trust-dot"></span>
+          <span>Est. 2014</span>
+          <span class="trust-dot"></span>
+          <span>Kampala, Uganda</span>
+        </div>
+      </div>
+
+      <!-- Right: Form column -->
+      <div class="contact-form-wrap">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="john@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-service">Service Interested In</label>
+            <select id="cf-service" name="service" required>
+              <option value="" disabled selected>What can we help you with?</option>
+              <option value="Branding & Marketing">Branding & Marketing</option>
+              <option value="Social Media Management">Social Media Management</option>
+              <option value="Events Production">Events Production</option>
+              <option value="Product Photography">Product Photography</option>
+              <option value="Podcast Studio">Podcast Studio</option>
+              <option value="Yes I Do (Weddings)">Yes I Do (Weddings)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Tell us about your project</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Give us a brief overview of what you need..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="formSubmitBtn">
+            <span class="form-submit-text">Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px;color:var(--sky);margin-bottom:16px;"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <h4>Message sent!</h4>
+          <p>We'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="height:1px;background:rgba(255,255,255,0.08);margin:80px 0 48px;"></div>
+
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
           <img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited">
         </div>
-        <p class="foot-tag">Uganda's full-service marketing, branding, creative communications, and media production agency — established 2014.</p>
+        <p class="foot-tag">High-quality visuals for your brand. Uganda's full-service branding, marketing, events production, product photography, and creative communications agency established 2014.</p>
         <p class="foot-tag" style="margin-top:12px;font-style:italic;color:var(--sky);font-size:13px;">Your Story. Our Creativity. Lasting Impact.</p>
       </div>
       <div>
@@ -1127,11 +1752,12 @@
       </div>
       <div>
         <h5>What We Do</h5>
-        <a href="#services">Marketing &amp; Branding</a>
+        <a href="#services">Branding &amp; Marketing</a>
         <a href="#services">Social Media Management</a>
-        <a href="#services">Video Production</a>
-        <a href="#services">Photography</a>
-        <a href="#services">Graphic Design</a>
+        <a href="#services">Events Production</a>
+        <a href="#services">Product Photography</a>
+        <a href="#services">Podcast Studio</a>
+        <a href="#services">Yes I Do (Weddings)</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1148,74 +1774,28 @@
 </footer>
 
 <script>
-  // ---------- Hero slate rotator — real Xpo Imaging services ----------
+  // ---------- Hero rotator — clean, minimal ----------
   const services = [
-    {
-      tag:"Marketing &amp; Branding",
-      title:'Your story.<br>Our <em>creativity.</em>',
-      sub:"Strategic marketing and branding that positions your organization for growth, visibility, and long-term success.",
-      hue:200,
-      bg:"services/branding.jpeg"
-    },
-    {
-      tag:"Social Media Management",
-      title:'Build communities. <em>Drive engagement.</em>',
-      sub:"We help organizations build strong online communities and maintain consistent, impactful digital engagement.",
-      hue:195,
-      bg:"services/social media management.jpeg"
-    },
-    {
-      tag:"Video Production",
-      title:'Cinematic content that <em>inspires action.</em>',
-      sub:"From corporate documentaries to TV commercials — high-quality video production that informs, inspires, and drives results.",
-      hue:210,
-      bg:"services/video production.jpeg"
-    },
-    {
-      tag:"Photography",
-      title:'Images that <em>communicate impact.</em>',
-      sub:"Professional corporate, documentary, event, and studio photography — camera-ready, every assignment.",
-      hue:205,
-      bg:"services/photograpy.jpeg"
-    },
-    {
-      tag:"Graphic Design",
-      title:'Visually <em>compelling</em> communications.',
-      sub:"Company profiles, annual reports, brochures, infographics, exhibition materials — designed to international standards.",
-      hue:215,
-      bg:"services/graphics deign.jpeg"
-    },
-    {
-      tag:"Printing &amp; Branding",
-      title:'Your brand, <em>everywhere.</em>',
-      sub:"Promotional merchandise, outdoor signage, vehicle branding, branded apparel, and corporate gift branding.",
-      hue:190,
-      bg:"services/printing and designing.PNG"
-    },
-    {
-      tag:"Communication &amp; Documentation",
-      title:'Impact stories that <em>mobilize resources.</em>',
-      sub:"Project documentation, success stories, case studies, and knowledge management products for development partners.",
-      hue:220,
-      bg:"services/communication and documentation.jpeg"
-    },
+    { sub:"— Strategic Brand Identity &amp; Campaigns", title:"Branding and Marketing", bg:"assets/branding.JPG" },
+    { sub:"— Content, Community &amp; Paid Advertising", title:"Social Media Management", bg:"assets/social media.jpg" },
+    { sub:"— Conferences, Launches &amp; Activations", title:"Events Production", bg:"assets/events production.jpg" },
+    { sub:"— Professional Studio, Commercial &amp; E-commerce", title:"Product Photography", bg:"assets/product protography.jpg" },
+    { sub:"— Audio &amp; Video Podcast Production", title:"Podcast Studio", bg:"assets/podcast.webp" },
+    { sub:"— Wedding Photography &amp; Videography", title:"Yes I Do (Weddings)", bg:"assets/yes i do.JPG" },
   ];
 
-  const heroBg     = document.getElementById('heroBg');
+  const heroBg      = document.getElementById('heroBg');
   const heroService = document.getElementById('heroService');
   const heroTitle   = document.getElementById('heroTitle');
-  const heroSub     = document.getElementById('heroSub');
   const takeCount   = document.getElementById('takeCount');
   const dotsWrap    = document.getElementById('slateDots');
   let current = 0, rotateTimer;
 
-  // Pre-load all background images for snappy transitions
   services.forEach(s => { const i = new Image(); i.src = s.bg; });
-
-  // Set initial background immediately
   heroBg.style.backgroundImage = `url('${services[0].bg}')`;
   heroBg.style.opacity = '1';
   heroBg.classList.add('zoom');
+
   services.forEach((s,i)=>{
     const b = document.createElement('button');
     if(i===0) b.classList.add('active');
@@ -1225,119 +1805,20 @@
 
   function pad(n){ return n.toString().padStart(2,'0'); }
 
-  // ---- Typewriter engine ----
-  let twTimer = null;
-
-  function typeWriter(el, htmlText, speed, onDone){
-    el.innerHTML = '';
-    const cursor = document.createElement('span');
-    cursor.className = 'tw-cursor';
-    el.appendChild(cursor);
-
-    // Parse HTML into typed segments: plain text, <em>text</em>, or <br>
-    const segments = [];
-    const regex = /(<br\s*\/?>|<em>[^<]*<\/em>|[^<]+)/gi;
-    let match;
-    while((match = regex.exec(htmlText)) !== null){
-      const raw = match[0];
-      if(/^<br/i.test(raw)){
-        segments.push({type:'br', text:''});
-      } else if(/^<em>/i.test(raw)){
-        segments.push({type:'em', text:raw.replace(/<\/?em>/gi,'')});
-      } else {
-        segments.push({type:'text', text:raw});
-      }
-    }
-
-    // Flatten into character-level steps
-    const steps = [];
-    segments.forEach(seg => {
-      if(seg.type === 'br'){
-        steps.push({br:true, em:false, char:''});
-      } else {
-        for(let c = 0; c < seg.text.length; c++){
-          steps.push({br:false, em:(seg.type==='em'), char:seg.text[c]});
-        }
-      }
-    });
-
-    let stepIdx = 0;
-    clearInterval(twTimer);
-
-    function rebuildHTML(upTo){
-      // Rebuild full HTML from steps 0..upTo
-      let html = '';
-      let inEm = false;
-      for(let s = 0; s <= upTo; s++){
-        const st = steps[s];
-        if(st.br){
-          if(inEm){ html += '</em>'; inEm = false; }
-          html += '<br>';
-        } else if(st.em){
-          if(!inEm){ html += '<em>'; inEm = true; }
-          html += st.char;
-        } else {
-          if(inEm){ html += '</em>'; inEm = false; }
-          html += st.char;
-        }
-      }
-      if(inEm) html += '</em>';
-      return html;
-    }
-
-    twTimer = setInterval(()=>{
-      if(stepIdx >= steps.length){
-        clearInterval(twTimer);
-        el.innerHTML = rebuildHTML(steps.length - 1);
-        setTimeout(()=>{ if(cursor.parentNode) cursor.remove(); }, 600);
-        if(onDone) onDone();
-        return;
-      }
-      el.innerHTML = rebuildHTML(stepIdx);
-      el.appendChild(cursor);
-      stepIdx++;
-    }, speed);
-  }
-
   function setSlide(i, manual){
-    const prev = current;
     current = i;
     const s = services[i];
-
-    // Swap background image with crossfade + zoom restart
-    if(s.bg !== services[prev].bg){
-      heroBg.style.opacity = '0';
-      heroBg.classList.remove('zoom');
-      setTimeout(()=>{
-        heroBg.style.backgroundImage = `url('${s.bg}')`;
-        heroBg.style.opacity = '1';
-        // Force reflow so the animation restarts cleanly
-        void heroBg.offsetWidth;
-        heroBg.classList.add('zoom');
-      }, 350);
-    } else {
-      // Same image — just restart zoom
-      heroBg.classList.remove('zoom');
+    heroBg.style.opacity = '0';
+    heroBg.classList.remove('zoom');
+    setTimeout(()=>{
+      heroBg.style.backgroundImage = `url('${s.bg}')`;
+      heroBg.style.opacity = '1';
       void heroBg.offsetWidth;
       heroBg.classList.add('zoom');
-    }
-
-    // Update service eyebrow immediately
-    heroService.innerHTML = s.tag;
-    heroService.classList.remove('tw-fade');
-    void heroService.offsetWidth; // force reflow
-    heroService.classList.add('tw-fade');
-
-    // Update subtitle with fade
-    heroSub.textContent   = s.sub;
-    heroSub.classList.remove('tw-fade');
-    void heroSub.offsetWidth;
-    heroSub.classList.add('tw-fade');
-
-    // Typewriter on the title
-    typeWriter(heroTitle, s.title, 42, null);
-
-    takeCount.innerHTML   = 'SERVICE <b>' + pad(i+1) + '</b>';
+    }, 350);
+    heroService.innerHTML = s.sub;
+    heroTitle.textContent = s.title;
+    takeCount.innerHTML = '<strong>' + pad(i+1) + '</strong><span>/' + services.length + '</span>';
     [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active', idx===i));
     if(manual){ clearInterval(rotateTimer); startRotate(); }
   }
@@ -1346,38 +1827,6 @@
     rotateTimer = setInterval(()=>{ setSlide((current+1) % services.length, false); }, 5500);
   }
   startRotate();
-  // Fire typewriter on the initial slide
-  setTimeout(() => typeWriter(heroTitle, services[0].title, 42, null), 300);
-
-  // ---------- Our Works grid ----------
-  const worksGrid  = document.getElementById('worksGrid');
-  const worksCopy  = [
-    "Brand strategy, identity design, and campaign branding",
-    "Account management, content planning, and paid advertising",
-    "Documentaries, commercials, and event coverage",
-    "Corporate, documentary, studio, and drone photography",
-    "Profiles, reports, brochures, and exhibition materials",
-    "Signage, merchandise, vehicle branding, and apparel",
-    "Impact documentation, case studies, and annual reports",
-  ];
-  services.forEach((s,i)=>{
-    const card = document.createElement('a');
-    card.href      = '#contact';
-    card.className = 'work-card';
-    card.innerHTML = `
-      <div class="art">
-        <img src="${s.bg}" alt="${s.tag}" loading="lazy">
-        <span class="arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
-        </span>
-      </div>
-      <div class="cap">
-        <span class="accent-line"></span>
-        <span class="num">${worksCopy[i]}</span>
-        <h3>${s.tag}</h3>
-      </div>`;
-    worksGrid.appendChild(card);
-  });
 
   // ---------- Clients logo carousel ----------
   // All logos from CLient Logos folder
@@ -1500,63 +1949,38 @@
      Cinematic scroll removed — no animation dependencies needed
   ================================================================ */
 
-  // ---------- Testimonials stacked deck ----------
+  // ---------- Contact form — Formspree AJAX submission ----------
   (function(){
-    const cards   = Array.from(document.querySelectorAll('.testi-card'));
-    const counter = document.getElementById('testiCurrent');
-    const total   = cards.length;
-    let active    = 0;
-    let animating = false;
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('formSubmitBtn');
+    if(!form) return;
 
-    // positions: 'active', '1', '2', 'hidden'
-    function getPos(index){
-      const diff = (index - active + total) % total;
-      if(diff === 0) return 'active';
-      if(diff === 1) return '1';
-      if(diff === 2) return '2';
-      return 'hidden';
-    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.form-submit-text').textContent = 'Sending...';
 
-    function applyPositions(){
-      cards.forEach((card, i) => {
-        const pos = getPos(i);
-        card.dataset.pos = pos;
-        card.style.display = (pos === 'hidden') ? 'none' : '';
+      const data = new FormData(form);
+      fetch(form.action, {
+        method:'POST',
+        body:data,
+        headers:{'Accept':'application/json'}
+      }).then(res => {
+        if(res.ok){
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.querySelector('.form-submit-text').textContent = 'Send Message';
+          alert('Something went wrong. Please try again or email us directly at xpoimaging@gmail.com');
+        }
+      }).catch(() => {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.form-submit-text').textContent = 'Send Message';
+        alert('Network error. Please try again or email us directly at xpoimaging@gmail.com');
       });
-      counter.textContent = active + 1;
-    }
-
-    function advance(direction){
-      if(animating) return;
-      animating = true;
-
-      const prevActive = cards[active];
-
-      // Animate active card off
-      prevActive.classList.add('exiting');
-
-      setTimeout(() => {
-        prevActive.classList.remove('exiting');
-        // Move to next/prev
-        active = direction === 'next'
-          ? (active + 1) % total
-          : (active - 1 + total) % total;
-        applyPositions();
-        animating = false;
-      }, 420);
-    }
-
-    // Init
-    applyPositions();
-
-    document.getElementById('testiNext').addEventListener('click', () => advance('next'));
-    document.getElementById('testiPrev').addEventListener('click', () => advance('prev'));
-
-    // Optional: auto-advance every 6s
-    let autoTimer = setInterval(() => advance('next'), 6000);
-    document.querySelector('.testimonials').addEventListener('mouseenter', () => clearInterval(autoTimer));
-    document.querySelector('.testimonials').addEventListener('mouseleave', () => {
-      autoTimer = setInterval(() => advance('next'), 6000);
     });
   })();
 </script>
