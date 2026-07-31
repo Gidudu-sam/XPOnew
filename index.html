@@ -273,7 +273,7 @@
     font-weight:700;
     letter-spacing:0.12em;
     text-transform:uppercase;
-    background:var(--blue);
+    background:#1e3a8a;
     color:#fff;
     border:none;
     border-radius:10px;
@@ -284,7 +284,7 @@
   .form-submit:hover{
     transform:translateY(-2px);
     box-shadow:0 8px 32px rgba(37,99,235,0.4);
-    background:#3B7AF0;
+    background:#2c5282;
   }
   .form-submit svg{width:16px;height:16px;transition:transform .25s ease;}
   .form-submit:hover svg{transform:translateX(4px);}
@@ -342,7 +342,7 @@
     --ink:       #FFFFFF;
     --ink-mid:   #9CA3AF;
     --ink-dim:   rgba(255,255,255,0.5);
-    --blue:      #2563EB;
+    --blue:      #1e3a8a;
     --blue-deep: #0F1419;
     --sky:       #6B9E9E;
     --sky-light: #1A2332;
@@ -501,7 +501,7 @@
     position:sticky;
     top:0;
     z-index:1;
-    min-height:100svh;
+    min-height:130svh;
     display:flex;flex-direction:column;justify-content:flex-end;
     padding:100px 0 0;
     overflow:hidden;
@@ -600,7 +600,7 @@
     font-style:italic;
   }
   .hero-btn{
-    background:var(--blue);
+    background:#1e3a8a;
     border:none;color:#fff;
     border-radius:30px;
     padding:16px 32px;
@@ -610,7 +610,7 @@
   .hero-btn:hover{
     transform:translateY(-2px);
     box-shadow:0 8px 24px rgba(37,99,235,0.4);
-    background:#3B7AF0;
+    background:#2c5282;
   }
   .hero-counter{
     position:absolute;
@@ -651,14 +651,14 @@
     display:inline-flex;align-items:center;gap:12px;
     font-family:'Space Mono',monospace;font-size:11px;
     letter-spacing:0.14em;text-transform:uppercase;
-    background:var(--blue);color:#fff;
-    padding:15px 28px;border:2px solid var(--blue);
+    background:#1e3a8a;color:#fff;
+    padding:15px 28px;border:2px solid #1e3a8a;
     border-radius:4px;
     transition:all .22s ease;cursor:pointer;
   }
   .btn:hover{background:var(--blue-deep);border-color:var(--blue-deep);}
   .btn.ghost{background:transparent;color:var(--blue);border-color:var(--rule);}
-  .btn.ghost:hover{border-color:var(--blue);background:var(--sky-light);}
+  .btn.ghost:hover{border-color:#1e3a8a;background:var(--sky-light);}
   .btn svg{width:14px;height:14px;transition:transform .22s ease;}
   .btn:hover svg{transform:translateX(4px);}
 
@@ -741,68 +741,84 @@
 
   /* ---- SERVICES — Full-bleed photo cards ---- */
   .service-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
+    columns:3;
+    column-gap:20px;
   }
+  /* ---- SERVICES — CSS Columns Masonry ---- */
   .service-item{
     display:block;
     text-decoration:none;
-    position:relative;
     border-radius:16px;
     overflow:hidden;
-    aspect-ratio:3/4;
-    transition:transform .3s ease, box-shadow .3s ease;
+    position:relative;
+    break-inside:avoid;
+    margin-bottom:20px;
+    transition:transform .35s ease, box-shadow .35s ease;
+    background:var(--panel);
   }
   .service-item:hover{
     transform:translateY(-6px);
-    box-shadow:0 20px 50px rgba(0,0,0,0.2);
+    box-shadow:0 24px 56px rgba(0,0,0,0.45);
   }
-  /* Staggered offset — every other card drops down */
-  .service-item--offset{
-    margin-top:60px;
-  }
+  .service-item--offset{ margin-top:0; }
 
-  /* Image fills entire card */
+  /* Image — aspect-ratio per card, object-fit:cover fills it cleanly */
   .service-img{
-    position:absolute;
-    inset:0;
-    background:var(--card-bg, #ccc);
+    width:100%;
     overflow:hidden;
+    line-height:0;
   }
   .service-img img{
-    width:100%;height:100%;
-    object-fit:cover;
+    width:100%;
+    height:auto;        /* natural height by default — no cropping */
+    object-fit:fill;
+    display:block;
     transition:transform .5s ease;
   }
-  .service-item:hover .service-img img{
-    transform:scale(1.06);
+  /* For cards with a fixed aspect-ratio, switch back to cover to fill the box */
+  .service-item--social .service-img img,
+  .service-item--weddings .service-img img,
+  .service-item--doc .service-img img,
+  .service-item--podcast .service-img img {
+    height:100%;
+    object-fit:cover;
   }
+  .service-item:hover .service-img img{
+    transform:scale(1.04);
+  }
+
+  /* Cards with a controlled ratio — portrait/landscape that look fine cropped slightly */
+  .service-item--social .service-img    { aspect-ratio:4/5; }
+  .service-item--weddings .service-img  { aspect-ratio:3/2; }
+  .service-item--doc .service-img       { aspect-ratio:3/2; }
+  .service-item--podcast .service-img   { aspect-ratio:16/9; }
 
   /* Dark gradient overlay */
   .service-overlay{
     position:absolute;inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
     pointer-events:none;
+    border-radius:16px;
   }
 
-  /* Caption at bottom of card */
+  /* Caption pinned to bottom over image */
   .service-caption{
     position:absolute;
     bottom:0;left:0;right:0;
-    padding:24px;
+    padding:20px 22px 22px;
     z-index:2;
   }
   .service-accent{display:none;}
   .service-subtitle{
     display:block;
-    font-size:12px;
-    color:rgba(255,255,255,0.7);
-    margin-bottom:6px;
-    letter-spacing:0.02em;
+    font-size:10px;
+    color:rgba(255,255,255,0.6);
+    margin-bottom:5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
   }
   .service-name{
-    font-size:clamp(18px,2vw,24px);
+    font-size:clamp(15px,1.6vw,21px);
     font-weight:800;
     color:#fff;
     margin:0;
@@ -811,14 +827,42 @@
   }
 
   @media(max-width:900px){
-    .service-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
-    .service-item--offset{margin-top:30px;}
-    .service-item{aspect-ratio:3/4;}
+    .service-grid{columns:2;column-gap:14px;}
+    .service-item{margin-bottom:14px;}
   }
   @media(max-width:560px){
-    .service-grid{grid-template-columns:1fr;gap:16px;}
-    .service-item--offset{margin-top:0;}
-    .service-item{aspect-ratio:4/3;border-radius:12px;}
+    .service-grid{columns:1;column-gap:0;}
+    .service-item{margin-bottom:16px;border-radius:12px;}
+
+    /* Force all cards to the same uniform 16/9 landscape ratio on mobile */
+    .service-item--branding .service-img,
+    .service-item--social .service-img,
+    .service-item--events .service-img,
+    .service-item--photo .service-img,
+    .service-item--weddings .service-img,
+    .service-item--doc .service-img,
+    .service-item--podcast .service-img {
+      aspect-ratio:16/9;
+    }
+    /* All images fill their box cleanly — object-position keeps subject in frame */
+    .service-item--branding .service-img img,
+    .service-item--social .service-img img,
+    .service-item--events .service-img img,
+    .service-item--photo .service-img img,
+    .service-item--weddings .service-img img,
+    .service-item--doc .service-img img,
+    .service-item--podcast .service-img img {
+      height:100%;
+      object-fit:cover;
+    }
+    /* Per-card focus points so the subject stays visible */
+    .service-item--branding .service-img img  { object-position:center center; }
+    .service-item--social .service-img img    { object-position:center top;    }
+    .service-item--events .service-img img    { object-position:center center; }
+    .service-item--photo .service-img img     { object-position:center top;    }
+    .service-item--weddings .service-img img  { object-position:center 30%;    }
+    .service-item--doc .service-img img       { object-position:center center; }
+    .service-item--podcast .service-img img   { object-position:center center; }
   }
 
   /* ---- VISUAL BREAK — Sticky image between sections ---- */
@@ -950,19 +994,12 @@
   }
   .logo-item:hover img{opacity:1;transform:scale(1.08);filter:grayscale(0%);}
 
-  /* ---- TESTIMONIALS — Horizontal Auto-Scroll Carousel ---- */
+  /* ---- TESTIMONIALS — Manual Slider ---- */
   .testi-section{
     padding:110px 0;
     background:var(--bg-soft);
     position:relative;
-    overflow:hidden;
     z-index:2;
-  }
-  .testi-section::before{
-    display:none;
-  }
-  .testi-section::after{
-    display:none;
   }
   .testi-eyebrow{
     font-size:11px;
@@ -974,116 +1011,138 @@
     gap:10px;
     margin-bottom:14px;
   }
-  .testi-eyebrow::before{
-    display:none;
-  }
   .testi-title{
-    font-size:clamp(36px,5vw,58px);
+    font-size:clamp(28px,4vw,48px);
     font-weight:700;
     line-height:1.05;
     color:var(--ink);
-    margin:0;
+    margin:0 0 56px;
     letter-spacing:-0.02em;
   }
 
-  /* Carousel wrapper */
-  .testi-carousel-wrap{
-    overflow:hidden;
-    -webkit-mask-image:linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
-    mask-image:linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
-  }
-  .testi-carousel{
+  /* Slider outer — positions arrows outside the card */
+  .testi-slider-outer{
+    position:relative;
     display:flex;
-    width:max-content;
-    animation:testiScroll 40s linear infinite;
-  }
-  .testi-carousel-wrap:hover .testi-carousel{
-    animation-play-state:paused;
-  }
-  @keyframes testiScroll{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-50%); }
+    align-items:center;
+    justify-content:center;
+    gap:24px;
+    padding:0 48px;
   }
 
-  /* Individual card */
+  /* Single visible card */
+  .testi-slider-track{
+    width:100%;
+    max-width:680px;
+    overflow:hidden;
+  }
+  .testi-slider-inner{
+    display:flex;
+    transition:transform .45s cubic-bezier(.4,0,.2,1);
+  }
   .testi-slide{
     flex-shrink:0;
-    width:380px;
-    margin:0 14px;
-    background:var(--panel);
-    border:1px solid var(--rule);
+    width:100%;
+    background:#fff;
     border-radius:20px;
-    padding:36px 32px;
+    padding:48px 52px;
     display:flex;
     flex-direction:column;
-    gap:20px;
-    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .testi-slide:hover{
-    border-color:var(--blue);
-    transform:translateY(-4px);
-    box-shadow:0 12px 40px rgba(0,0,0,0.3);
+    align-items:center;
+    text-align:center;
+    box-shadow:0 4px 32px rgba(0,0,0,0.08);
   }
 
   /* Stars */
   .testi-stars{
-    font-size:16px;
-    letter-spacing:3px;
-    color:var(--gold);
+    font-size:18px;
+    letter-spacing:4px;
+    color:#4a7fa5;
+    margin-bottom:24px;
   }
 
   /* Quote */
   .testi-quote{
-    font-size:15px;
-    line-height:1.75;
-    color:var(--ink-mid);
-    flex:1;
-    margin:0;
+    font-size:clamp(16px,1.8vw,20px);
+    line-height:1.65;
+    color:#1e3a5f;
+    font-weight:500;
+    margin:0 0 28px;
+    font-style:italic;
   }
 
   /* Author */
-  .testi-author{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding-top:16px;
-    border-top:1px solid var(--rule);
-  }
-  .testi-author .testi-avatar{
-    width:42px;height:42px;border-radius:50%;
-    background:var(--panel-2);
-    border:1px solid var(--rule);
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-    font-size:16px;font-weight:700;color:var(--gold);
-  }
-  .testi-author strong{
-    font-size:14px;
+  .testi-author-name{
+    font-size:15px;
     font-weight:700;
-    color:#fff;
+    color:#1e3a5f;
     display:block;
-    margin-bottom:2px;
+    margin-bottom:4px;
   }
-  .testi-author span{
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-mid);
+  .testi-author-role{
+    font-size:12px;
+    letter-spacing:0.06em;
+    color:#7a9ab5;
+  }
+
+  /* Prev / Next arrow buttons */
+  .testi-arrow{
+    flex-shrink:0;
+    width:44px;height:44px;
+    border-radius:50%;
+    border:1.5px solid #cbd5e1;
+    background:#fff;
+    color:#334155;
+    font-size:18px;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .2s ease;
+    box-shadow:0 2px 8px rgba(0,0,0,0.07);
+  }
+  .testi-arrow:hover{
+    border-color:#1e3a8a;
+    color:#1e3a8a;
+    box-shadow:0 4px 16px rgba(30,58,138,0.15);
+  }
+
+  /* Dot indicators */
+  .testi-dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:32px;
+  }
+  .testi-dot{
+    width:8px;height:8px;
+    border-radius:50%;
+    border:none;
+    background:#cbd5e1;
+    cursor:pointer;
+    padding:0;
+    transition:all .25s ease;
+  }
+  .testi-dot.active{
+    background:#1e3a8a;
+    width:28px;
+    border-radius:4px;
   }
 
   @media(max-width:900px){
     .testi-section{padding:80px 0;}
-    .testi-slide{width:320px;padding:28px 24px;}
+    .testi-slider-outer{padding:0 16px;gap:12px;}
+    .testi-slide{padding:36px 28px;}
   }
   @media(max-width:560px){
     .testi-section{padding:60px 0;}
-    .testi-slide{width:290px;padding:24px 20px;margin:0 10px;}
-    .testi-title{font-size:clamp(28px,8vw,42px);}
+    .testi-slide{padding:28px 20px;}
+    .testi-slider-outer{padding:0 8px;gap:8px;}
+    .testi-arrow{width:36px;height:36px;font-size:14px;}
+    .testi-quote{font-size:15px;}
   }
 
   /* ---- CTA STRIP ---- */
   .cta-strip{
-    background:var(--blue);
+    background:#1e3a8a;
     padding:100px 0;text-align:center;
     position:relative;overflow:hidden;
     z-index:2;
@@ -1167,15 +1226,16 @@
     .about-grid{grid-template-columns:1fr;gap:16px;}
     .about-card{padding:28px 24px;}
     /* Services */
-    .service-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
-    .service-item{aspect-ratio:3/4;border-radius:12px;}
+    .service-grid{columns:2;column-gap:12px;}
+    .service-item{border-radius:12px;}
     .service-item--offset{margin-top:0;}
     /* Why */
     .why-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
     .why-card{padding:32px 24px;}
     /* Testimonials */
     .testi-section{padding:80px 0;}
-    .testi-slide{width:320px;padding:28px 24px;}
+    .testi-slider-outer{padding:0 12px;gap:10px;}
+    .testi-slide{padding:32px 24px;}
     /* Contact */
     .contact-split{grid-template-columns:1fr;gap:48px;}
     .contact-form-wrap{padding:32px 28px;}
@@ -1193,7 +1253,7 @@
     .logo-img{height:50px;}
     .mobile-nav{top:70px;}
     /* Hero */
-    .hero{padding:70px 0 0;}
+    .hero{padding:70px 0 0;min-height:100svh;}
     .hero-title{font-size:clamp(28px,11vw,48px);line-height:1.0;}
     .hero-body{padding:0 16px 50px;}
     .hero-sub-line{font-size:13px;}
@@ -1201,9 +1261,9 @@
     .slate-dots{padding:0 16px 24px;}
     /* Sections */
     section{padding:50px 0;}
-    /* Services — full width cards */
-    .service-grid{grid-template-columns:1fr;gap:12px;}
-    .service-item{aspect-ratio:4/3;border-radius:10px;}
+    /* Services — full width uniform cards */
+    .service-grid{columns:1;column-gap:0;}
+    .service-item{border-radius:10px;}
     .service-item--offset{margin-top:0;}
     .service-img{border-radius:0;}
     .service-caption{padding:16px;}
@@ -1220,8 +1280,9 @@
     .contact-detail-icon{width:38px;height:38px;border-radius:10px;}
     /* Testimonials */
     .testi-section{padding:60px 0;}
-    .testi-slide{width:280px;padding:24px 18px;margin:0 8px;}
-    .testi-title{font-size:clamp(28px,7vw,40px);}
+    .testi-slide{padding:28px 20px;}
+    .testi-quote{font-size:14px;}
+    .testi-title{font-size:clamp(24px,7vw,36px);}
     /* Visual break */
     .visual-break{height:50vh;}
     .visual-break-img{height:50vh;}
@@ -1396,7 +1457,7 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-body">
-    <p class="hero-sub-line" id="heroService">— Strategic Brand Identity &amp; Campaigns</p>
+    <p class="hero-sub-line" id="heroService"> Strategic Brand Identity &amp; Campaigns</p>
     <h1 class="hero-title" id="heroTitle">Branding and Marketing</h1>
     <div style="margin-top:32px;">
       <a href="#services" class="btn hero-btn">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
@@ -1470,9 +1531,9 @@
 
     <div class="service-grid">
 
-      <a href="branding.html" class="service-item" data-aos="fade-up">
+      <a href="branding.html" class="service-item service-item--branding" data-aos="fade-up">
         <div class="service-img">
-          <img src="assets/branding.JPG" alt="Branding & Marketing">
+          <img src="assets/branding.jpg" alt="Branding & Marketing">
         </div>
         <div class="service-overlay"></div>
         <div class="service-caption">
@@ -1481,7 +1542,7 @@
         </div>
       </a>
 
-      <a href="social-media.html" class="service-item service-item--offset" data-aos="fade-up" data-aos-delay="100">
+      <a href="social-media.html" class="service-item service-item--social" data-aos="fade-up" data-aos-delay="100">
         <div class="service-img">
           <img src="assets/social media.jpg" alt="Social Media Management">
         </div>
@@ -1492,7 +1553,7 @@
         </div>
       </a>
 
-      <a href="events.html" class="service-item" data-aos="fade-up" data-aos-delay="200">
+      <a href="events.html" class="service-item service-item--events" data-aos="fade-up" data-aos-delay="200">
         <div class="service-img">
           <img src="assets/events production.jpg" alt="Events Production">
         </div>
@@ -1503,18 +1564,18 @@
         </div>
       </a>
 
-      <a href="photography.html" class="service-item service-item--offset" data-aos="fade-up" data-aos-delay="100">
+      <a href="photography.html" class="service-item service-item--photo" data-aos="fade-up" data-aos-delay="100">
         <div class="service-img">
-          <img src="assets/product protography.jpg" alt="Product Photography">
+          <img src="assets/photography.jpg" alt="Product Photography">
         </div>
         <div class="service-overlay"></div>
         <div class="service-caption">
           <span class="service-subtitle">Studio, Commercial & E-commerce</span>
-          <h3 class="service-name">Product Photography</h3>
+          <h3 class="service-name">Photography</h3>
         </div>
       </a>
 
-      <a href="podcast.html" class="service-item" data-aos="fade-up" data-aos-delay="200">
+      <a href="podcast.html" class="service-item service-item--podcast" data-aos="fade-up" data-aos-delay="200">
         <div class="service-img">
           <img src="assets/podcast.webp" alt="Podcast Studio">
         </div>
@@ -1525,9 +1586,9 @@
         </div>
       </a>
 
-      <a href="weddings.html" class="service-item service-item--offset" data-aos="fade-up" data-aos-delay="100">
+      <a href="weddings.html" class="service-item service-item--weddings" data-aos="fade-up" data-aos-delay="100">
         <div class="service-img">
-          <img src="assets/yes i do.JPG" alt="Yes I Do (Weddings)">
+          <img src="assets/yes i do.jpg" alt="Yes I Do (Weddings)">
         </div>
         <div class="service-overlay"></div>
         <div class="service-caption">
@@ -1536,9 +1597,9 @@
         </div>
       </a>
 
-      <a href="documentary.html" class="service-item" data-aos="fade-up" data-aos-delay="200">
+      <a href="documentary.html" class="service-item service-item--doc" data-aos="fade-up" data-aos-delay="200">
         <div class="service-img">
-          <img src="services/video production.jpeg" alt="Documentary">
+          <img src="assets/documentary.jpg" alt="Documentary">
         </div>
         <div class="service-overlay"></div>
         <div class="service-caption">
@@ -1618,71 +1679,71 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS — Horizontal Carousel ============ -->
+<!-- ============ TESTIMONIALS — Manual Slider ============ -->
 <section class="testi-section" id="testimonials">
-  <div class="wrap" style="text-align:center;margin-bottom:56px;position:relative;z-index:2;">
+  <div class="wrap" style="text-align:center;">
     <span class="testi-eyebrow">Real Reviews</span>
     <h2 class="testi-title" data-aos="fade-up">What Our Clients Say</h2>
-  </div>
 
-  <div class="testi-carousel-wrap" style="position:relative;z-index:2;">
-    <div class="testi-carousel" id="testiCarousel">
-      <!-- Set A -->
-      <div class="testi-slide">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
-        <div class="testi-author">
-          <div class="testi-avatar">U</div>
-          <div><strong>UGANICS Limited</strong><span>Development Partner</span></div>
+    <div class="testi-slider-outer">
+
+      <!-- Prev arrow -->
+      <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <!-- Sliding track -->
+      <div class="testi-slider-track">
+        <div class="testi-slider-inner" id="testiInner">
+
+          <div class="testi-slide">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
+            <strong class="testi-author-name">AEE Uganda</strong>
+            <span class="testi-author-role">Corporate Client</span>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
+            <strong class="testi-author-name">UGANICS Limited</strong>
+            <span class="testi-author-role">Development Partner</span>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
+            <strong class="testi-author-name">Diakonia Uganda</strong>
+            <span class="testi-author-role">NGO Partner</span>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">&ldquo;Working with Xpo Imaging was seamless from start to finish. They understood our brief immediately and delivered work that exceeded our expectations.&rdquo;</p>
+            <strong class="testi-author-name">Kampala International Fair</strong>
+            <span class="testi-author-role">Events Client</span>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">&ldquo;Outstanding photography and branding support. Our product visuals have never looked better — the quality speaks for itself.&rdquo;</p>
+            <strong class="testi-author-name">7 Star Garments</strong>
+            <span class="testi-author-role">Product Photography Client</span>
+          </div>
+
         </div>
       </div>
 
-      <div class="testi-slide">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div><strong>AEE Uganda</strong><span>Corporate Client</span></div>
-        </div>
-      </div>
+      <!-- Next arrow -->
+      <button class="testi-arrow" id="testiNext" aria-label="Next testimonial">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
 
-      <div class="testi-slide">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div><strong>AEE Uganda</strong><span>NGO Partner</span></div>
-        </div>
-      </div>
-
-      <!-- Set B (duplicate for seamless loop) -->
-      <div class="testi-slide">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">&ldquo;Xpo Imaging consistently delivers compelling visual stories that effectively communicate project impact while maintaining exceptional professionalism.&rdquo;</p>
-        <div class="testi-author">
-          <div class="testi-avatar">U</div>
-          <div><strong>UGANICS Limited</strong><span>Development Partner</span></div>
-        </div>
-      </div>
-
-      <div class="testi-slide">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">&ldquo;Their creativity, reliability, and attention to detail have significantly improved our organization's visibility and communication.&rdquo;</p>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div><strong>AEE Uganda</strong><span>Corporate Client</span></div>
-        </div>
-      </div>
-
-      <div class="testi-slide">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">&ldquo;The team's ability to work in remote communities while maintaining high production quality makes them a dependable communications partner.&rdquo;</p>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div><strong>AEE Uganda</strong><span>NGO Partner</span></div>
-        </div>
-      </div>
     </div>
+
+    <!-- Dot indicators -->
+    <div class="testi-dots" id="testiDots"></div>
+
   </div>
 </section>
 
@@ -1844,13 +1905,13 @@
 <script>
   // ---------- Hero rotator — clean, minimal ----------
   const services = [
-    { sub:"— Strategic Brand Identity &amp; Campaigns", title:"Branding and Marketing", bg:"assets/branding.JPG" },
-    { sub:"— Content, Community &amp; Paid Advertising", title:"Social Media Management", bg:"assets/social media.jpg" },
-    { sub:"— Conferences, Launches &amp; Activations", title:"Events Production", bg:"assets/events production.jpg" },
-    { sub:"— Professional Studio, Commercial &amp; E-commerce", title:"Product Photography", bg:"assets/product protography.jpg" },
-    { sub:"— Audio &amp; Video Podcast Production", title:"Podcast Studio", bg:"assets/podcast.webp" },
-    { sub:"— Wedding Photography &amp; Videography", title:"Yes I Do (Weddings)", bg:"assets/yes i do.JPG" },
-    { sub:"— Impact Films &amp; Project Documentation", title:"Documentary", bg:"services/video production.jpeg" },
+    { sub:"— Strategic Brand Identity &amp; Campaigns",         title:"Branding and Marketing",  bg:"assets/branding.jpg",                pos:"center top",    mobilePos:"center center", fit:"cover"   },
+    { sub:"— Content, Community &amp; Paid Advertising",        title:"Social Media Management", bg:"assets/social media.jpg",            pos:"center center", mobilePos:"center center", fit:"cover"   },
+    { sub:"— Conferences, Launches &amp; Activations",          title:"Events Production",       bg:"assets/events production.jpg",       pos:"center top"    },
+    { sub:"— Professional Studio, Commercial &amp; E-commerce", title:"Product Photography",     bg:"assets/product photography (2).jpg", pos:"center 20%"    },
+    { sub:"— Audio &amp; Video Podcast Production",             title:"Podcast Studio",          bg:"assets/podcast.webp",                pos:"center center" },
+    { sub:"— Wedding Photography &amp; Videography",            title:"Yes I Do (Weddings)",     bg:"assets/yes i do.jpg",                pos:"center 30%"    },
+    { sub:"— Impact Films &amp; Project Documentation",         title:"Documentary",             bg:"assets/documentary.jpg",             pos:"center 40%"    },
   ];
 
   const heroBg      = document.getElementById('heroBg');
@@ -1861,7 +1922,11 @@
   let current = 0, rotateTimer;
 
   services.forEach(s => { const i = new Image(); i.src = s.bg; });
-  heroBg.style.backgroundImage = `url('${services[0].bg}')`;
+  const _isMobile = window.innerWidth <= 560;
+  heroBg.style.backgroundImage    = `url('${services[0].bg}')`;
+  heroBg.style.backgroundPosition = (_isMobile && services[0].mobilePos) ? services[0].mobilePos : services[0].pos;
+  heroBg.style.backgroundSize     = 'cover';
+  heroBg.style.backgroundColor    = '';
   heroBg.style.opacity = '1';
   heroBg.classList.add('zoom');
 
@@ -1880,7 +1945,11 @@
     heroBg.style.opacity = '0';
     heroBg.classList.remove('zoom');
     setTimeout(()=>{
-      heroBg.style.backgroundImage = `url('${s.bg}')`;
+      heroBg.style.backgroundImage    = `url('${s.bg}')`;
+      const isMobile = window.innerWidth <= 560;
+      heroBg.style.backgroundPosition = (isMobile && s.mobilePos) ? s.mobilePos : s.pos;
+      heroBg.style.backgroundSize     = 'cover';
+      heroBg.style.backgroundColor    = '';
       heroBg.style.opacity = '1';
       void heroBg.offsetWidth;
       heroBg.classList.add('zoom');
@@ -2106,6 +2175,56 @@
         setTimeout(()=>{ window.location.href = href; }, 500);
       });
     });
+  })();
+
+  // ---------- Testimonial Slider ----------
+  (function(){
+    const inner  = document.getElementById('testiInner');
+    const dotsEl = document.getElementById('testiDots');
+    const prevBtn = document.getElementById('testiPrev');
+    const nextBtn = document.getElementById('testiNext');
+    if(!inner) return;
+
+    const slides = inner.querySelectorAll('.testi-slide');
+    const total  = slides.length;
+    let current  = 0;
+    let autoTimer;
+
+    // Build dots
+    slides.forEach((_,i) => {
+      const d = document.createElement('button');
+      d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i+1));
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    });
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      inner.style.transform = `translateX(-${current * 100}%)`;
+      dotsEl.querySelectorAll('.testi-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      resetAuto();
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Swipe support for mobile
+    let touchStartX = 0;
+    inner.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+    inner.addEventListener('touchend',   e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+
+    resetAuto();
   })();
 </script>
 </body>
