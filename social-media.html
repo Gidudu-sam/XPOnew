@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,6 +10,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+/* Custom Cursor */
+.cursor{position:fixed;width:12px;height:12px;background:#fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s ease,height .2s ease,background .2s ease,opacity .2s ease;mix-blend-mode:difference;opacity:0;}
+.cursor.active{opacity:1;}
+.cursor.hover{width:48px;height:48px;background:rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.4);}
+@media(max-width:900px){.cursor{display:none;}}
+/* Page transition */
+.page-transition{position:fixed;inset:0;z-index:10000;background:#0F1419;transform:scaleY(0);transform-origin:bottom;pointer-events:none;}
+.page-transition.active{animation:pageOut .5s cubic-bezier(.77,0,.175,1) forwards;}
+@keyframes pageOut{0%{transform:scaleY(0);transform-origin:bottom;}50%{transform:scaleY(1);transform-origin:bottom;}51%{transform-origin:top;}100%{transform:scaleY(0);transform-origin:top;}}
+body{animation:bodyFadeIn .6s ease forwards;}
+@keyframes bodyFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 *:not(code):not(pre){font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif !important;}
 :root{--bg:#0F1419;--bg-soft:#1A2332;--ink:#FFFFFF;--ink-mid:#9CA3AF;--ink-dim:rgba(255,255,255,0.5);--blue:#2563EB;--blue-deep:#0F1419;--sky:#6B9E9E;--sky-light:#1A2332;--rule:#2A3544;--maxw:1240px;--gold:#D4A843;--brand-color:#7c3aed;}
 *{box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -115,8 +126,11 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 @media(max-width:900px){nav.primary{display:none;}.burger{display:flex;}.nav-cta{display:none;}header.site{grid-template-columns:1fr 1fr;height:80px;padding:0 24px;}.logo-img{height:50px;}.mobile-nav{top:80px;}.nav-right{justify-self:end;}.svc-intro-grid{grid-template-columns:1fr;gap:40px;}.projects-grid{grid-template-columns:1fr;}.svc-hero{height:70vh;}}
 @media(max-width:560px){.wrap{padding:0 16px;}header.site{height:70px;padding:0 16px;}.logo-img{height:44px;}.mobile-nav{top:70px;}.svc-hero{height:60vh;min-height:400px;}.svc-deliverables{grid-template-columns:1fr;}.partner-logos{gap:24px;}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body>
+<div class="cursor" id="cursor"></div>
+<div class="page-transition" id="pageTransition"></div>
 
 <header class="site">
   <a href="index.html" class="logo"><img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited" class="logo-img"></a>
@@ -202,21 +216,21 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 <!-- FEATURED PROJECTS -->
 <section class="svc-projects">
   <div class="wrap">
-    <div class="svc-projects-head"><h2>Featured Projects</h2></div>
+    <div class="svc-projects-head" data-aos="fade-up"><h2>Featured Projects</h2></div>
     <div class="projects-grid">
-      <a href="project-sm-uganics.html" class="project-card" onclick="cardClick(event,this)">
+      <a href="project-sm-uganics.html" class="project-card" data-aos="fade-up" data-aos-delay="0" onclick="cardClick(event,this)">
         <img src="CLient Logos/Urganics-transp.jpeg" alt="UGANICS" loading="lazy">
         <div class="project-card-overlay"></div>
         <h3 class="project-card-name">UGANICS</h3>
         <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
       </a>
-      <a href="project-sm-kampalafair.html" class="project-card" onclick="cardClick(event,this)">
+      <a href="project-sm-kampalafair.html" class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="cardClick(event,this)">
         <img src="CLient Logos/kampalafair_logo.png" alt="Kampala Fair" loading="lazy">
         <div class="project-card-overlay"></div>
         <h3 class="project-card-name">Kampala Fair</h3>
         <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
       </a>
-      <a href="project-sm-sina.html" class="project-card" onclick="cardClick(event,this)">
+      <a href="project-sm-sina.html" class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="cardClick(event,this)">
         <img src="CLient Logos/cropped-Social-Innovation-Academy-Sina.jpg" alt="SINA" loading="lazy">
         <div class="project-card-overlay"></div>
         <h3 class="project-card-name">Social Innovation Academy</h3>
@@ -273,6 +287,12 @@ function cardClick(e,card){e.preventDefault();card.classList.add('clicked');setT
   btn.addEventListener('click',()=>{const o=nav.classList.contains('open');nav.style.display=o?'':'block';requestAnimationFrame(()=>nav.classList.toggle('open'));btn.classList.toggle('open');document.body.style.overflow=o?'':'hidden';});
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.classList.remove('open');nav.style.display='';document.body.style.overflow='';}));
 })();
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:800,easing:'ease-out-cubic',once:true,offset:80});
+(function(){const cursor=document.getElementById('cursor');if(!cursor||window.innerWidth<900)return;let mx=0,my=0,cx=0,cy=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.classList.add('active');});document.addEventListener('mouseleave',()=>cursor.classList.remove('active'));function anim(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(anim);}anim();document.querySelectorAll('a,button,.project-card,.service-item,.testi-slide,.masonry-item,.dense-masonry-item').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));});})();
+(function(){const t=document.getElementById('pageTransition');document.querySelectorAll('a[href]').forEach(l=>{if(l.hostname!==window.location.hostname)return;if(l.getAttribute('href').startsWith('#'))return;if(l.getAttribute('href').startsWith('mailto'))return;if(l.getAttribute('onclick'))return;l.addEventListener('click',e=>{e.preventDefault();const h=l.getAttribute('href');t.classList.add('active');setTimeout(()=>{window.location.href=h;},500);});});})();
 </script>
 </body>
 </html>

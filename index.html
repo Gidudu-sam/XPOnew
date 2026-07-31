@@ -7,6 +7,8 @@
 <meta name="description" content="High-quality visuals for your brand. Xpo Imaging Limited — Uganda's full-service marketing, branding, social media management, events production, and photography agency. Established 2014. Kampala, Uganda.">
 <link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
 <link rel="shortcut icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<!-- AOS Library -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -14,6 +16,54 @@
   /* Century Gothic font override — applied globally */
   *:not(code):not(pre) {
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+  }
+
+  /* Custom Cursor */
+  .cursor{
+    position:fixed;
+    width:12px;height:12px;
+    background:#fff;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:width .2s ease, height .2s ease, background .2s ease, opacity .2s ease;
+    mix-blend-mode:difference;
+    opacity:0;
+  }
+  .cursor.active{opacity:1;}
+  .cursor.hover{
+    width:48px;height:48px;
+    background:rgba(37,99,235,0.3);
+    border:1px solid rgba(255,255,255,0.4);
+  }
+  @media(max-width:900px){.cursor{display:none;}}
+
+  /* Page transition */
+  .page-transition{
+    position:fixed;inset:0;z-index:10000;
+    background:#0F1419;
+    transform:scaleY(0);
+    transform-origin:bottom;
+    pointer-events:none;
+  }
+  .page-transition.active{
+    animation:pageOut .5s cubic-bezier(.77,0,.175,1) forwards;
+  }
+  @keyframes pageOut{
+    0%{transform:scaleY(0);transform-origin:bottom;}
+    50%{transform:scaleY(1);transform-origin:bottom;}
+    51%{transform-origin:top;}
+    100%{transform:scaleY(0);transform-origin:top;}
+  }
+
+  /* Fade-in on page load */
+  body{
+    animation:bodyFadeIn .6s ease forwards;
+  }
+  @keyframes bodyFadeIn{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
   }
 
   /* ---- CONTACT FORM — Premium Split Layout ---- */
@@ -1299,7 +1349,8 @@
 </style>
 </head>
 <body>
-<div class="grain"></div>
+<div class="cursor" id="cursor"></div>
+<div class="page-transition" id="pageTransition"></div>
 
 <header class="site">
   <a href="#" class="logo">
@@ -1317,6 +1368,7 @@
         <a href="photography.html">Product Photography</a>
         <a href="podcast.html">Podcast Studio</a>
         <a href="weddings.html">Yes I Do (Weddings)</a>
+        <a href="documentary.html">Documentary</a>
       </div>
     </div>
     <a href="#contact">Contact</a>
@@ -1358,7 +1410,7 @@
 <!-- ============ ABOUT ============ -->
 <section id="about" aria-label="About Xpo Imaging Limited">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-aos="fade-up">
       <div>
         <h2>Who we are</h2>
       </div>
@@ -1366,7 +1418,7 @@
 
     <div class="about-grid">
 
-      <div class="about-card">
+      <div class="about-card" data-aos="fade-up">
         <h3 class="about-card-title">Integrated creative<br><em>communications.</em></h3>
         <p class="about-card-body">
           A fully registered Ugandan creative communications, marketing, branding, and media production company delivering integrated solutions since 2014.
@@ -1377,7 +1429,7 @@
         </a>
       </div>
 
-      <div class="about-card">
+      <div class="about-card" data-aos="fade-up">
         <h3 class="about-card-title">Authentic stories<br><em>that inspire action.</em></h3>
         <p class="about-card-body">
           We help organizations communicate their impact, strengthen their brands, and engage stakeholders through creative storytelling.
@@ -1392,7 +1444,7 @@
         </ul>
       </div>
 
-      <div class="about-card">
+      <div class="about-card" data-aos="fade-up">
         <h3 class="about-card-title">East Africa's leading<br><em>creative agency.</em></h3>
         <p class="about-card-body">
           Working across Uganda from Kampala to remote communities, combining creativity with strategic thinking to deliver measurable results.
@@ -1410,7 +1462,7 @@
 <!-- ============ OUR WORKS — Colorful Staggered Grid ============ -->
 <section id="services" style="background:var(--bg);padding-bottom:80px;">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-aos="fade-up">
       <div>
         <h2>What we create for you</h2>
       </div>
@@ -1418,7 +1470,7 @@
 
     <div class="service-grid">
 
-      <a href="branding.html" class="service-item">
+      <a href="branding.html" class="service-item" data-aos="fade-up">
         <div class="service-img">
           <img src="assets/branding.JPG" alt="Branding & Marketing">
         </div>
@@ -1429,7 +1481,7 @@
         </div>
       </a>
 
-      <a href="social-media.html" class="service-item service-item--offset">
+      <a href="social-media.html" class="service-item service-item--offset" data-aos="fade-up" data-aos-delay="100">
         <div class="service-img">
           <img src="assets/social media.jpg" alt="Social Media Management">
         </div>
@@ -1440,7 +1492,7 @@
         </div>
       </a>
 
-      <a href="events.html" class="service-item">
+      <a href="events.html" class="service-item" data-aos="fade-up" data-aos-delay="200">
         <div class="service-img">
           <img src="assets/events production.jpg" alt="Events Production">
         </div>
@@ -1451,7 +1503,7 @@
         </div>
       </a>
 
-      <a href="photography.html" class="service-item service-item--offset">
+      <a href="photography.html" class="service-item service-item--offset" data-aos="fade-up" data-aos-delay="100">
         <div class="service-img">
           <img src="assets/product protography.jpg" alt="Product Photography">
         </div>
@@ -1462,7 +1514,7 @@
         </div>
       </a>
 
-      <a href="podcast.html" class="service-item">
+      <a href="podcast.html" class="service-item" data-aos="fade-up" data-aos-delay="200">
         <div class="service-img">
           <img src="assets/podcast.webp" alt="Podcast Studio">
         </div>
@@ -1473,7 +1525,7 @@
         </div>
       </a>
 
-      <a href="weddings.html" class="service-item service-item--offset">
+      <a href="weddings.html" class="service-item service-item--offset" data-aos="fade-up" data-aos-delay="100">
         <div class="service-img">
           <img src="assets/yes i do.JPG" alt="Yes I Do (Weddings)">
         </div>
@@ -1481,6 +1533,17 @@
         <div class="service-caption">
           <span class="service-subtitle">Photography, Videography & Coverage</span>
           <h3 class="service-name">Yes I Do (Weddings)</h3>
+        </div>
+      </a>
+
+      <a href="documentary.html" class="service-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-img">
+          <img src="services/video production.jpeg" alt="Documentary">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Impact Films & Project Documentation</span>
+          <h3 class="service-name">Documentary</h3>
         </div>
       </a>
 
@@ -1559,7 +1622,7 @@
 <section class="testi-section" id="testimonials">
   <div class="wrap" style="text-align:center;margin-bottom:56px;position:relative;z-index:2;">
     <span class="testi-eyebrow">Real Reviews</span>
-    <h2 class="testi-title">What Our Clients Say</h2>
+    <h2 class="testi-title" data-aos="fade-up">What Our Clients Say</h2>
   </div>
 
   <div class="testi-carousel-wrap" style="position:relative;z-index:2;">
@@ -1787,6 +1850,7 @@
     { sub:"— Professional Studio, Commercial &amp; E-commerce", title:"Product Photography", bg:"assets/product protography.jpg" },
     { sub:"— Audio &amp; Video Podcast Production", title:"Podcast Studio", bg:"assets/podcast.webp" },
     { sub:"— Wedding Photography &amp; Videography", title:"Yes I Do (Weddings)", bg:"assets/yes i do.JPG" },
+    { sub:"— Impact Films &amp; Project Documentation", title:"Documentary", bg:"services/video production.jpeg" },
   ];
 
   const heroBg      = document.getElementById('heroBg');
@@ -1985,6 +2049,61 @@
         submitBtn.disabled = false;
         submitBtn.querySelector('.form-submit-text').textContent = 'Send Message';
         alert('Network error. Please try again or email us directly at xpoimaging@gmail.com');
+      });
+    });
+  })();
+</script>
+
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 80
+  });
+
+  // Custom Cursor
+  (function(){
+    const cursor = document.getElementById('cursor');
+    if(!cursor || window.innerWidth < 900) return;
+    let mouseX=0,mouseY=0,curX=0,curY=0;
+    document.addEventListener('mousemove',e=>{
+      mouseX=e.clientX;mouseY=e.clientY;
+      cursor.classList.add('active');
+    });
+    document.addEventListener('mouseleave',()=>cursor.classList.remove('active'));
+    // Smooth follow
+    function animate(){
+      curX+=(mouseX-curX)*0.15;
+      curY+=(mouseY-curY)*0.15;
+      cursor.style.left=curX+'px';
+      cursor.style.top=curY+'px';
+      requestAnimationFrame(animate);
+    }
+    animate();
+    // Hover effect on interactive elements
+    document.querySelectorAll('a, button, .service-item, .project-card, .testi-slide').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+      el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
+    });
+  })();
+
+  // Page Transitions
+  (function(){
+    const transition = document.getElementById('pageTransition');
+    document.querySelectorAll('a[href]').forEach(link=>{
+      if(link.hostname !== window.location.hostname) return;
+      if(link.getAttribute('href').startsWith('#')) return;
+      if(link.getAttribute('href').startsWith('mailto')) return;
+      if(link.getAttribute('onclick')) return;
+      link.addEventListener('click', e=>{
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        transition.classList.add('active');
+        setTimeout(()=>{ window.location.href = href; }, 500);
       });
     });
   })();

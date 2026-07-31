@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,12 +11,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* Custom Cursor */
+.cursor{position:fixed;width:12px;height:12px;background:#fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s ease,height .2s ease,background .2s ease,opacity .2s ease;mix-blend-mode:difference;opacity:0;}
+.cursor.active{opacity:1;}
+.cursor.hover{width:48px;height:48px;background:rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.4);}
+@media(max-width:900px){.cursor{display:none;}}
+/* Page transition */
+.page-transition{position:fixed;inset:0;z-index:10000;background:#0F1419;transform:scaleY(0);transform-origin:bottom;pointer-events:none;}
+.page-transition.active{animation:pageOut .5s cubic-bezier(.77,0,.175,1) forwards;}
+@keyframes pageOut{0%{transform:scaleY(0);transform-origin:bottom;}50%{transform:scaleY(1);transform-origin:bottom;}51%{transform-origin:top;}100%{transform:scaleY(0);transform-origin:top;}}
+body{animation:bodyFadeIn .6s ease forwards;}
+@keyframes bodyFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
   /* Century Gothic font override — applied globally */
   *:not(code):not(pre) {
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
   }
 </style>
 <style>
+/* Custom Cursor */
+.cursor{position:fixed;width:12px;height:12px;background:#fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s ease,height .2s ease,background .2s ease,opacity .2s ease;mix-blend-mode:difference;opacity:0;}
+.cursor.active{opacity:1;}
+.cursor.hover{width:48px;height:48px;background:rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.4);}
+@media(max-width:900px){.cursor{display:none;}}
+/* Page transition */
+.page-transition{position:fixed;inset:0;z-index:10000;background:#0F1419;transform:scaleY(0);transform-origin:bottom;pointer-events:none;}
+.page-transition.active{animation:pageOut .5s cubic-bezier(.77,0,.175,1) forwards;}
+@keyframes pageOut{0%{transform:scaleY(0);transform-origin:bottom;}50%{transform:scaleY(1);transform-origin:bottom;}51%{transform-origin:top;}100%{transform:scaleY(0);transform-origin:top;}}
+body{animation:bodyFadeIn .6s ease forwards;}
+@keyframes bodyFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
   :root{
     --bg:#0F1419;
     --bg-soft:#1A2332;
@@ -362,6 +384,10 @@
     nav.primary{display:none;}
     .burger{display:flex;}
     .nav-cta{display:none;}
+    .nav-right{justify-self:end;}
+    header.site{grid-template-columns:1fr 1fr;height:80px;padding:0 24px;}
+    .logo-img{height:50px;}
+    .mobile-nav{top:80px;}
     .about-intro-grid{grid-template-columns:1fr;gap:40px;}
     .experience-layout{grid-template-columns:1fr;gap:40px;}
     .exp-sectors{grid-template-columns:1fr 1fr;}
@@ -385,8 +411,11 @@
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body>
+<div class="cursor" id="cursor"></div>
+<div class="page-transition" id="pageTransition"></div>
 
 <!-- ============ NAV ============ -->
 <header class="site">
@@ -439,13 +468,13 @@
     <div class="about-intro-grid">
       <div class="about-intro-text">
         <span class="section-label">Who We Are</span>
-        <h2 class="section-title">From a camera to a<br>full creative agency.</h2>
+        <h2 class="section-title" data-aos="fade-up">From a camera to a<br>full creative agency.</h2>
         <p class="section-body">Xpo Imaging Limited is a fully registered Ugandan creative communications, marketing, branding, and media production company established in 2014. What began as a professional video production and photography company is now a full-service marketing and branding agency providing integrated communication solutions to government institutions, development partners, NGOs, UN agencies, corporate organizations, financial institutions, and private businesses.</p>
         <p class="section-body" style="margin-top:18px;">We specialize in helping organizations communicate their impact, strengthen their brands, influence public perception, and engage stakeholders through strategic marketing, creative branding, digital communications, professional photography, documentary filmmaking, and visual storytelling.</p>
         <p class="section-body" style="margin-top:18px;">Our experienced team of marketers, communication specialists, filmmakers, photographers, graphic designers, content creators, and digital strategists combines creativity with strategic thinking to develop compelling campaigns that produce measurable results.</p>
         <p class="section-body" style="margin-top:18px;">Having worked extensively across Uganda, including underserved and hard-to-reach communities such as Nyumanzi Refugee Settlement, Karamoja, Moroto, Kaabong, Abim, Pader, Oyam, Kitagata, Amuru, Adjumani, and other regions, we understand how to tell authentic stories that inspire action, influence policy, mobilize resources, and strengthen institutional visibility.</p>
       </div>
-      <div class="about-intro-aside">
+      <div class="about-intro-aside" data-aos="fade-up">
         <div class="aside-stat">
           <div class="aside-stat-num">10+</div>
           <div class="aside-stat-label">Years of professional experience delivering integrated creative solutions across Uganda.</div>
@@ -475,7 +504,7 @@
       <!-- Left: text + sectors grid -->
       <div>
         <span class="section-label">A Decade of Impact</span>
-        <h2 class="section-title">Working across<br>all of Uganda.</h2>
+        <h2 class="section-title" data-aos="fade-up">Working across<br>all of Uganda.</h2>
         <p class="section-body">Since 2014, Xpo Imaging Limited has worked throughout Uganda documenting development projects, corporate events, humanitarian interventions, community transformation initiatives, advocacy campaigns, conferences, and institutional success stories.</p>
         <p class="section-body" style="margin-top:16px;">Our work spans a wide range of sectors — from emergency refugee response to environmental conservation — giving us deep understanding of how to tell authentic stories that inspire action and mobilize resources.</p>
 
@@ -535,16 +564,16 @@
 <section class="section section-alt">
   <div class="wrap">
     <span class="section-label">Our Direction</span>
-    <h2 class="section-title" style="margin-bottom:40px;">Vision &amp; Mission</h2>
+    <h2 class="section-title" data-aos="fade-up" style="margin-bottom:40px;">Vision &amp; Mission</h2>
     <div class="vm-grid">
-      <div class="vm-card">
+      <div class="vm-card" data-aos="fade-up">
         <div class="vm-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
         </div>
         <h3>Our Vision</h3>
         <p>To become East Africa's leading integrated marketing, branding, and creative communications agency recognized for transforming organizations through innovative storytelling, strategic marketing, and impactful visual communication.</p>
       </div>
-      <div class="vm-card">
+      <div class="vm-card" data-aos="fade-up">
         <div class="vm-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
@@ -559,13 +588,13 @@
 <section class="section">
   <div class="wrap">
     <span class="section-label">What Drives Us</span>
-    <h2 class="section-title" style="margin-bottom:40px;">Our Core Values</h2>
+    <h2 class="section-title" data-aos="fade-up" style="margin-bottom:40px;">Our Core Values</h2>
     <div class="values-grid">
-      <div class="value-pill"><span class="v-num">01</span><span class="v-name">Creativity</span></div>
-      <div class="value-pill"><span class="v-num">02</span><span class="v-name">Professionalism</span></div>
-      <div class="value-pill"><span class="v-num">03</span><span class="v-name">Excellence</span></div>
-      <div class="value-pill"><span class="v-num">04</span><span class="v-name">Integrity</span></div>
-      <div class="value-pill"><span class="v-num">05</span><span class="v-name">Innovation</span></div>
+      <div class="value-pill" data-aos="fade-up"><span class="v-num">01</span><span class="v-name">Creativity</span></div>
+      <div class="value-pill" data-aos="fade-up"><span class="v-num">02</span><span class="v-name">Professionalism</span></div>
+      <div class="value-pill" data-aos="fade-up"><span class="v-num">03</span><span class="v-name">Excellence</span></div>
+      <div class="value-pill" data-aos="fade-up"><span class="v-num">04</span><span class="v-name">Integrity</span></div>
+      <div class="value-pill" data-aos="fade-up"><span class="v-num">05</span><span class="v-name">Innovation</span></div>
       <div class="value-pill"><span class="v-num">06</span><span class="v-name">Accountability</span></div>
       <div class="value-pill"><span class="v-num">07</span><span class="v-name">Teamwork</span></div>
       <div class="value-pill"><span class="v-num">08</span><span class="v-name">Client Satisfaction</span></div>
@@ -579,7 +608,7 @@
 <section class="section section-alt">
   <div class="wrap">
     <span class="section-label">How We Work</span>
-    <h2 class="section-title" style="margin-bottom:40px;">Our Work Process</h2>
+    <h2 class="section-title" data-aos="fade-up" style="margin-bottom:40px;">Our Work Process</h2>
     <div class="process-grid">
       <div class="process-step">
         <span class="step-num">01</span>
@@ -629,7 +658,7 @@
 <section class="section">
   <div class="wrap">
     <span class="section-label">Production Capabilities</span>
-    <h2 class="section-title" style="margin-bottom:40px;">Our Equipment</h2>
+    <h2 class="section-title" data-aos="fade-up" style="margin-bottom:40px;">Our Equipment</h2>
     <div class="equip-grid">
       <div class="equip-card">
         <h4>Cameras</h4>
@@ -692,7 +721,7 @@
 <section class="section section-alt">
   <div class="wrap">
     <span class="section-label">How We Are Organised</span>
-    <h2 class="section-title" style="margin-bottom:16px;">Organisational Structure</h2>
+    <h2 class="section-title" data-aos="fade-up" style="margin-bottom:16px;">Organisational Structure</h2>
     <p class="section-body" style="margin-bottom:40px;">The company operates through specialized departments that work collaboratively to deliver integrated communication solutions.</p>
     <div class="org-grid">
       <div class="org-dept">
@@ -802,6 +831,12 @@
     nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
   })();
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:800,easing:'ease-out-cubic',once:true,offset:80});
+(function(){const cursor=document.getElementById('cursor');if(!cursor||window.innerWidth<900)return;let mx=0,my=0,cx=0,cy=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.classList.add('active');});document.addEventListener('mouseleave',()=>cursor.classList.remove('active'));function anim(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(anim);}anim();document.querySelectorAll('a,button,.project-card,.service-item,.testi-slide,.masonry-item,.dense-masonry-item').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));});})();
+(function(){const t=document.getElementById('pageTransition');document.querySelectorAll('a[href]').forEach(l=>{if(l.hostname!==window.location.hostname)return;if(l.getAttribute('href').startsWith('#'))return;if(l.getAttribute('href').startsWith('mailto'))return;if(l.getAttribute('onclick'))return;l.addEventListener('click',e=>{e.preventDefault();const h=l.getAttribute('href');t.classList.add('active');setTimeout(()=>{window.location.href=h;},500);});});})();
 </script>
 </body>
 </html>

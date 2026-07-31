@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,6 +10,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+/* Custom Cursor */
+.cursor{position:fixed;width:12px;height:12px;background:#fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s ease,height .2s ease,background .2s ease,opacity .2s ease;mix-blend-mode:difference;opacity:0;}
+.cursor.active{opacity:1;}
+.cursor.hover{width:48px;height:48px;background:rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.4);}
+@media(max-width:900px){.cursor{display:none;}}
+/* Page transition */
+.page-transition{position:fixed;inset:0;z-index:10000;background:#0F1419;transform:scaleY(0);transform-origin:bottom;pointer-events:none;}
+.page-transition.active{animation:pageOut .5s cubic-bezier(.77,0,.175,1) forwards;}
+@keyframes pageOut{0%{transform:scaleY(0);transform-origin:bottom;}50%{transform:scaleY(1);transform-origin:bottom;}51%{transform-origin:top;}100%{transform:scaleY(0);transform-origin:top;}}
+body{animation:bodyFadeIn .6s ease forwards;}
+@keyframes bodyFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 *:not(code):not(pre){font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif !important;}
 :root{--bg:#0F1419;--bg-soft:#1A2332;--ink:#FFFFFF;--ink-mid:#9CA3AF;--ink-dim:rgba(255,255,255,0.5);--blue:#2563EB;--blue-deep:#0F1419;--sky:#6B9E9E;--sky-light:#1A2332;--rule:#2A3544;--maxw:1240px;--gold:#D4A843;--brand-color:#f5c518;}
 *{box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -70,9 +81,12 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 .svc-hero-next{right:24px;}
 
 /* SERVICE INTRO */
-.svc-intro{padding:80px 0;background:var(--brand-color);}.svc-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.svc-intro-label{font-size:clamp(32px,4vw,52px);letter-spacing:-0.02em;line-height:1.05;color:#fff;margin-bottom:16px;font-weight:800;}
-.svc-intro-title{font-size:clamp(18px,2vw,24px);font-weight:400;line-height:1.6;color:rgba(255,255,255,0.85);}
+.svc-intro{padding:80px 0;background:#FFFFFF;border-top:none;border-bottom:none;}.svc-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.svc-intro-label{font-size:clamp(32px,4vw,52px);letter-spacing:-0.02em;line-height:1.05;color:#1A1A1A;margin-bottom:16px;font-weight:800;}
+.svc-intro-title{font-size:clamp(18px,2vw,24px);font-weight:400;line-height:1.6;color:#4A4A4A;}
+.svc-deliverables{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.svc-deliverables li{font-size:14px;color:#4A4A4A;display:flex;align-items:center;gap:10px;padding:8px 0;}
+.svc-deliverables li::before{content:"";width:8px;height:8px;border-radius:50%;background:#2563EB;flex-shrink:0;}
 .svc-deliverables{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .svc-deliverables li{font-size:14px;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;padding:8px 0;}
 .svc-deliverables li::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0;}
@@ -102,9 +116,9 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 /* PARTNERS */
 .svc-partners{padding:60px 0;border-top:1px solid #2A3544;}
 .svc-partners h3{font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-align:center;margin-bottom:32px;}
-.partner-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.partner-logos img{height:40px;width:auto;opacity:0.6;transition:opacity .3s;object-fit:contain;}
-.partner-logos img:hover{opacity:1;}
+.partner-logos{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.partner-name{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;padding:8px 16px;border:1px solid #2A3544;border-radius:4px;transition:all .2s;}
+.partner-name:hover{color:#fff;border-color:rgba(255,255,255,0.3);}
 
 /* CTA */
 .svc-cta{background:#2563EB;padding:80px 0;text-align:center;position:relative;overflow:hidden;}
@@ -125,8 +139,11 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 @media(max-width:900px){nav.primary{display:none;}.burger{display:flex;}.nav-cta{display:none;}header.site{grid-template-columns:1fr 1fr;height:80px;padding:0 24px;}.logo-img{height:50px;}.mobile-nav{top:80px;}.nav-right{justify-self:end;}.svc-intro-grid{grid-template-columns:1fr;gap:40px;}.projects-grid{grid-template-columns:1fr;}.svc-hero{height:70vh;}}
 @media(max-width:560px){.wrap{padding:0 16px;}header.site{height:70px;padding:0 16px;}.logo-img{height:44px;}.mobile-nav{top:70px;}.svc-hero{height:60vh;min-height:400px;}.svc-deliverables{grid-template-columns:1fr;}.partner-logos{gap:24px;}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body>
+<div class="cursor" id="cursor"></div>
+<div class="page-transition" id="pageTransition"></div>
 
 <!-- NAV -->
 <header class="site">
@@ -203,10 +220,11 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
     <div class="svc-intro-grid">
       <div>
         <h1 class="svc-intro-label">What We Do</h1>
-        <h2 class="svc-intro-title">Strategic branding that positions your organization for growth.</h2>
+        <h2 class="svc-intro-title">Brand strategy that positions your organization for growth.</h2>
+        <p style="color:#6B7280;font-size:15px;line-height:1.7;margin-top:16px;">Strategic branding that positions your organization for growth — built on research, identity systems, and creative execution that holds up across every touchpoint.</p>
       </div>
       <div>
-        <h3 class="svc-intro-label" style="font-size:clamp(24px,3vw,36px);">Deliverables</h3>
+        <h3 class="svc-intro-label" style="font-size:clamp(24px,3vw,36px);color:#1A1A1A;">Deliverables</h3>
         <ul class="svc-deliverables">
           <li>Brand Strategy</li>
           <li>Logo Design</li>
@@ -227,13 +245,14 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 <!-- FEATURED PROJECTS -->
 <section class="svc-projects">
   <div class="wrap">
-    <div class="svc-projects-head">
+    <div class="svc-projects-head" data-aos="fade-up">
+      <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Selected Work</span>
       <h2>Featured Projects</h2>
     </div>
     <div class="projects-grid">
 
-      <a href="project-aceli.html" class="project-card" onclick="cardClick(event,this)">
-        <img src="CLient Logos/Aceli-Africa-FullColor-Logo.png" alt="Aceli Africa" loading="lazy">
+      <a href="project-aceli.html" class="project-card" data-aos="fade-up" data-aos-delay="0" onclick="cardClick(event,this)">
+        <img src="services/branding.jpeg" alt="Aceli Africa" loading="lazy">
         <div class="project-card-overlay"></div>
         <h3 class="project-card-name">Aceli Africa</h3>
         <div class="project-card-click-overlay">
@@ -242,8 +261,8 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
         </div>
       </a>
 
-      <a href="project-globalpeace.html" class="project-card" onclick="cardClick(event,this)">
-        <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace Foundation" loading="lazy">
+      <a href="project-globalpeace.html" class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="cardClick(event,this)">
+        <img src="services/social media management.jpeg" alt="Global Peace Foundation" loading="lazy">
         <div class="project-card-overlay"></div>
         <h3 class="project-card-name">Global Peace Foundation</h3>
         <div class="project-card-click-overlay">
@@ -252,10 +271,10 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
         </div>
       </a>
 
-      <a href="project-7star.html" class="project-card" onclick="cardClick(event,this)">
-        <img src="CLient Logos/7STAR png.png" alt="7 Star" loading="lazy">
+      <a href="project-7star.html" class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="cardClick(event,this)">
+        <img src="services/printing and designing.PNG" alt="7 Star" loading="lazy">
         <div class="project-card-overlay"></div>
-        <h3 class="project-card-name">7 Star</h3>
+        <h3 class="project-card-name">7 Star Cleaning Services</h3>
         <div class="project-card-click-overlay">
           <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           <span>Opening</span>
@@ -271,13 +290,13 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
   <div class="wrap">
     <h3>Brands We've Worked With</h3>
     <div class="partner-logos">
-      <img src="CLient Logos/Aceli-Africa-FullColor-Logo.png" alt="Aceli Africa">
-      <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace Foundation">
-      <img src="CLient Logos/7STAR png.png" alt="7 Star">
-      <img src="CLient Logos/BASA.png" alt="BASA">
-      <img src="CLient Logos/DGF.jpg" alt="DGF">
-      <img src="CLient Logos/kampalafair_logo.png" alt="Kampala Fair">
-      <img src="CLient Logos/Danish refugee-council.png" alt="Danish Refugee Council">
+      <span class="partner-name">Aceli Africa</span>
+      <span class="partner-name">Global Peace Foundation</span>
+      <span class="partner-name">7 Star</span>
+      <span class="partner-name">BASA</span>
+      <span class="partner-name">DGF</span>
+      <span class="partner-name">Kampala Fair</span>
+      <span class="partner-name">Danish Refugee Council</span>
     </div>
   </div>
 </section>
@@ -338,6 +357,12 @@ function cardClick(e,card){
   btn.addEventListener('click',()=>{const o=nav.classList.contains('open');nav.style.display=o?'':'block';requestAnimationFrame(()=>nav.classList.toggle('open'));btn.classList.toggle('open');document.body.style.overflow=o?'':'hidden';});
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.classList.remove('open');nav.style.display='';document.body.style.overflow='';}));
 })();
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:800,easing:'ease-out-cubic',once:true,offset:80});
+(function(){const cursor=document.getElementById('cursor');if(!cursor||window.innerWidth<900)return;let mx=0,my=0,cx=0,cy=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.classList.add('active');});document.addEventListener('mouseleave',()=>cursor.classList.remove('active'));function anim(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(anim);}anim();document.querySelectorAll('a,button,.project-card,.service-item,.testi-slide,.masonry-item,.dense-masonry-item').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));});})();
+(function(){const t=document.getElementById('pageTransition');document.querySelectorAll('a[href]').forEach(l=>{if(l.hostname!==window.location.hostname)return;if(l.getAttribute('href').startsWith('#'))return;if(l.getAttribute('href').startsWith('mailto'))return;if(l.getAttribute('onclick'))return;l.addEventListener('click',e=>{e.preventDefault();const h=l.getAttribute('href');t.classList.add('active');setTimeout(()=>{window.location.href=h;},500);});});})();
 </script>
 </body>
 </html>
