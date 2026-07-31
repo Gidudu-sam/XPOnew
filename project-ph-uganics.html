@@ -3,68 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>UGANICS PRODUCTS | Xpo Imaging Limited</title>
+<title>Uganics Products | Xpo Imaging Limited</title>
 <link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
 <style>
 *:not(code):not(pre){font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif !important;}
-:root{--bg:#0F1419;--ink:#FFFFFF;--ink-mid:#9CA3AF;--rule:#2A3544;--maxw:1400px;--brand-color:#10b981;}
-*{box-sizing:border-box;}html{scroll-behavior:smooth;}body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}h1,h2,h3{margin:0;font-weight:700;}
-.project-hero{position:relative;height:50vh;min-height:320px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.project-hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4);}
-.project-hero-title{position:relative;z-index:2;font-size:clamp(32px,6vw,64px);color:#fff;text-align:center;letter-spacing:0.06em;text-transform:uppercase;text-shadow:0 4px 20px rgba(0,0,0,0.4);}
-.project-logo-bar{display:flex;align-items:center;justify-content:center;padding:24px 0;border-bottom:1px solid var(--rule);}
-.project-logo-bar img{height:48px;width:auto;filter:brightness(0) invert(1);}
-.project-info-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:var(--maxw);margin:0 auto;}
-.project-info-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:var(--ink-mid);}
-.project-info-back a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:var(--ink-mid);display:flex;align-items:center;gap:6px;transition:color .2s;}
-.project-info-back a:hover{color:var(--brand-color);}
-.project-info-back svg{width:14px;height:14px;}
-.dense-masonry{columns:4;column-gap:6px;padding:8px 6px 60px;}
-.dense-masonry-item{break-inside:avoid;margin-bottom:6px;overflow:hidden;cursor:pointer;}
-.dense-masonry-item img{width:100%;display:block;transition:transform .4s ease;}
-.dense-masonry-item:hover img{transform:scale(1.03);}
+:root{
+  --bg:#0F1419;--ink:#FFFFFF;--ink-mid:#9CA3AF;
+  --rule:#2A3544;--gold:#D4A843;--maxw:1400px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+h1,h2,h3{margin:0;font-weight:700;}
+
+/* ---- BACK BUTTON ---- */
+.back-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:10px 18px 10px 14px;
+  background:rgba(15,20,25,0.65);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px;
+  color:#fff;font-size:11px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  transition:background .22s,border-color .22s,transform .22s;
+  width:fit-content;
+  margin-bottom:20px;
+}
+.back-btn:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(255,255,255,0.4);
+  transform:translateX(-3px);
+}
+.back-btn svg{width:13px;height:13px;flex-shrink:0;transition:transform .22s;}
+.back-btn:hover svg{transform:translateX(-2px);}
+
+/* ---- HERO ---- */
+.project-hero{
+  position:relative;height:70vh;min-height:480px;
+  overflow:hidden;display:flex;align-items:flex-end;
+}
+.project-hero img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center center;
+}
+.project-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,
+    rgba(15,20,25,0.15) 0%,
+    rgba(15,20,25,0.55) 60%,
+    rgba(15,20,25,0.88) 100%);
+}
+.project-hero-content{
+  position:relative;z-index:2;
+  padding:0 48px 52px;
+  width:100%;max-width:var(--maxw);margin:0 auto;
+}
+.project-hero-eyebrow{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);display:block;margin-bottom:12px;
+}
+.project-hero-title{
+  font-size:clamp(36px,6vw,72px);
+  color:#fff;letter-spacing:-0.01em;
+  line-height:1.05;font-weight:800;
+}
+.project-hero-rule{
+  width:48px;height:3px;
+  background:var(--gold);border-radius:2px;
+  margin-top:20px;
+}
+
+/* ---- GALLERY ---- */
+.dense-masonry{
+  columns:4;column-gap:6px;
+  padding:6px 6px 60px;
+}
+.dense-masonry-item{
+  break-inside:avoid;margin-bottom:6px;
+  overflow:hidden;cursor:pointer;border-radius:4px;
+}
+.dense-masonry-item img{
+  width:100%;display:block;
+  transition:transform .45s ease,filter .3s ease;
+}
+.dense-masonry-item:hover img{
+  transform:scale(1.04);
+  filter:brightness(1.08);
+}
+
+/* ---- CTA ---- */
+.project-cta{
+  text-align:center;padding:60px 0;
+  border-top:1px solid var(--rule);
+}
+.project-cta p{
+  font-size:14px;color:var(--ink-mid);
+  margin-bottom:24px;letter-spacing:0.04em;
+}
+.project-cta a{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  font-weight:700;color:#fff;
+  border:1.5px solid rgba(255,255,255,0.35);
+  padding:16px 36px;border-radius:4px;
+  transition:all .22s;
+}
+.project-cta a:hover{
+  background:rgba(255,255,255,0.08);
+  border-color:#fff;
+}
+
+/* ---- FOOTER ---- */
+.project-footer{
+  text-align:center;padding:16px 0 32px;
+  font-size:11px;color:rgba(255,255,255,0.25);
+  letter-spacing:0.06em;
+}
+
+/* ---- LIGHTBOX ---- */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(7,10,14,0.97);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}
+.lb.open{opacity:1;visibility:visible;}
+.lb-img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:2px;}
+.lb-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.6;transition:opacity .2s;}
+.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.lb-nav:hover{background:var(--gold);border-color:var(--gold);color:#0F1419;}
+.lb-prev{left:20px;}.lb-next{right:20px;}
+.lb-counter{position:absolute;bottom:20px;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.12em;}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+  .dense-masonry{columns:3;column-gap:4px;}
+  .dense-masonry-item{margin-bottom:4px;}
+  .project-hero{height:55vh;}
+  .project-hero-content{padding:0 24px 40px;}
+  .back-btn{top:16px;left:16px;padding:9px 14px 9px 12px;font-size:11px;}
+}
+@media(max-width:560px){
+  .dense-masonry{columns:2;column-gap:3px;}
+  .dense-masonry-item{margin-bottom:3px;}
+  .project-hero{height:50vh;min-height:300px;}
+  .project-hero-content{padding:0 16px 32px;}
+  .back-btn{font-size:10px;padding:8px 12px 8px 10px;gap:6px;}
+}
 </style>
 </head>
 <body>
-<div class="project-hero"><img src="uganics/a (1).JPG" alt="UGANICS PRODUCTS"><div class="project-hero-overlay"></div><h1 class="project-hero-title">UGANICS PRODUCTS</h1></div>
-<div class="project-logo-bar"><img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging"></div>
-<div class="project-info-bar"><span class="project-info-label">Product Photography</span><div class="project-info-back"><a href="photography.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to Photography</a></div></div>
-<div class="dense-masonry" id="masonry">
-<div class="dense-masonry-item"><img src="uganics/4R4A7381.JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/4R4A7388.JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/4R4A7391.JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/4R4A7493.JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/5G0A9982.JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (1).JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (10).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (12).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (15).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (16).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (19).JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (2).JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (3).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (4).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (5).JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (6).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (8).JPG" alt="UGANICS PRODUCTS" loading="lazy"></div>
-<div class="dense-masonry-item"><img src="uganics/a (9).jpg" alt="UGANICS PRODUCTS" loading="lazy"></div>
+
+<!-- HERO -->
+<div class="project-hero">
+  <img src="uganics/a (1).JPG" alt="Uganics Products">
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <a href="photography.html" class="back-btn" aria-label="Back to Photography">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      <span>Photography</span>
+    </a>
+    <span class="project-hero-eyebrow">Product Photography &nbsp;·&nbsp; Xpo Imaging</span>
+    <h1 class="project-hero-title">Uganics Products</h1>
+    <div class="project-hero-rule"></div>
+  </div>
 </div>
-<div class="project-cta"><a href="mailto:xpoimaging@gmail.com?subject=Product%20Photography%20Inquiry">Get in touch</a></div>
-<div class="project-footer">Powered by <strong>XPO IMAGING</strong></div>
-<div class="lb" id="lb"><button class="lb-close" id="lbClose">&times;</button><button class="lb-nav lb-prev" id="lbPrev">&#8592;</button><img class="lb-img" id="lbImg" src="" alt=""><button class="lb-nav lb-next" id="lbNext">&#8594;</button><span class="lb-counter" id="lbCounter"></span></div>
-<style>
-.lb{position:fixed;inset:0;z-index:200;background:rgba(7,10,14,0.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}.lb.open{opacity:1;visibility:visible;}
-.lb-img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:2px;}
-.lb-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.7;}.lb-close:hover{opacity:1;}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s;}.lb-nav:hover{background:var(--brand-color);}.lb-prev{left:16px;}.lb-next{right:16px;}
-.lb-counter{position:absolute;bottom:16px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;}
-.project-cta{text-align:center;padding:20px 0 60px;}.project-cta a{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--ink);border:2px solid var(--ink);padding:14px 32px;border-radius:4px;transition:all .22s;}.project-cta a:hover{background:var(--ink);color:var(--bg);}
-.project-footer{text-align:center;padding:20px 0 32px;font-size:11px;color:var(--ink-mid);}
-@media(max-width:900px){.dense-masonry{columns:3;column-gap:4px;}.dense-masonry-item{margin-bottom:4px;}.project-hero{height:40vh;}}
-@media(max-width:560px){.dense-masonry{columns:2;column-gap:3px;}.dense-masonry-item{margin-bottom:3px;}.project-hero{height:35vh;min-height:240px;}.project-hero-title{font-size:clamp(24px,8vw,40px);}.project-info-bar{padding:12px 16px;}}
-</style>
-<script>(function(){var items=Array.from(document.querySelectorAll('.dense-masonry-item')),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCounter'),idx=0;items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}function close(){lb.classList.remove('open');document.body.style.overflow='';}document.getElementById('lbClose').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close();});document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});})();</script>
+
+<!-- GALLERY -->
+<div class="dense-masonry" id="masonry">
+  <div class="dense-masonry-item"><img src="uganics/4R4A7381.JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/4R4A7388.JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/4R4A7391.JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/4R4A7493.JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/5G0A9982.JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (1).JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (10).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (12).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (15).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (16).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (19).JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (2).JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (3).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (4).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (5).JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (6).jpg" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (8).JPG" alt="Uganics" loading="lazy"></div>
+  <div class="dense-masonry-item"><img src="uganics/a (9).jpg" alt="Uganics" loading="lazy"></div>
+</div>
+
+<!-- CTA -->
+<div class="project-cta">
+  <p>Like what you see? Let's create something for your brand.</p>
+  <a href="mailto:xpoimaging@gmail.com?subject=Product%20Photography%20Inquiry">
+    Start a Project
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<div class="project-footer">© Xpo Imaging Limited &nbsp;·&nbsp; Product Photography</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev">&#8592;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext">&#8594;</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
+
+<script>
+(function(){
+  var items=Array.from(document.querySelectorAll('.dense-masonry-item')),
+      lb=document.getElementById('lb'),
+      img=document.getElementById('lbImg'),
+      ctr=document.getElementById('lbCounter'),idx=0;
+  items.forEach(function(item,i){
+    item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});
+  });
+  function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lbClose').onclick=close;
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};
+  document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}
+    if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}
+  });
+})();
+</script>
 </body>
 </html>

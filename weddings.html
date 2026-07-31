@@ -12,47 +12,115 @@
 body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
 h1,h2,h3{margin:0;font-weight:700;color:#fff;}
+
+/* ---- BACK BUTTON — fixed top-left, professional ---- */
+.back-btn{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:100;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:10px 18px 10px 14px;
+  background:rgba(15,20,25,0.75);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px;
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  transition:background .22s ease, border-color .22s ease, transform .22s ease;
+  text-decoration:none;
+}
+.back-btn:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(255,255,255,0.4);
+  transform:translateX(-3px);
+}
+.back-btn svg{
+  width:14px;height:14px;
+  flex-shrink:0;
+  transition:transform .22s ease;
+}
+.back-btn:hover svg{transform:translateX(-2px);}
+
+/* ---- HERO ---- */
 .wed-hero{position:relative;height:70vh;min-height:450px;overflow:hidden;}
 .wed-hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;}
 .wed-hero-slide.active{opacity:1;}
 .wed-hero-slide img{width:100%;height:100%;object-fit:cover;}
 .wed-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,20,25,0.3) 0%,rgba(15,20,25,0.7) 100%);}
 .wed-hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 48px 60px;max-width:var(--maxw);margin:0 auto;z-index:2;}
-.wed-hero-eyebrow{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+.wed-hero-eyebrow{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#fff;display:block;margin-bottom:12px;}
 .wed-hero-title{font-size:clamp(42px,7vw,80px);text-transform:uppercase;letter-spacing:0.03em;font-weight:800;line-height:1.0;}
 .wed-hero-dots{position:absolute;bottom:28px;right:48px;display:flex;gap:8px;z-index:3;}
 .wed-hero-dots button{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,0.5);background:transparent;cursor:pointer;padding:0;transition:all .2s;}
 .wed-hero-dots button.active{background:#fff;border-color:#fff;}
-.wed-hero-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.08);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;backdrop-filter:blur(4px);}
-.wed-hero-nav:hover{background:#fff;color:#0F1419;border-color:#fff;}
-.wed-hero-prev{left:24px;}.wed-hero-next{right:24px;}
-.wed-info{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;max-width:var(--maxw);margin:0 auto;border-bottom:1px solid var(--rule);}
-.wed-info-label{font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;}
-.wed-info-back{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);font-weight:600;transition:color .2s;}
-.wed-info-back:hover{color:#fff;}
+/* Arrows hidden */
+.wed-hero-nav{display:none;}
+
+/* ---- GALLERY ---- */
 .wed-gallery{columns:5;column-gap:4px;padding:4px;}
 .wed-gallery-item{break-inside:avoid;margin-bottom:4px;overflow:hidden;cursor:pointer;}
 .wed-gallery-item img{width:100%;display:block;transition:transform .4s ease,opacity .3s;}
 .wed-gallery-item:hover img{transform:scale(1.02);opacity:0.85;}
-.lb{position:fixed;inset:0;z-index:200;background:rgba(7,10,14,0.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}.lb.open{opacity:1;visibility:visible;}
+
+/* ---- LIGHTBOX ---- */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(7,10,14,0.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}
+.lb.open{opacity:1;visibility:visible;}
 .lb-img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:2px;}
-.lb-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.7;}.lb-close:hover{opacity:1;}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s;}.lb-nav:hover{background:var(--blue);}.lb-prev{left:16px;}.lb-next{right:16px;}
+.lb-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.7;}
+.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lb-nav:hover{background:var(--blue);}
+.lb-prev{left:16px;}.lb-next{right:16px;}
 .lb-counter{position:absolute;bottom:16px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;}
+
+/* ---- CTA & FOOTER ---- */
 .wed-cta{text-align:center;padding:48px 0;border-top:1px solid var(--rule);}
 .wed-cta a{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#fff;border:1.5px solid rgba(255,255,255,0.4);padding:14px 32px;border-radius:4px;transition:all .22s;}
 .wed-cta a:hover{background:rgba(255,255,255,0.08);border-color:#fff;}
 .wed-footer{text-align:center;padding:20px 0 32px;font-size:11px;color:var(--ink-mid);}
-@media(max-width:900px){.wed-gallery{columns:4;column-gap:3px;}.wed-gallery-item{margin-bottom:3px;}.wed-hero{height:55vh;}.wed-hero-content{padding:0 24px 48px;}.wed-info{padding:16px 24px;}}
-@media(max-width:560px){.wed-gallery{columns:3;column-gap:2px;}.wed-gallery-item{margin-bottom:2px;}.wed-hero{height:45vh;min-height:300px;}.wed-hero-title{font-size:clamp(28px,8vw,48px);}.wed-hero-content{padding:0 16px 36px;}.wed-info{padding:12px 16px;}}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+  .wed-gallery{columns:4;column-gap:3px;}
+  .wed-gallery-item{margin-bottom:3px;}
+  .wed-hero{height:55vh;}
+  .wed-hero-content{padding:0 24px 48px;}
+  .back-btn{top:16px;left:16px;padding:9px 14px 9px 12px;font-size:11px;}
+}
+@media(max-width:560px){
+  .wed-gallery{columns:3;column-gap:2px;}
+  .wed-gallery-item{margin-bottom:2px;}
+  .wed-hero{height:45vh;min-height:300px;}
+  .wed-hero-title{font-size:clamp(28px,8vw,48px);}
+  .wed-hero-content{padding:0 16px 36px;}
+  .back-btn{top:14px;left:14px;padding:8px 12px 8px 10px;gap:7px;}
+  .back-btn span{display:none;} /* show only arrow icon on smallest screens */
+}
 </style>
 </head>
 <body>
+
+<!-- BACK BUTTON — fixed top-left -->
+<a href="index.html" class="back-btn" aria-label="Back to Home">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 12H5M12 5l-7 7 7 7"/>
+  </svg>
+  <span>Back to Home</span>
+</a>
+
+<!-- HERO CAROUSEL -->
 <section class="wed-hero">
-  <div class="wed-hero-slide active"><img src="yes i do/yes I doo.jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
+  <div class="wed-hero-slide active"><img src="assets/yes i do.jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
   <div class="wed-hero-slide"><img src="yes i do/_M9A7191.jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
-  <div class="wed-hero-slide"><img src="yes i do/Albert And josephine (2).jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
-  <div class="wed-hero-slide"><img src="yes i do/Emma and phiona (21).jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
+  <div class="wed-hero-slide"><img src="yes i do/Albert And josephine (4).jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
+  <div class="wed-hero-slide"><img src="yes i do/Emma And Treasure (3).jpg" alt="XPO Weddings"><div class="wed-hero-overlay"></div></div>
   <div class="wed-hero-content">
     <span class="wed-hero-eyebrow">Your Special Day, Beautifully Captured</span>
     <h1 class="wed-hero-title">XPO Weddings</h1>
@@ -61,10 +129,8 @@ h1,h2,h3{margin:0;font-weight:700;color:#fff;}
   <button class="wed-hero-nav wed-hero-prev" id="heroPrev">&#8592;</button>
   <button class="wed-hero-nav wed-hero-next" id="heroNext">&#8594;</button>
 </section>
-<div class="wed-info">
-  <span class="wed-info-label">XPO Weddings</span>
-  <a href="index.html" class="wed-info-back">← Back to Home</a>
-</div>
+
+<!-- GALLERY -->
 <div class="wed-gallery" id="gallery">
   <div class="wed-gallery-item"><img src="yes i do/_M9A6675.jpg" alt="Wedding" loading="lazy"></div>
   <div class="wed-gallery-item"><img src="yes i do/Albert And josephine (2).jpg" alt="Wedding" loading="lazy"></div>
@@ -92,12 +158,42 @@ h1,h2,h3{margin:0;font-weight:700;color:#fff;}
   <div class="wed-gallery-item"><img src="yes i do/Sandra_s Intro (9).jpg" alt="Wedding" loading="lazy"></div>
   <div class="wed-gallery-item"><img src="yes i do/yes I doo.jpg" alt="Wedding" loading="lazy"></div>
 </div>
+
 <div class="wed-cta"><a href="mailto:xpoimaging@gmail.com?subject=Wedding%20Inquiry">Get in touch</a></div>
 <div class="wed-footer">Powered by <strong>XPO IMAGING</strong></div>
-<div class="lb" id="lb"><button class="lb-close" id="lbClose">&times;</button><button class="lb-nav lb-prev" id="lbPrev">&#8592;</button><img class="lb-img" id="lbImg" src="" alt=""><button class="lb-nav lb-next" id="lbNext">&#8594;</button><span class="lb-counter" id="lbCounter"></span></div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev">&#8592;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext">&#8594;</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
+
 <script>
-(function(){var s=document.querySelectorAll('.wed-hero-slide'),d=document.getElementById('heroDots'),c=0,t;s.forEach(function(_,i){var b=document.createElement('button');if(i===0)b.classList.add('active');b.onclick=function(){g(i);r();};d.appendChild(b);});function g(i){s[c].classList.remove('active');d.children[c].classList.remove('active');c=i;s[c].classList.add('active');d.children[c].classList.add('active');}function n(){g((c+1)%s.length);}function p(){g((c-1+s.length)%s.length);}function r(){clearInterval(t);t=setInterval(n,4000);}document.getElementById('heroNext').onclick=function(){n();r();};document.getElementById('heroPrev').onclick=function(){p();r();};t=setInterval(n,4000);})();
-(function(){var items=Array.from(document.querySelectorAll('.wed-gallery-item')),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCounter'),idx=0;items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}function close(){lb.classList.remove('open');document.body.style.overflow='';}document.getElementById('lbClose').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close();});document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});})();
+(function(){
+  var s=document.querySelectorAll('.wed-hero-slide'),d=document.getElementById('heroDots'),c=0,t;
+  s.forEach(function(_,i){var b=document.createElement('button');if(i===0)b.classList.add('active');b.onclick=function(){g(i);r();};d.appendChild(b);});
+  function g(i){s[c].classList.remove('active');d.children[c].classList.remove('active');c=i;s[c].classList.add('active');d.children[c].classList.add('active');}
+  function n(){g((c+1)%s.length);}
+  function p(){g((c-1+s.length)%s.length);}
+  function r(){clearInterval(t);t=setInterval(n,4000);}
+  document.getElementById('heroNext').onclick=function(){n();r();};
+  document.getElementById('heroPrev').onclick=function(){p();r();};
+  t=setInterval(n,4000);
+})();
+(function(){
+  var items=Array.from(document.querySelectorAll('.wed-gallery-item')),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCounter'),idx=0;
+  items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});
+  function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lbClose').onclick=close;
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};
+  document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});
+})();
 </script>
 </body>
 </html>

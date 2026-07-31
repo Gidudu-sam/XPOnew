@@ -1309,6 +1309,21 @@
     *{animation:none!important;transition:none!important;}
   }
 
+  /* ---- Utility classes replacing inline styles ---- */
+  .hero-btn-wrap{ margin-top:32px; }
+  .section-services{ background:var(--bg);padding-bottom:80px; }
+  .why-section-top{ padding-top:100px; }
+  .why-heading{ color:#fff; }
+  .logo-track-row2{ margin-top:24px; }
+  .cta-desc{
+    font-size:17px;color:rgba(255,255,255,0.7);
+    max-width:48ch;margin:0 auto 36px;line-height:1.7;
+  }
+  .foot-tagline{ margin-top:12px;font-style:italic;color:var(--sky);font-size:13px; }
+  .foot-divider{ height:1px;background:rgba(255,255,255,0.08);margin:80px 0 48px; }
+  .form-success-icon{ width:48px;height:48px;color:var(--sky);margin-bottom:16px; }
+  .testi-header{ text-align:center;margin-bottom:56px; }
+
   /* Large screens (TVs, ultrawide) */
   @media (min-width:1600px){
     .wrap{max-width:1600px;padding:0 80px;}
@@ -1474,7 +1489,7 @@
   <div class="hero-body">
     <p class="hero-sub-line" id="heroService"> Strategic Brand Identity &amp; Campaigns</p>
     <h1 class="hero-title" id="heroTitle">Branding and Marketing</h1>
-    <div style="margin-top:32px;">
+    <div class="hero-btn-wrap">
       <a href="#services" class="btn hero-btn">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
     </div>
   </div>
@@ -1536,7 +1551,7 @@
 </section>
 
 <!-- ============ OUR WORKS — Colorful Staggered Grid ============ -->
-<section id="services" style="background:var(--bg);padding-bottom:80px;">
+<section id="services" class="section-services">
   <div class="wrap">
     <div class="section-head" data-aos="fade-up">
       <div>
@@ -1640,11 +1655,11 @@
 </div>
 
 <!-- ============ WHY US ============ -->
-<section class="why-section" style="padding-top:100px;">
+<section class="why-section why-section-top">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2 style="color:#fff;">Why<br>Choose us.</h2>
+        <h2 class="why-heading">Why<br>Choose us.</h2>
       </div>
     </div>
   </div>
@@ -1686,7 +1701,7 @@
   </div>
 
   <!-- Row 2 — scrolls right -->
-  <div class="logo-track-wrap" style="margin-top:24px;">
+  <div class="logo-track-wrap logo-track-row2">
     <div class="logo-track logo-track--right" id="logoTrack2">
       <div class="logo-set" id="logoSet2a"></div>
       <div class="logo-set" id="logoSet2b"></div>
@@ -1696,7 +1711,7 @@
 
 <!-- ============ TESTIMONIALS — Manual Slider ============ -->
 <section class="testi-section" id="testimonials">
-  <div class="wrap" style="text-align:center;">
+  <div class="wrap testi-header">
     <span class="testi-eyebrow">Real Reviews</span>
     <h2 class="testi-title" data-aos="fade-up">What Our Clients Say</h2>
 
@@ -1766,7 +1781,7 @@
 <section class="cta-strip" id="start-project">
   <div class="wrap">
     <h2>Ready to tell your story with impact?</h2>
-    <p style="font-size:17px;color:rgba(255,255,255,0.7);max-width:48ch;margin:0 auto 36px;line-height:1.7;position:relative;">High-quality visuals for your brand. Let's create something remarkable together.</p>
+    <p class="cta-desc">High-quality visuals for your brand. Let's create something remarkable together.</p>
     <a href="mailto:xpoimaging@gmail.com?subject=New%20Project%20Inquiry" class="btn">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
   </div>
 </section>
@@ -1865,7 +1880,7 @@
           </button>
         </form>
         <div class="form-success" id="formSuccess">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px;color:var(--sky);margin-bottom:16px;"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="form-success-icon"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
           <h4>Message sent!</h4>
           <p>We'll get back to you within 24 hours.</p>
         </div>
@@ -1873,7 +1888,7 @@
 
     </div>
 
-    <div style="height:1px;background:rgba(255,255,255,0.08);margin:80px 0 48px;"></div>
+    <div class="foot-divider"></div>
 
     <div class="foot-grid">
       <div>
@@ -1881,7 +1896,7 @@
           <img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging Limited">
         </div>
         <p class="foot-tag">High-quality visuals for your brand. Uganda's full-service branding, marketing, events production, product photography, and creative communications agency established 2014.</p>
-        <p class="foot-tag" style="margin-top:12px;font-style:italic;color:var(--sky);font-size:13px;">Your Story. Our Creativity. Lasting Impact.</p>
+        <p class="foot-tag foot-tagline">Your Story. Our Creativity. Lasting Impact.</p>
       </div>
       <div>
         <h5>Head Office</h5>

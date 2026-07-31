@@ -54,12 +54,11 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 .mobile-nav a{display:block;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);border-bottom:1px solid #2A3544;}
 .mobile-nav a:hover{background:#1E2A3A;color:#fff;}
 
-/* BREADCRUMB */
-.breadcrumb{background:#1A2332;padding:14px 0;margin-top:100px;}
-.breadcrumb .wrap{display:flex;align-items:center;gap:16px;}
-.breadcrumb a{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-weight:700;transition:color .2s;}.breadcrumb a:hover{color:#fff;}
-.breadcrumb-sep{color:rgba(255,255,255,0.3);font-size:14px;}
-.breadcrumb-current{font-size:13px;color:rgba(255,255,255,0.85);font-weight:400;}
+/* BACK BUTTON */
+.back-btn{display:inline-flex;align-items:center;gap:9px;padding:9px 16px 9px 12px;background:rgba(15,20,25,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:100px;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:background .22s,border-color .22s,transform .22s;text-decoration:none;margin-bottom:20px;}
+.back-btn:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.45);transform:translateX(-3px);}
+.back-btn svg{width:13px;height:13px;flex-shrink:0;transition:transform .22s;}
+.back-btn:hover svg{transform:translateX(-2px);}
 
 /* HERO */
 .svc-hero{position:relative;height:85vh;min-height:500px;overflow:hidden;}
@@ -67,23 +66,21 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 .svc-hero-slide img{width:100%;height:100%;object-fit:cover;}
 .svc-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,20,25,0.25) 0%,rgba(15,20,25,0.6) 100%);}
 .svc-hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 32px 60px;max-width:var(--maxw);margin:0 auto;z-index:2;}
-.svc-hero-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-color);margin-bottom:12px;display:block;}
+.svc-hero-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#fff;margin-bottom:12px;display:block;}
 .svc-hero-title{font-size:clamp(40px,7vw,80px);line-height:1.0;color:#fff;margin-bottom:16px;}
 .svc-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:50ch;line-height:1.6;}
 .svc-hero-dots{position:absolute;bottom:28px;right:32px;display:flex;gap:8px;z-index:3;}
 .svc-hero-dots button{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,0.5);background:transparent;cursor:pointer;padding:0;transition:all .2s;}
 .svc-hero-dots button.active{background:#fff;border-color:#fff;transform:scale(1.2);}
-.svc-hero-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.1);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;backdrop-filter:blur(4px);}
-.svc-hero-nav:hover{background:#fff;color:#0F1419;border-color:#fff;}
-.svc-hero-prev{left:24px;}.svc-hero-next{right:24px;}
+.svc-hero-nav{display:none;}
 
 /* SERVICE INTRO */
-.svc-intro{padding:80px 0;background:var(--brand-color);}.svc-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.svc-intro{padding:80px 0;background:#1A2332;}.svc-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .svc-intro-label{font-size:clamp(32px,4vw,52px);letter-spacing:-0.02em;line-height:1.05;color:#fff;margin-bottom:16px;font-weight:800;}
-.svc-intro-title{font-size:clamp(18px,2vw,24px);font-weight:400;line-height:1.6;color:rgba(255,255,255,0.85);}
+.svc-intro-title{font-size:clamp(18px,2vw,24px);font-weight:400;line-height:1.6;color:rgba(255,255,255,0.75);}
 .svc-deliverables{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.svc-deliverables li{font-size:14px;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;padding:8px 0;}
-.svc-deliverables li::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0;}
+.svc-deliverables li{font-size:14px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;padding:8px 0;}
+.svc-deliverables li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
 /* PROJECTS */
 .svc-projects{padding:80px 0;background:#1A2332;border-top:1px solid #2A3544;}
@@ -167,13 +164,17 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
   <a href="index.html#contact">Contact</a>
 </nav>
 
-<div class="breadcrumb"><div class="wrap"><a href="index.html#services">SERVICES</a><span class="breadcrumb-sep">»</span><span class="breadcrumb-current">Events Production</span></div></div>
-
 <section class="svc-hero">
-  <div class="svc-hero-slide active"><img src="services/video production.jpeg" alt="Event production"><div class="svc-hero-overlay"></div></div>
-  <div class="svc-hero-slide"><img src="services/photograpy.jpeg" alt="Event photography"><div class="svc-hero-overlay"></div></div>
-  <div class="svc-hero-slide"><img src="services/communication and documentation.jpeg" alt="Event coverage"><div class="svc-hero-overlay"></div></div>
+  <div class="svc-hero-slide active"><img src="CONCERTS/XPO_8460.jpg" alt="Concerts Event"><div class="svc-hero-overlay"></div></div>
+  <div class="svc-hero-slide"><img src="ACELI AFRICA/_R6A8646.jpg" alt="Aceli Africa Event"><div class="svc-hero-overlay"></div></div>
+  <div class="svc-hero-slide"><img src="MASTERCARD/Master Card Foundation (11).jpg" alt="Mastercard Foundation Event"><div class="svc-hero-overlay"></div></div>
+  <div class="svc-hero-slide"><img src="C-CARE/1 (1).jpg" alt="C-Care Event"><div class="svc-hero-overlay"></div></div>
+  <div class="svc-hero-slide"><img src="MARATHAN/Rob (1).jpg" alt="Marathon Event"><div class="svc-hero-overlay"></div></div>
   <div class="svc-hero-content">
+    <a href="index.html#services" class="back-btn" aria-label="Back to Services">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span>Services</span>
+    </a>
     <span class="svc-hero-eyebrow">Service / Events Production</span>
     <h1 class="svc-hero-title">Events<br>Production</h1>
     <p class="svc-hero-sub">From corporate conferences to product launches — we produce events that leave lasting impressions.</p>
@@ -208,22 +209,46 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 <section class="svc-projects"><div class="wrap">
   <div class="svc-projects-head" data-aos="fade-up"><h2>Featured Projects</h2></div>
   <div class="projects-grid">
-    <a href="project-ev-dgf.html" class="project-card" data-aos="fade-up" data-aos-delay="0" onclick="cardClick(event,this)">
-      <img src="CLient Logos/DGF.jpg" alt="DGF" loading="lazy">
+    <a href="project-ev-concerts.html" class="project-card" data-aos="fade-up" data-aos-delay="0" onclick="cardClick(event,this)">
+      <img src="CONCERTS/XPO_8460.jpg" alt="Concerts" loading="lazy">
+      <div class="project-card-overlay"></div>
+      <h3 class="project-card-name">Concerts</h3>
+      <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
+    </a>
+    <a href="project-ev-aceli.html" class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="cardClick(event,this)">
+      <img src="ACELI AFRICA/_R6A8727.jpg" alt="Aceli Africa" loading="lazy">
+      <div class="project-card-overlay"></div>
+      <h3 class="project-card-name">Aceli Africa</h3>
+      <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
+    </a>
+    <a href="project-ev-mastercard.html" class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="cardClick(event,this)">
+      <img src="MASTERCARD/Master Card Foundation (11).jpg" alt="Mastercard Foundation" loading="lazy">
+      <div class="project-card-overlay"></div>
+      <h3 class="project-card-name">Mastercard Foundation</h3>
+      <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
+    </a>
+    <a href="project-ev-ccare.html" class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="cardClick(event,this)">
+      <img src="C-CARE/1 (22).jpg" alt="C-Care" loading="lazy">
+      <div class="project-card-overlay"></div>
+      <h3 class="project-card-name">C-Care</h3>
+      <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
+    </a>
+    <a href="project-ev-marathon.html" class="project-card" data-aos="fade-up" data-aos-delay="300" onclick="cardClick(event,this)">
+      <img src="MARATHAN/Rob (3).jpg" alt="Marathon" loading="lazy">
+      <div class="project-card-overlay"></div>
+      <h3 class="project-card-name">Marathon</h3>
+      <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
+    </a>
+    <a href="project-ev-dgf.html" class="project-card" data-aos="fade-up" data-aos-delay="400" onclick="cardClick(event,this)">
+      <img src="EVENTS/image 1.jpg" alt="DGF Conference" loading="lazy">
       <div class="project-card-overlay"></div>
       <h3 class="project-card-name">DGF Conference</h3>
       <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
     </a>
-    <a href="project-ev-diakonia.html" class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="cardClick(event,this)">
-      <img src="CLient Logos/diakonia.jpg" alt="Diakonia" loading="lazy">
+    <a href="project-ev-diakonia.html" class="project-card" data-aos="fade-up" data-aos-delay="500" onclick="cardClick(event,this)">
+      <img src="EVENTS/image 2.JPG" alt="Diakonia" loading="lazy">
       <div class="project-card-overlay"></div>
       <h3 class="project-card-name">Diakonia Annual Summit</h3>
-      <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
-    </a>
-    <a href="project-ev-danida.html" class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="cardClick(event,this)">
-      <img src="CLient Logos/Ministr_Danida_Std_Rgb_En [66].png" alt="Danida" loading="lazy">
-      <div class="project-card-overlay"></div>
-      <h3 class="project-card-name">Danida Partnership Forum</h3>
       <div class="project-card-click-overlay"><div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><span>Opening</span></div>
     </a>
   </div>
@@ -232,11 +257,13 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 <section class="svc-partners"><div class="wrap">
   <h3>Events We've Produced For</h3>
   <div class="partner-logos">
+    <img src="CLient Logos/Aceli-Africa-FullColor-Logo.png" alt="Aceli Africa">
+    <img src="CLient Logos/4a1399860dbdf7aab6b7eac1c229df80_400x400.jpeg" alt="Mastercard Foundation">
     <img src="CLient Logos/DGF.jpg" alt="DGF">
     <img src="CLient Logos/diakonia.jpg" alt="Diakonia">
     <img src="CLient Logos/Ministr_Danida_Std_Rgb_En [66].png" alt="Danida">
-    <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace">
-    <img src="CLient Logos/Danish refugee-council.png" alt="DRC">
+    <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace Foundation">
+    <img src="CLient Logos/Danish refugee-council.png" alt="Danish Refugee Council">
     <img src="CLient Logos/kampalafair_logo.png" alt="Kampala Fair">
   </div>
 </div></section>

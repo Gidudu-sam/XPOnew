@@ -3,69 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>HOTEL PHOTOGRAPHY | Xpo Imaging Limited</title>
+<title>Hotel Photography | Xpo Imaging Limited</title>
 <link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
 <style>
 *:not(code):not(pre){font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif !important;}
-:root{--bg:#0F1419;--ink:#FFFFFF;--ink-mid:#9CA3AF;--rule:#2A3544;--maxw:1400px;--brand-color:#10b981;}
-*{box-sizing:border-box;}html{scroll-behavior:smooth;}body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}h1,h2,h3{margin:0;font-weight:700;}
-.project-hero{position:relative;height:50vh;min-height:320px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.project-hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4);}
-.project-hero-title{position:relative;z-index:2;font-size:clamp(32px,6vw,64px);color:#fff;text-align:center;letter-spacing:0.06em;text-transform:uppercase;text-shadow:0 4px 20px rgba(0,0,0,0.4);}
-.project-logo-bar{display:flex;align-items:center;justify-content:center;padding:24px 0;border-bottom:1px solid var(--rule);}
-.project-logo-bar img{height:48px;width:auto;filter:brightness(0) invert(1);}
-.project-info-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:var(--maxw);margin:0 auto;}
-.project-info-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:var(--ink-mid);}
-.project-info-back a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:var(--ink-mid);display:flex;align-items:center;gap:6px;transition:color .2s;}
-.project-info-back a:hover{color:var(--brand-color);}
-.project-info-back svg{width:14px;height:14px;}
-.dense-masonry{columns:4;column-gap:6px;padding:8px 6px 60px;}
-.dense-masonry-item{break-inside:avoid;margin-bottom:6px;overflow:hidden;cursor:pointer;}
-.dense-masonry-item img{width:100%;display:block;transition:transform .4s ease;}
-.dense-masonry-item:hover img{transform:scale(1.03);}
-.lb{position:fixed;inset:0;z-index:200;background:rgba(7,10,14,0.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}.lb.open{opacity:1;visibility:visible;}
+:root{--bg:#0F1419;--ink:#fff;--ink-mid:#9CA3AF;--rule:#2A3544;--gold:#D4A843;--maxw:1600px;}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
+h1,h2,h3{margin:0;font-weight:700;color:#fff;}
+.back-btn{display:inline-flex;align-items:center;gap:9px;padding:10px 18px 10px 14px;background:rgba(15,20,25,0.65);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.18);border-radius:100px;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:background .22s,border-color .22s,transform .22s;width:fit-content;margin-bottom:24px;}
+.back-btn:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.4);transform:translateX(-3px);}
+.back-btn svg{width:13px;height:13px;flex-shrink:0;transition:transform .22s;}
+.back-btn:hover svg{transform:translateX(-2px);}
+.proj-hero{position:relative;height:75vh;min-height:480px;overflow:hidden;display:flex;align-items:flex-end;}
+.proj-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.proj-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,20,25,0.1) 0%,rgba(15,20,25,0.5) 55%,rgba(15,20,25,0.92) 100%);}
+.proj-hero-content{position:relative;z-index:2;padding:0 48px 56px;width:100%;max-width:var(--maxw);margin:0 auto;}
+.proj-hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:14px;}
+.proj-hero-title{font-size:clamp(40px,7vw,88px);font-weight:800;letter-spacing:0.02em;text-transform:uppercase;line-height:1.0;color:#fff;}
+.proj-hero-rule{width:52px;height:3px;background:var(--gold);border-radius:2px;margin-top:22px;}
+.proj-gallery{columns:4;column-gap:5px;padding:5px 5px 60px;}
+.proj-gallery-item{break-inside:avoid;margin-bottom:5px;overflow:hidden;cursor:pointer;}
+.proj-gallery-item img{width:100%;display:block;transition:transform .45s ease,opacity .3s;}
+.proj-gallery-item:hover img{transform:scale(1.03);opacity:0.88;}
+.proj-cta{text-align:center;padding:56px 0;border-top:1px solid var(--rule);}
+.proj-cta p{font-size:13px;color:var(--ink-mid);margin-bottom:24px;letter-spacing:0.04em;}
+.proj-cta a{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#fff;border:1.5px solid rgba(255,255,255,0.35);padding:16px 36px;border-radius:4px;transition:all .22s;}
+.proj-cta a:hover{background:rgba(255,255,255,0.08);border-color:#fff;}
+.proj-cta a svg{width:14px;height:14px;}
+.proj-footer{text-align:center;padding:16px 0 32px;font-size:11px;color:rgba(255,255,255,0.22);letter-spacing:0.06em;}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(7,10,14,0.97);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}.lb.open{opacity:1;visibility:visible;}
 .lb-img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:2px;}
-.lb-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.7;}.lb-close:hover{opacity:1;}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s;}.lb-nav:hover{background:var(--brand-color);}.lb-prev{left:16px;}.lb-next{right:16px;}
-.lb-counter{position:absolute;bottom:16px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;}
-.project-cta{text-align:center;padding:20px 0 60px;}.project-cta a{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--ink);border:2px solid var(--ink);padding:14px 32px;border-radius:4px;transition:all .22s;}.project-cta a:hover{background:var(--ink);color:var(--bg);}
-.project-footer{text-align:center;padding:20px 0 32px;font-size:11px;color:var(--ink-mid);}
-@media(max-width:900px){.dense-masonry{columns:3;column-gap:4px;}.dense-masonry-item{margin-bottom:4px;}.project-hero{height:40vh;}}
-@media(max-width:560px){.dense-masonry{columns:2;column-gap:3px;}.dense-masonry-item{margin-bottom:3px;}.project-hero{height:35vh;min-height:240px;}.project-hero-title{font-size:clamp(24px,8vw,40px);}.project-info-bar{padding:12px 16px;}}
+.lb-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.6;transition:opacity .2s;}.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s;}.lb-nav:hover{background:var(--gold);border-color:var(--gold);color:#0F1419;}
+.lb-prev{left:20px;}.lb-next{right:20px;}
+.lb-counter{position:absolute;bottom:20px;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.12em;}
+@media(max-width:900px){.proj-gallery{columns:3;column-gap:4px;}.proj-gallery-item{margin-bottom:4px;}.proj-hero{height:58vh;}.proj-hero-content{padding:0 24px 44px;}}
+@media(max-width:560px){.proj-gallery{columns:2;column-gap:3px;}.proj-gallery-item{margin-bottom:3px;}.proj-hero{height:50vh;min-height:320px;}.proj-hero-content{padding:0 16px 32px;}.proj-hero-title{font-size:clamp(30px,9vw,52px);}}
 </style>
 </head>
 <body>
-<div class="project-hero">
-  <img src="hotel/D (1).jpg" alt="Hotel Photography">
-  <div class="project-hero-overlay"></div>
-  <h1 class="project-hero-title">HOTEL PHOTOGRAPHY</h1>
+<div class="proj-hero">
+  <img src="hotel/D (1).jpg" alt="Hotel Photography by Xpo Imaging">
+  <div class="proj-hero-overlay"></div>
+  <div class="proj-hero-content">
+    <a href="photography.html" class="back-btn" aria-label="Back to Photography">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span>Photography</span>
+    </a>
+    <span class="proj-hero-eyebrow">Product Photography &nbsp;·&nbsp; Xpo Imaging</span>
+    <h1 class="proj-hero-title">Hotel Photography</h1>
+    <div class="proj-hero-rule"></div>
+  </div>
 </div>
-<div class="project-logo-bar"><img src="xpo logo/Profile XPO LOGO 2019.png" alt="Xpo Imaging"></div>
-<div class="project-info-bar">
-  <span class="project-info-label">Product Photography</span>
-  <div class="project-info-back"><a href="photography.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to Photography</a></div>
+<div class="proj-gallery" id="gallery">
+  <div class="proj-gallery-item"><img src="hotel/D (1).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D (2).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D (3).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D1 V (2).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D2 (1).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D2 (2).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D2 (3).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D2 V (1).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D2 V (2).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D2 V (3).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D3 (1).jpg" alt="Hotel Photography" loading="lazy"></div>
+  <div class="proj-gallery-item"><img src="hotel/D3 (4).jpg" alt="Hotel Photography" loading="lazy"></div>
 </div>
-<div class="dense-masonry" id="masonry">
-  <div class="dense-masonry-item"><img src="hotel/D (1).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D (2).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D (3).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D1 V (2).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D2 (1).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D2 (2).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D2 (3).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D2 V (1).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D2 V (2).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D2 V (3).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D3 (1).jpg" alt="Hotel Photography" loading="lazy"></div>
-  <div class="dense-masonry-item"><img src="hotel/D3 (4).jpg" alt="Hotel Photography" loading="lazy"></div>
+<div class="proj-cta">
+  <p>Like what you see? Let's create something for your brand.</p>
+  <a href="mailto:xpoimaging@gmail.com?subject=Hotel%20Photography%20Inquiry">
+    Start a Project
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
 </div>
-<div class="project-cta"><a href="mailto:xpoimaging@gmail.com?subject=Product%20Photography%20Inquiry">Get in touch</a></div>
-<div class="project-footer">Powered by <strong>XPO IMAGING</strong></div>
-<div class="lb" id="lb"><button class="lb-close" id="lbClose">&times;</button><button class="lb-nav lb-prev" id="lbPrev">&#8592;</button><img class="lb-img" id="lbImg" src="" alt=""><button class="lb-nav lb-next" id="lbNext">&#8594;</button><span class="lb-counter" id="lbCounter"></span></div>
+<div class="proj-footer">© Xpo Imaging Limited &nbsp;·&nbsp; Product Photography</div>
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev">&#8592;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext">&#8594;</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
 <script>
-(function(){var items=Array.from(document.querySelectorAll('.dense-masonry-item')),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCounter'),idx=0;items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}function close(){lb.classList.remove('open');document.body.style.overflow='';}document.getElementById('lbClose').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close();});document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});})();
+(function(){var items=Array.from(document.querySelectorAll('.proj-gallery-item')),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCounter'),idx=0;items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}function close(){lb.classList.remove('open');document.body.style.overflow='';}document.getElementById('lbClose').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close();});document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});})();
 </script>
 </body>
 </html>
