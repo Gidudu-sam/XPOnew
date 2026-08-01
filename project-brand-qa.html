@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>QA Branding | Xpo Imaging Limited</title>
+<link rel="icon" type="image/png" href="xpo logo/Profile XPO LOGO 2019.png">
+<style>
+*:not(code):not(pre){font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif !important;}
+:root{--bg:#0F1419;--ink:#fff;--ink-mid:#9CA3AF;--rule:#2A3544;--gold:#D4A843;--maxw:1600px;}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}h1,h2,h3{margin:0;font-weight:700;color:#fff;}
+.back-btn{display:inline-flex;align-items:center;gap:9px;padding:10px 18px 10px 14px;background:rgba(15,20,25,0.65);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.18);border-radius:100px;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:background .22s,border-color .22s,transform .22s;width:fit-content;margin-bottom:28px;}
+.back-btn:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.4);transform:translateX(-3px);}
+.back-btn svg{width:13px;height:13px;flex-shrink:0;transition:transform .22s;}.back-btn:hover svg{transform:translateX(-2px);}
+.proj-hero{position:relative;width:100%;}
+.proj-hero-img{position:relative;width:100%;height:80vh;min-height:500px;overflow:hidden;}
+.proj-hero-img img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center;}
+.proj-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,20,25,0.15) 0%,transparent 40%,transparent 60%,rgba(15,20,25,0.5) 100%);pointer-events:none;}
+.proj-hero-back{position:absolute;top:28px;left:40px;z-index:10;}
+.proj-hero-content{background:#0F1419;padding:40px 56px 48px;width:100%;border-bottom:1px solid var(--rule);display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.proj-hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.proj-hero-tag::before{content:'';width:28px;height:1px;background:var(--gold);}
+.proj-hero-title{font-size:clamp(36px,5vw,72px);font-weight:800;letter-spacing:-0.01em;text-transform:uppercase;line-height:1.0;color:#fff;}
+.proj-hero-right{max-width:38ch;flex-shrink:0;}
+.proj-hero-sub{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:20px;}
+.proj-hero-rule{width:40px;height:2px;background:var(--gold);}
+.proj-intro{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:40px 56px;border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+.proj-intro-stat{text-align:center;}
+.proj-intro-stat strong{display:block;font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;}
+.proj-intro-stat span{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;display:block;}
+.proj-intro-desc{flex:1;min-width:280px;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;border-left:2px solid var(--gold);padding-left:24px;}
+.proj-gallery-wrap{padding:60px 5px;}
+.proj-gallery{columns:4;column-gap:6px;}
+.proj-gallery-item{break-inside:avoid;margin-bottom:6px;overflow:hidden;cursor:pointer;position:relative;}
+.proj-gallery-item img{width:100%;display:block;transition:transform .5s cubic-bezier(.25,.46,.45,.94),filter .4s;}
+.proj-gallery-item:hover img{transform:scale(1.04);filter:brightness(0.85);}
+.proj-cta{text-align:center;padding:72px 24px;background:linear-gradient(to bottom,var(--bg),#111820);}
+.proj-cta-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px;}
+.proj-cta h2{font-size:clamp(28px,4vw,52px);font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-0.01em;}
+.proj-cta p{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:36px;}
+.proj-cta a{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#0F1419;background:var(--gold);padding:18px 40px;border-radius:3px;transition:all .22s;}
+.proj-cta a:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 32px rgba(212,168,67,0.25);}
+.proj-cta a svg{width:14px;height:14px;}
+.proj-footer{text-align:center;padding:20px 0 36px;font-size:10px;color:rgba(255,255,255,0.15);letter-spacing:0.1em;text-transform:uppercase;border-top:1px solid var(--rule);}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(5,8,12,0.98);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}.lb.open{opacity:1;visibility:visible;}
+.lb-img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:2px;box-shadow:0 32px 80px rgba(0,0,0,0.6);}
+.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:0.4;transition:opacity .2s;line-height:1;}.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .22s;}.lb-nav:hover{background:var(--gold);border-color:var(--gold);color:#0F1419;}
+.lb-prev{left:24px;}.lb-next{right:24px;}
+.lb-counter{position:absolute;bottom:24px;font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:0.2em;text-transform:uppercase;}
+@media(max-width:1100px){.proj-gallery{columns:3;}}
+@media(max-width:900px){.proj-gallery{columns:2;column-gap:4px;}.proj-gallery-item{margin-bottom:4px;}.proj-hero-img{height:52vh;}.proj-hero-back{top:16px;left:20px;}.proj-hero-content{padding:28px 24px 36px;gap:20px;}.proj-intro{padding:28px 24px;}}
+@media(max-width:560px){.proj-gallery{columns:2;column-gap:3px;}.proj-gallery-item{margin-bottom:3px;}.proj-hero-img{height:45vh;min-height:240px;}.proj-hero-back{top:12px;left:14px;}.proj-hero-content{padding:22px 16px 28px;flex-direction:column;gap:14px;}.proj-hero-title{font-size:clamp(28px,9vw,52px);}.proj-hero-right{max-width:100%;}.proj-intro{flex-direction:column;padding:22px 16px;}.proj-intro-desc{border-left:none;border-top:1px solid var(--rule);padding:16px 0 0;}.proj-cta{padding:48px 16px;}.proj-cta h2{font-size:clamp(22px,6vw,36px);}}
+</style>
+</head>
+<body>
+<div class="proj-hero">
+  <div class="proj-hero-img">
+    <img src="branding-QA/4R6A3899.jpg" alt="QA Branding by Xpo Imaging">
+    <a href="branding.html" class="proj-hero-back back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Branding
+    </a>
+  </div>
+  <div class="proj-hero-content">
+    <div class="proj-hero-left">
+      <div class="proj-hero-tag">Branding &amp; Marketing</div>
+      <h1 class="proj-hero-title">QA</h1>
+    </div>
+    <div class="proj-hero-right">
+      <p class="proj-hero-sub">A refined brand identity that speaks precision, quality, and professionalism at every touchpoint.</p>
+      <div class="proj-hero-rule"></div>
+    </div>
+  </div>
+</div>
+<div class="proj-intro">
+  <div class="proj-intro-stat"><strong>9</strong><span>Deliverables</span></div>
+  <div class="proj-intro-stat"><strong>Brand</strong><span>Identity</span></div>
+  <div class="proj-intro-stat"><strong>XPO</strong><span>Imaging</span></div>
+  <p class="proj-intro-desc">End-to-end branding for QA — visual identity, brand photography, and marketing materials crafted to communicate quality and build lasting trust with their audience.</p>
+</div>
+<div class="proj-gallery-wrap">
+  <div class="proj-gallery" id="gallery">
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3653.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3728.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3778.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3779.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3783.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3899.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A3901.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A8672.jpg" alt="QA Branding" loading="lazy"></div>
+    <div class="proj-gallery-item"><img src="branding-QA/4R6A8695.jpg" alt="QA Branding" loading="lazy"></div>
+  </div>
+</div>
+<div class="proj-cta">
+  <span class="proj-cta-label">Ready to build your brand?</span>
+  <h2>Let's create something<br>remarkable together.</h2>
+  <p>Talk to us about your brand project.</p>
+  <a href="mailto:xpoimaging@gmail.com?subject=Branding%20Inquiry%20-%20QA">
+    Start a Project
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+<div class="proj-footer">© Xpo Imaging Limited &nbsp;·&nbsp; Branding &amp; Marketing</div>
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev">&#8592;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext">&#8594;</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
+<script>
+(function(){var items=Array.from(document.querySelectorAll('.proj-gallery-item')),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCounter'),idx=0;items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}function close(){lb.classList.remove('open');document.body.style.overflow='';}document.getElementById('lbClose').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close();});document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});})();
+</script>
+</body>
+</html>

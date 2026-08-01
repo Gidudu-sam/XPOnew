@@ -31,7 +31,7 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-0.01em;color:#fff;}
 p{margin:0;color:#9CA3AF;}.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
 
 /* NAV */
-header.site{position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 40px;height:100px;background:rgba(15,20,25,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid #2A3544;box-shadow:none;}
+header.site{position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 40px;height:100px;background:rgba(15,20,25,0.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid #2A3544;box-shadow:none;}
 .logo{display:flex;align-items:center;justify-self:start;}.logo-img{height:80px;width:auto;display:block;object-fit:contain;filter:brightness(0) invert(1);}
 nav.primary{display:flex;align-items:center;gap:40px;justify-self:center;}
 nav.primary a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.7);padding:4px 0;transition:color .2s;}
@@ -49,13 +49,13 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .burger.open span:nth-child(2){opacity:0;}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-nav{display:none;position:fixed;top:100px;left:0;right:0;z-index:49;background:rgba(15,20,25,0.98);backdrop-filter:blur(20px);padding:16px 0 24px;transform:translateY(-10px);opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;border-bottom:1px solid #2A3544;}
+.mobile-nav{display:none;position:fixed;top:100px;left:0;right:0;z-index:49;background:rgba(15,20,25,0.98);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:16px 0 24px;transform:translateY(-10px);opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;border-bottom:1px solid #2A3544;}
 .mobile-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
 .mobile-nav a{display:block;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);border-bottom:1px solid #2A3544;}
 .mobile-nav a:hover{background:#1E2A3A;color:#fff;}
 
 /* BACK BUTTON */
-.back-btn{display:inline-flex;align-items:center;gap:9px;padding:9px 16px 9px 12px;background:rgba(15,20,25,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:100px;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:background .22s,border-color .22s,transform .22s;text-decoration:none;margin-bottom:20px;}
+.back-btn{display:inline-flex;align-items:center;gap:9px;padding:9px 16px 9px 12px;background:rgba(15,20,25,0.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:100px;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:background .22s,border-color .22s,transform .22s;text-decoration:none;margin-bottom:20px;}
 .back-btn:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.45);transform:translateX(-3px);}
 .back-btn svg{width:13px;height:13px;flex-shrink:0;transition:transform .22s;}
 .back-btn:hover svg{transform:translateX(-2px);}
@@ -84,27 +84,26 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 .svc-deliverables li{font-size:14px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;padding:8px 0;}
 .svc-deliverables li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
-/* PROJECTS GRID */
-.svc-projects{padding:80px 0;background:#1A2332;border-top:1px solid #2A3544;}
-.svc-projects-head{margin-bottom:48px;}
-.svc-projects-head h2{font-size:clamp(28px,3.5vw,44px);color:#fff;}
-.svc-projects-head p{font-size:15px;color:#9CA3AF;margin-top:12px;max-width:50ch;}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.project-card{display:block;text-decoration:none;color:inherit;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;transition:transform .3s,box-shadow .3s;}
-.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.4);}
-.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.project-card:hover img{transform:scale(1.04);}
-.project-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 50%);pointer-events:none;}
-.project-card-name{position:absolute;bottom:20px;left:20px;right:20px;font-size:clamp(16px,2vw,22px);font-weight:700;color:#fff;margin:0;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
-.project-card-count{display:none;}
+/* GALLERY — pure CSS masonry, natural heights */
+.doc-gallery-section{padding:60px 0 80px;background:#1A2332;border-top:1px solid #2A3544;}
+.doc-gallery-head{margin-bottom:40px;}
+.doc-gallery-head h2{font-size:clamp(28px,3.5vw,44px);color:#fff;}
+.doc-gallery-head span{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+.doc-gallery{columns:4;column-gap:6px;}
+.doc-gallery-item{break-inside:avoid;margin-bottom:6px;overflow:hidden;cursor:pointer;border-radius:4px;position:relative;}
+.doc-gallery-item img{width:100%;height:auto;display:block;transition:transform .5s ease,filter .4s;}
+.doc-gallery-item:hover img{transform:scale(1.03);filter:brightness(0.82);}
 
-/* Click overlay effect */
-.project-card-click-overlay{position:absolute;inset:0;background:rgba(30,58,95,0.92);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:5;}
-.project-card.clicked .project-card-click-overlay{opacity:1;}
-.project-card-click-overlay span{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#fff;}
-.project-card-click-overlay .click-arrow{width:40px;height:40px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;animation:clickPulse .6s ease infinite;}
-.project-card-click-overlay .click-arrow svg{width:18px;height:18px;color:#0F1419;}
-@keyframes clickPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(5,8,12,0.98);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;}
+.lb.open{opacity:1;visibility:visible;}
+.lb-img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:2px;box-shadow:0 32px 80px rgba(0,0,0,0.6);}
+.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:0.4;transition:opacity .2s;line-height:1;}
+.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .22s;}
+.lb-nav:hover{background:var(--gold);border-color:var(--gold);color:#0F1419;}
+.lb-prev{left:24px;}.lb-next{right:24px;}
+.lb-counter{position:absolute;bottom:24px;font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:0.2em;text-transform:uppercase;}
 
 /* PARTNERS */
 .svc-partners{padding:60px 0;border-top:1px solid #2A3544;}
@@ -129,8 +128,8 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 .foot-logo-sm img{height:36px;width:auto;filter:brightness(0) invert(1);}
 
 /* RESPONSIVE */
-@media(max-width:900px){nav.primary{display:none;}.burger{display:flex;}.nav-cta{display:none;}header.site{grid-template-columns:1fr 1fr;height:80px;padding:0 24px;}.logo-img{height:50px;}.mobile-nav{top:80px;}.nav-right{justify-self:end;}.svc-intro-grid{grid-template-columns:1fr;gap:40px;}.projects-grid{grid-template-columns:1fr;}.svc-hero{height:70vh;}}
-@media(max-width:560px){.wrap{padding:0 16px;}header.site{height:70px;padding:0 16px;}.logo-img{height:44px;}.mobile-nav{top:70px;}.svc-hero{height:60vh;min-height:400px;}.svc-deliverables{grid-template-columns:1fr;}.partner-logos{gap:24px;}}
+@media(max-width:900px){nav.primary{display:none;}.burger{display:flex;}.nav-cta{display:none;}header.site{grid-template-columns:1fr 1fr;height:80px;padding:0 24px;}.logo-img{height:50px;}.mobile-nav{top:80px;}.nav-right{justify-self:end;}.svc-intro-grid{grid-template-columns:1fr;gap:40px;}.doc-gallery{columns:3;column-gap:4px;}.doc-gallery-item{margin-bottom:4px;}.svc-hero{height:65vh;}.svc-hero-content{padding:0 24px 44px;}.svc-hero-sub{font-size:15px;}}
+@media(max-width:560px){.wrap{padding:0 16px;}header.site{height:70px;padding:0 16px;}.logo-img{height:44px;}.mobile-nav{top:70px;}.svc-hero{height:58vh;min-height:360px;}.svc-hero-content{padding:0 16px 32px;}.svc-hero-sub{font-size:14px;max-width:100%;}.svc-deliverables{grid-template-columns:1fr;}.doc-gallery{columns:2;column-gap:3px;}.doc-gallery-item{margin-bottom:3px;}.partner-logos{gap:24px;}.svc-intro{padding:48px 0;}.svc-cta{padding:56px 0;}}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
@@ -179,15 +178,15 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 <!-- HERO CAROUSEL -->
 <section class="svc-hero" id="svcHero">
   <div class="svc-hero-slide active">
-    <img src="services/video production.jpeg" alt="Documentary production">
+    <img src="documentary/Home Page.jpg" alt="Documentary production">
     <div class="svc-hero-overlay"></div>
   </div>
   <div class="svc-hero-slide">
-    <img src="services/communication and documentation.jpeg" alt="Documentation work">
+    <img src="documentary/XPO_8131.jpg" alt="Documentary filming">
     <div class="svc-hero-overlay"></div>
   </div>
   <div class="svc-hero-slide">
-    <img src="services/photograpy.jpeg" alt="Cinematic filming">
+    <img src="documentary/4R6A7623.jpg" alt="Documentary work">
     <div class="svc-hero-overlay"></div>
   </div>
   <div class="svc-hero-content">
@@ -232,48 +231,44 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
   </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section class="svc-projects">
+<!-- GALLERY -->
+<section class="doc-gallery-section">
   <div class="wrap">
-    <div class="svc-projects-head" data-aos="fade-up">
-      <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Selected Work</span>
-      <h2>Featured Projects</h2>
+    <div class="doc-gallery-head" data-aos="fade-up">
+      <span>Selected Work</span>
+      <h2>Our Documentary Work</h2>
     </div>
-    <div class="projects-grid">
-
-      <a href="project-doc-community.html" class="project-card" data-aos="fade-up" data-aos-delay="0" onclick="cardClick(event,this)">
-        <img src="services/communication and documentation.jpeg" alt="Community Transformation" loading="lazy">
-        <div class="project-card-overlay"></div>
-        <h3 class="project-card-name">Community Transformation</h3>
-        <div class="project-card-click-overlay">
-          <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-          <span>Opening</span>
-        </div>
-      </a>
-
-      <a href="project-doc-refugee.html" class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="cardClick(event,this)">
-        <img src="services/video production.jpeg" alt="Refugee Response" loading="lazy">
-        <div class="project-card-overlay"></div>
-        <h3 class="project-card-name">Refugee Response</h3>
-        <div class="project-card-click-overlay">
-          <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-          <span>Opening</span>
-        </div>
-      </a>
-
-      <a href="project-doc-climate.html" class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="cardClick(event,this)">
-        <img src="services/photograpy.jpeg" alt="Climate Resilience" loading="lazy">
-        <div class="project-card-overlay"></div>
-        <h3 class="project-card-name">Climate Resilience</h3>
-        <div class="project-card-click-overlay">
-          <div class="click-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-          <span>Opening</span>
-        </div>
-      </a>
-
+    <div class="doc-gallery" id="docGallery">
+      <div class="doc-gallery-item"><img src="documentary/Home Page.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/353A7763.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/353A7787.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/4R6A7623.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/4R6A7625.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/AA (1).jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/AA (5).jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/BB (3).jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/DSC_8362.JPG" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/DSC_8679.JPG" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/DSC_9121.JPG" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/IMG_1088.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/IMG_8611.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/IMG_9292.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/IMG_9706.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/XPO_2128.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/XPO_2187.jpg" alt="Documentary" loading="lazy"></div>
+      <div class="doc-gallery-item"><img src="documentary/XPO_8131.jpg" alt="Documentary" loading="lazy"></div>
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev">&#8592;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext">&#8594;</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
 
 <!-- PARTNERS -->
 <section class="svc-partners">
@@ -323,6 +318,22 @@ function cardClick(e,card){
     window.location.href = card.href;
   }, 700);
 }
+
+// Lightbox
+(function(){
+  var items=Array.from(document.querySelectorAll('.doc-gallery-item')),
+      lb=document.getElementById('lb'),
+      img=document.getElementById('lbImg'),
+      ctr=document.getElementById('lbCounter'),idx=0;
+  items.forEach(function(item,i){item.addEventListener('click',function(){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden';});});
+  function show(){img.src=items[idx].querySelector('img').src;ctr.textContent=(idx+1)+' / '+items.length;}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lbClose').onclick=close;
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();idx=(idx-1+items.length)%items.length;show();};
+  document.getElementById('lbNext').onclick=function(e){e.stopPropagation();idx=(idx+1)%items.length;show();};
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;show();}if(e.key==='ArrowRight'){idx=(idx+1)%items.length;show();}});
+})();
 
 // Hero carousel
 (function(){
