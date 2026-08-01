@@ -51,8 +51,35 @@ a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}h1,h2,h3
 .lb-prev{left:24px;}.lb-next{right:24px;}
 .lb-counter{position:absolute;bottom:24px;font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:0.2em;text-transform:uppercase;}
 @media(max-width:1100px){.proj-gallery{columns:3;}}
-@media(max-width:900px){.proj-gallery{columns:2;column-gap:4px;}.proj-gallery-item{margin-bottom:4px;}.proj-hero-img{height:52vh;}.proj-hero-back{top:16px;left:20px;}.proj-hero-content{padding:28px 24px 36px;gap:20px;}.proj-intro{padding:28px 24px;}}
-@media(max-width:560px){.proj-gallery{columns:2;column-gap:3px;}.proj-gallery-item{margin-bottom:3px;}.proj-hero-img{height:45vh;min-height:240px;}.proj-hero-back{top:12px;left:14px;}.proj-hero-content{padding:22px 16px 28px;flex-direction:column;gap:14px;}.proj-hero-title{font-size:clamp(28px,9vw,52px);}.proj-hero-right{max-width:100%;}.proj-intro{flex-direction:column;padding:22px 16px;}.proj-intro-desc{border-left:none;border-top:1px solid var(--rule);padding:16px 0 0;}.proj-cta{padding:48px 16px;}.proj-cta h2{font-size:clamp(22px,6vw,36px);}}
+@media(max-width:900px){
+  .proj-gallery{columns:2;column-gap:4px;}
+  .proj-gallery-item{margin-bottom:4px;}
+  .proj-hero-img{height:52vh;}
+  .proj-hero-back{top:16px;left:20px;}
+  .proj-hero-content{padding:24px;gap:16px;}
+  .proj-intro{padding:20px 24px;gap:16px;}
+  .proj-intro-stat strong{font-size:22px;}
+  .proj-intro-desc{min-width:200px;}
+}
+@media(max-width:560px){
+  .proj-gallery{columns:2;column-gap:3px;}
+  .proj-gallery-item{margin-bottom:3px;}
+  .proj-hero-img{height:44vh;min-height:220px;}
+  .proj-hero-back{top:10px;left:12px;}
+  .proj-hero-content{padding:16px;flex-direction:column;align-items:flex-start;gap:8px;}
+  .proj-hero-left,.proj-hero-right{width:100%;}
+  .proj-hero-tag{margin-bottom:6px;}
+  .proj-hero-title{font-size:clamp(26px,8vw,44px);}
+  .proj-hero-sub{font-size:13px;line-height:1.55;margin-bottom:8px;}
+  .proj-hero-rule{margin-top:10px;}
+  .proj-intro{display:none;}
+  .proj-gallery-wrap{padding:12px 4px 32px;}
+  .proj-cta{padding:36px 16px;}
+  .proj-cta h2{font-size:clamp(20px,6vw,30px);}
+  .proj-cta p{font-size:13px;margin-bottom:20px;}
+  .proj-cta a{padding:14px 28px;}
+  .proj-footer{padding:14px 0 24px;}
+}
 </style>
 </head>
 <body>
