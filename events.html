@@ -85,12 +85,13 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 /* PROJECTS */
 .svc-projects{padding:80px 0;background:#1A2332;border-top:1px solid #2A3544;}
 .svc-projects-head{margin-bottom:48px;}.svc-projects-head h2{font-size:clamp(28px,3.5vw,44px);color:#fff;}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.project-card{display:block;text-decoration:none;color:inherit;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;transition:transform .3s,box-shadow .3s;}
-.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.4);}
-.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}.project-card:hover img{transform:scale(1.04);}
-.project-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 50%);pointer-events:none;}
-.project-card-name{position:absolute;bottom:20px;left:20px;right:20px;font-size:clamp(16px,2vw,22px);font-weight:700;color:#fff;margin:0;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start;}
+.project-card{display:block;text-decoration:none;color:inherit;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 20px 52px rgba(0,0,0,0.5);}
+.project-card img{width:100%;height:auto;display:block;transition:transform .5s ease,filter .4s;}
+.project-card:hover img{transform:scale(1.03);filter:brightness(0.82);}
+.project-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.05) 55%);pointer-events:none;}
+.project-card-name{position:absolute;bottom:18px;left:18px;right:18px;font-size:clamp(15px,2vw,20px);font-weight:700;color:#fff;margin:0;text-shadow:0 2px 10px rgba(0,0,0,0.5);}
 .project-card-click-overlay{position:absolute;inset:0;background:rgba(230,57,70,0.92);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:5;}
 .project-card.clicked .project-card-click-overlay{opacity:1;}
 .project-card-click-overlay span{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#fff;}
@@ -102,7 +103,7 @@ nav.primary a:hover,nav.primary a.active{color:#fff;}
 .svc-partners{padding:60px 0;border-top:1px solid #2A3544;}
 .svc-partners h3{font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-align:center;margin-bottom:32px;}
 .partner-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.partner-logos img{height:40px;width:auto;opacity:0.6;transition:opacity .3s;object-fit:contain;}.partner-logos img:hover{opacity:1;}
+.partner-logos img{height:44px;width:auto;opacity:0.85;transition:opacity .3s;object-fit:contain;}.partner-logos img:hover{opacity:1;}
 
 /* CTA */
 .svc-cta{background:#1e3a8a;padding:80px 0;text-align:center;position:relative;overflow:hidden;}
@@ -258,13 +259,9 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
   <h3>Events We've Produced For</h3>
   <div class="partner-logos">
     <img src="CLient Logos/Aceli-Africa-FullColor-Logo.png" alt="Aceli Africa">
-    <img src="CLient Logos/4a1399860dbdf7aab6b7eac1c229df80_400x400.jpeg" alt="Mastercard Foundation">
-    <img src="CLient Logos/DGF.jpg" alt="DGF">
-    <img src="CLient Logos/diakonia.jpg" alt="Diakonia">
-    <img src="CLient Logos/Ministr_Danida_Std_Rgb_En [66].png" alt="Danida">
-    <img src="CLient Logos/Global_Peace_Foundation_logo.png" alt="Global Peace Foundation">
-    <img src="CLient Logos/Danish refugee-council.png" alt="Danish Refugee Council">
-    <img src="CLient Logos/kampalafair_logo.png" alt="Kampala Fair">
+    <img src="CLient Logos/mastercard.png" alt="Mastercard Foundation">
+    <img src="CLient Logos/c-care.jfif" alt="c-care">
+ 
   </div>
 </div></section>
 
