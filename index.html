@@ -501,7 +501,7 @@
     position:sticky;
     top:0;
     z-index:1;
-    min-height:130svh;
+    min-height:100vh;
     display:flex;flex-direction:column;justify-content:flex-end;
     padding:100px 0 0;
     overflow:hidden;
@@ -515,7 +515,8 @@
     background-position:center center;
     background-repeat:no-repeat;
     transition:opacity 0.7s ease;
-    will-change:transform,opacity;
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering:crisp-edges;
     transform-origin:center center;
   }
   .hero-bg.fade-out{ opacity:0; }
@@ -524,7 +525,7 @@
   /* Ken Burns zoom — restarts each slide */
   @keyframes kenBurns{
     from{ transform:scale(1.0); }
-    to  { transform:scale(1.10); }
+    to  { transform:scale(1.04); }
   }
   .hero-bg.zoom{
     animation:kenBurns 6s ease-out forwards;
@@ -580,7 +581,7 @@
   .slate-meta b{color:var(--sky);font-weight:700;}
   .hero-body{
     position:relative;z-index:4;
-    padding:0 32px 80px;max-width:var(--maxw);margin:0 auto;width:100%;
+    padding:0 32px 100px;max-width:var(--maxw);margin:0 auto;width:100%;
   }
   .hero-service{font-size:11px;margin-bottom:4px;}
   .hero-title{
@@ -779,7 +780,8 @@
   .service-item--social .service-img img,
   .service-item--weddings .service-img img,
   .service-item--doc .service-img img,
-  .service-item--podcast .service-img img {
+  .service-item--podcast .service-img img,
+  .service-item--tourism .service-img img {
     height:100%;
     object-fit:cover;
   }
@@ -792,6 +794,7 @@
   .service-item--weddings .service-img  { aspect-ratio:3/2; }
   .service-item--doc .service-img       { aspect-ratio:3/2; }
   .service-item--podcast .service-img   { aspect-ratio:16/9; }
+  .service-item--tourism .service-img   { aspect-ratio:3/2; }
 
   /* Dark gradient overlay */
   .service-overlay{
@@ -844,14 +847,14 @@
       break-inside:unset;
     }
 
-    /* Every card gets the same 4/3 ratio — tall enough to show subjects clearly */
     .service-item--branding .service-img,
     .service-item--social .service-img,
     .service-item--events .service-img,
     .service-item--photo .service-img,
     .service-item--weddings .service-img,
     .service-item--doc .service-img,
-    .service-item--podcast .service-img {
+    .service-item--podcast .service-img,
+    .service-item--tourism .service-img {
       aspect-ratio:4/3;
     }
     /* All images cover their box — focus point keeps the subject in view */
@@ -861,7 +864,8 @@
     .service-item--photo .service-img img,
     .service-item--weddings .service-img img,
     .service-item--doc .service-img img,
-    .service-item--podcast .service-img img {
+    .service-item--podcast .service-img img,
+    .service-item--tourism .service-img img {
       height:100%;
       object-fit:cover;
     }
@@ -872,6 +876,7 @@
     .service-item--weddings .service-img img  { object-position:center 30%;    }
     .service-item--doc .service-img img       { object-position:center center; }
     .service-item--podcast .service-img img   { object-position:center center; }
+    .service-item--tourism .service-img img   { object-position:center center; }
   }
 
   /* ---- VISUAL BREAK — Sticky image between sections ---- */
@@ -1327,13 +1332,17 @@
   /* Large screens (TVs, ultrawide) */
   @media (min-width:1600px){
     .wrap{max-width:1600px;padding:0 80px;}
-    .hero-title{font-size:clamp(80px,8vw,160px);}
-    .hero-body{padding:0 80px 100px;max-width:1600px;}
-    .hero-sub-line{font-size:24px;}
-    .hero-counter{font-size:80px;bottom:50px;right:80px;}
+    /* Hero: text stays at the bottom with generous padding so it clears TV bezels */
+    .hero{min-height:100svh;justify-content:flex-end;padding:100px 0 0;}
+    .hero-title{font-size:clamp(80px,7vw,140px);}
+    .hero-body{padding:0 80px 120px;max-width:1600px;}
+    .hero-sub-line{font-size:22px;}
+    .hero-counter{font-size:72px;bottom:100px;right:80px;}
+    .slate-dots{padding:0 80px 60px;}
     header.site{padding:0 80px;height:110px;}
     .logo-img{height:90px;}
-    nav.primary a{font-size:15px;gap:48px;}
+    nav.primary a{font-size:15px;}
+    nav.primary{gap:48px;}
     section{padding:120px 0;}
     .about-grid{gap:32px;}
     .about-card{padding:48px 44px;}
@@ -1355,7 +1364,12 @@
   }
   @media (min-width:2200px){
     .wrap{max-width:1900px;padding:0 120px;}
-    .hero-title{font-size:180px;}
+    .hero{padding:100px 0 0;}
+    .hero-title{font-size:clamp(100px,6vw,160px);}
+    .hero-body{padding:0 120px 140px;max-width:1900px;}
+    .hero-counter{bottom:120px;right:120px;}
+    .slate-dots{padding:0 120px 80px;}
+    header.site{padding:0 120px;}
     section{padding:140px 0;}
   }
 
@@ -1635,6 +1649,17 @@
         <div class="service-caption">
           <span class="service-subtitle">Impact Films & Project Documentation</span>
           <h3 class="service-name">Documentary</h3>
+        </div>
+      </a>
+
+      <a href="tourism.html" class="service-item service-item--tourism" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-img">
+          <img src="tourism/Home Page.jpg" alt="Tourism Photography & Videography">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-caption">
+          <span class="service-subtitle">Destinations, Culture & Adventure</span>
+          <h3 class="service-name">Tourism</h3>
         </div>
       </a>
 
@@ -1942,6 +1967,7 @@
     { sub:"— Audio &amp; Video Podcast Production",             title:"Podcast Studio",          bg:"assets/podcast.webp",                pos:"center center" },
     { sub:"— Wedding Photography &amp; Videography",            title:"Yes I Do (Weddings)",     bg:"assets/yes i do.jpg",                pos:"center 30%"    },
     { sub:"— Impact Films &amp; Project Documentation",         title:"Documentary",             bg:"assets/documentary.jpg",             pos:"center 40%"    },
+    { sub:"— Destinations, Culture &amp; Adventure",            title:"Tourism",                 bg:"tourism/Home Page.jpg",              pos:"center center", mobilePos:"center center", fit:"cover"   },
   ];
 
   const heroBg      = document.getElementById('heroBg');

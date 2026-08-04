@@ -130,6 +130,23 @@ footer{padding:40px 0;background:#0A0F14;border-top:1px solid #2A3544;}
 /* RESPONSIVE */
 @media(max-width:900px){nav.primary{display:none;}.burger{display:flex;}.nav-cta{display:none;}header.site{grid-template-columns:1fr 1fr;height:80px;padding:0 24px;}.logo-img{height:50px;}.mobile-nav{top:80px;}.nav-right{justify-self:end;}.svc-intro-grid{grid-template-columns:1fr;gap:40px;}.doc-gallery{columns:3;column-gap:4px;}.doc-gallery-item{margin-bottom:4px;}.svc-hero{height:65vh;}.svc-hero-content{padding:0 24px 44px;}.svc-hero-sub{font-size:15px;}}
 @media(max-width:560px){.wrap{padding:0 16px;}header.site{height:70px;padding:0 16px;}.logo-img{height:44px;}.mobile-nav{top:70px;}.svc-hero{height:58vh;min-height:360px;}.svc-hero-content{padding:0 16px 32px;}.svc-hero-sub{font-size:14px;max-width:100%;}.svc-deliverables{grid-template-columns:1fr;}.doc-gallery{columns:2;column-gap:3px;}.doc-gallery-item{margin-bottom:3px;}.partner-logos{gap:24px;}.svc-intro{padding:48px 0;}.svc-cta{padding:56px 0;}}
+/* Large screens — TV / ultrawide */
+@media(min-width:1600px){
+  .wrap{max-width:1600px;padding:0 80px;}
+  header.site{padding:0 80px;height:110px;}
+  .logo-img{height:90px;}
+  nav.primary{gap:48px;}
+  .svc-hero{height:100vh;}
+  .svc-hero-content{padding:0 80px 0;bottom:50%;transform:translateY(50%);}
+  .svc-hero-title{font-size:clamp(60px,6vw,100px);}
+  .svc-hero-sub{font-size:20px;}
+}
+@media(min-width:2200px){
+  .wrap{max-width:1900px;padding:0 120px;}
+  header.site{padding:0 120px;}
+  .svc-hero-content{padding:0 120px 0;}
+  .svc-hero-title{font-size:clamp(80px,5vw,120px);}
+}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
