@@ -742,17 +742,17 @@
   /* ---- SERVICES — Full-bleed photo cards ---- */
   .service-grid{
     columns:3;
-    column-gap:20px;
+    column-gap:8px;
   }
   /* ---- SERVICES — CSS Columns Masonry ---- */
   .service-item{
     display:block;
     text-decoration:none;
-    border-radius:16px;
+    border-radius:8px;
     overflow:hidden;
     position:relative;
     break-inside:avoid;
-    margin-bottom:20px;
+    margin-bottom:8px;
     transition:transform .35s ease, box-shadow .35s ease;
     background:var(--panel);
   }
@@ -800,7 +800,7 @@
     position:absolute;inset:0;
     background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
     pointer-events:none;
-    border-radius:16px;
+    border-radius:8px;
   }
 
   /* Caption pinned to bottom over image */
@@ -831,6 +831,23 @@
   @media(max-width:900px){
     .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;columns:unset;}
     .service-item{margin-bottom:0;}
+    /* Force all cards to a consistent ratio so images fill corners cleanly */
+    .service-item--branding .service-img,
+    .service-item--social .service-img,
+    .service-item--events .service-img,
+    .service-item--photo .service-img,
+    .service-item--weddings .service-img,
+    .service-item--doc .service-img,
+    .service-item--podcast .service-img,
+    .service-item--tourism .service-img { aspect-ratio:4/3; }
+    .service-item--branding .service-img img,
+    .service-item--social .service-img img,
+    .service-item--events .service-img img,
+    .service-item--photo .service-img img,
+    .service-item--weddings .service-img img,
+    .service-item--doc .service-img img,
+    .service-item--podcast .service-img img,
+    .service-item--tourism .service-img img { height:100%; object-fit:cover; }
   }
   @media(max-width:560px){
     /* Switch to reliable single-column grid on mobile */
